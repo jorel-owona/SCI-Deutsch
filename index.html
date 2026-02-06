@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCI Deutsch - Gestion et Valorisation de Patrimoine</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="logo.png">
+</head>
+
+<body>
+    <!-- Header avec navigation -->
+    <header class="header">
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="logo.png" alt="SCI Deutsch Logo">
+                SCI <span>Deutsch</span>
+            </a>
+
+            <!-- Navigation Desktop -->
+            <nav class="nav-desktop">
+                <ul>
+                    <li><a href="#accueil" class="active">Accueil</a></li>
+                    <li><a href="#apropos">À propos</a></li>
+                    <li><a href="#biens">Nos Biens</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Menu Burger pour mobile -->
+            <button class="burger-menu" id="burgerBtn" aria-label="Menu mobile">
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+            </button>
+
+            <!-- Navigation Mobile -->
+            <nav class="nav-mobile" id="mobileNav">
+                <ul>
+                    <li><a href="#accueil" class="active">Accueil</a></li>
+                    <li><a href="#apropos">À propos</a></li>
+                    <li><a href="#biens">Nos Biens</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Section Hero avec carousel -->
+        <section id="accueil" class="hero">
+            <div class="carousel">
+                <!-- Slides du carousel -->
+                <div class="carousel-slides">
+                    <div class="slide active"
+                        style="background-image: url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');">
+                        <div class="overlay"></div>
+                    </div>
+                    <div class="slide"
+                        style="background-image: url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');">
+                        <div class="overlay"></div>
+                    </div>
+                    <div class="slide"
+                        style="background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');">
+                        <div class="overlay"></div>
+                    </div>
+                </div>
+
+                <!-- Boutons de navigation du carousel -->
+                <button class="carousel-btn prev" aria-label="Image précédente">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-btn next" aria-label="Image suivante">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+                <!-- Indicateurs du carousel -->
+                <div class="carousel-indicators">
+                    <span class="indicator active" data-index="0"></span>
+                    <span class="indicator" data-index="1"></span>
+                    <span class="indicator" data-index="2"></span>
+                </div>
+            </div>
+
+            <!-- Contenu Hero -->
+            <div class="hero-content">
+                <h1>Gestion et Valorisation de Patrimoine</h1>
+                <p>SCI Deutsch vous accompagne dans la gestion et l'optimisation de votre patrimoine immobilier depuis
+                    plus de 20 ans.</p>
+                <a href="#contact" class="btn btn-primary">Nous contacter</a>
+            </div>
+        </section>
+
+        <!-- Section À propos -->
+        <section id="apropos" class="about">
+            <div class="container">
+                <div class="section-header">
+                    <h2>À propos de SCI Deutsch</h2>
+                    <p>Notre expertise au service de votre patrimoine</p>
+                </div>
+
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>La <strong>SCI Deutsch</strong> est une Société Civile Immobilière qui vient tout juste
+                            d'être fondée, spécialisée dans la gestion et la valorisation de patrimoine immobilier.</p>
+
+                        <p>Notre mission est d'offrir une gestion locative de qualité, en alliant rigueur administrative
+                            et relation de proximité avec nos locataires. Nous nous engageons à maximiser la rentabilité
+                            de vos biens tout en préservant leur valeur sur le long terme.</p>
+
+                        <p>Notre approche repose sur trois piliers fondamentaux : <strong>l'expertise
+                                technique</strong>, <strong>la transparence financière</strong> et <strong>un suivi
+                                personnalisé</strong> de chaque bien. Nous adaptons notre gestion à la spécificité de
+                            chaque patrimoine, qu'il s'agisse de résidences principales, de biens locatifs ou de
+                            portefeuilles immobiliers diversifiés.</p>
+
+                        <p>En choisissant SCI Deutsch, vous bénéficiez d'une structure stable et fiable, qui place la
+                            satisfaction de ses associés et la pérennité des biens au cœur de ses préoccupations.</p>
+                    </div>
+
+                    <div class="about-image">
+                        <!-- Image d'illustration - peut être remplacée par une photo de l'équipe ou des bureaux -->
+                        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+                            alt="Réunion professionnelle SCI Deutsch">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Nos Biens / Notre Approche -->
+        <section id="biens" class="properties">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Notre Approche</h2>
+                    <p>Nous gérons différents types de biens avec une expertise adaptée</p>
+                </div>
+
+                <div class="properties-grid">
+                    <!-- Carte 1 : Résidentiel -->
+                    <article class="property-card">
+                        <div class="card-image">
+                            <!-- Image d'illustration - peut être remplacée par une photo de bien réel -->
+                            <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                                alt="Appartement résidentiel">
+                            <div class="card-icon">
+                                <i class="fas fa-home"></i>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Résidentiel</h3>
+                            <p>Gestion complète d'appartements et maisons à usage d'habitation principale ou locative.
+                                Nous assurons la sélection rigoureuse des locataires, l'entretien régulier et la
+                                valorisation de votre bien.</p>
+                            <ul class="property-features">
+                                <li><i class="fas fa-check-circle"></i> Sélection rigoureuse des locataires</li>
+                                <li><i class="fas fa-check-circle"></i> Gestion des états des lieux</li>
+                                <li><i class="fas fa-check-circle"></i> Suivi des loyers et charges</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- Carte 2 : Commercial -->
+                    <article class="property-card">
+                        <div class="card-image">
+                            <!-- Image d'illustration - peut être remplacée par une photo de bien réel -->
+                            <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+                                alt="Local commercial">
+                            <div class="card-icon">
+                                <i class="fas fa-store"></i>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Commercial</h3>
+                            <p>Gestion de locaux commerciaux, bureaux et surfaces de vente. Nous optimisons la mise en
+                                valeur de vos actifs et assurons des relations contractuelles sereines avec les
+                                commerçants et entreprises.</p>
+                            <ul class="property-features">
+                                <li><i class="fas fa-check-circle"></i> Négociation des baux commerciaux</li>
+                                <li><i class="fas fa-check-circle"></i> Suivi des indexations de loyers</li>
+                                <li><i class="fas fa-check-circle"></i> Gestion des travaux d'adaptation</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- Carte 3 : Bureaux -->
+                    <article class="property-card">
+                        <div class="card-image">
+                            <!-- Image d'illustration - peut être remplacée par une photo de bien réel -->
+                            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+                                alt="Bureaux professionnels">
+                            <div class="card-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Bureaux</h3>
+                            <p>Gestion spécialisée d'immeubles de bureaux et espaces professionnels. Nous veillons au
+                                maintien des standards de qualité, à la satisfaction des occupants et à la performance
+                                énergétique des bâtiments.</p>
+                            <ul class="property-features">
+                                <li><i class="fas fa-check-circle"></i> Maintenance des parties communes</li>
+                                <li><i class="fas fa-check-circle"></i> Optimisation des charges</li>
+                                <li><i class="fas fa-check-circle"></i> Suivi des normes en vigueur</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Contact -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Contactez-nous</h2>
+                    <p>Prenez rendez-vous pour un audit gratuit de votre patrimoine</p>
+                </div>
+
+                <div class="contact-container">
+                    <div class="contact-form-container">
+                        <form id="contactForm" class="contact-form">
+                            <div class="form-group">
+                                <label for="name">Nom complet *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Adresse email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Téléphone</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">Sujet</label>
+                                <select id="subject" name="subject">
+                                    <option value="general">Demande générale</option>
+                                    <option value="management">Gestion de bien</option>
+                                    <option value="valuation">Estimation de patrimoine</option>
+                                    <option value="other">Autre</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Message *</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Envoyer le message</button>
+                        </form>
+
+                        <!-- Message de confirmation (caché par défaut) -->
+                        <div id="formConfirmation" class="form-confirmation">
+                            <i class="fas fa-check-circle"></i>
+                            <h3>Message envoyé avec succès !</h3>
+                            <p>Nous vous répondrons dans les plus brefs délais.</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-container">
+                        <!-- Informations de contact -->
+                        <div class="contact-info">
+                            <h3>Nos coordonnées</h3>
+
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h4>Adresse</h4>
+                                    <p>Carrefour jamot<br>Entrer vers l'Hopital, Cameroun</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h4>Téléphone</h4>
+                                    <p>+237 678 89 22 03</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h4>Email</h4>
+                                    <a href="#">contact@scideutsch.fr</a>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h4>Horaires d'ouverture</h4>
+                                    <p>Lundi - Vendredi : 9h00 - 18h00<br>Samedi : 9h00 - 12h00</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Carte Google Maps (iframe) -->
+                        <div class="map-container">
+                            <h3>Nous trouver</h3>
+                            <div class="map-wrapper">
+                                <!-- Iframe Google Maps - Placeholder avec coordonnées de Paris -->
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d995.1463176645655!2d11.523140369604953!3d3.898678687756173!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x108bcf723797517d%3A0x7d4e052a98ca2970!2sCarrefour%20Jamot!5e0!3m2!1sfr!2sus!4v1765212273162!5m2!1sfr!2sus"
+                                    width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+                                    title="Carte Google Maps montrant l'emplacement de SCI Deutsch">
+                                </iframe>
+                                <p class="map-note">Notre bureau est situé au Carrefour Jamot, accessible en transports
+                                    en commun.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="logo">SCI <span>Deutsch</span></a>
+                    <p>Gestion et valorisation de patrimoine immobilier depuis 1998.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://wa.me/237678892203"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Liens rapides</h4>
+                    <ul>
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#apropos">À propos</a></li>
+                        <li><a href="#biens">Nos Biens</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#biens">Gestion résidentielle</a></li>
+                        <li><a href="#biens">Gestion commerciale</a></li>
+                        <li><a href="#biens">Gestion de bureaux</a></li>
+                        <li><a href="#contact">Audit patrimonial</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Légal</h4>
+                    <ul>
+                        <li><a href="#">Mentions légales</a></li>
+                        <li><a href="#">Politique de confidentialité</a></li>
+                        <li><a href="#">CGU</a></li>
+                        <li><a href="#">Plan du site</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 SCI Deutsch. Tous droits réservés.</p>
+                <p>Construire aujourd'hui un patrimoine immobilier durable et valorisé.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Supabase & EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <!-- Script JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>
