@@ -212,6 +212,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Initialisation
     const supabase = window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY) : null;
+
+    // Vérification de la configuration EmailJS
+    if (EMAILJS_PUBLIC_KEY === 'VOTRE_PUBLIC_KEY_EMAILJS' ||
+        EMAILJS_SERVICE_ID === 'VOTRE_SERVICE_ID' ||
+        EMAILJS_TEMPLATE_ID === 'VOTRE_TEMPLATE_ID') {
+        console.error("CONFIGURATION MANQUANTE : Veuillez configurer vos clés EmailJS dans script.js");
+        // Optionnel : Alert pour le développeur (commenté pour la prod)
+        // alert("Attention : Les clés EmailJS ne sont pas configurées. Le formulaire ne fonctionnera pas.");
+    }
+
     if (window.emailjs) emailjs.init(EMAILJS_PUBLIC_KEY);
 
     if (contactForm) {
