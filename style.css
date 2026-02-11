@@ -699,6 +699,16 @@ section {
     line-height: 1.6;
 }
 
+.footer-brand a {
+    color: wheat;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-brand a:hover {
+    color: goldenrod;
+}
+
 .social-links {
     display: flex;
     gap: 15px;
