@@ -654,6 +654,17 @@ section {
     line-height: 1.5;
 }
 
+.contact-details a {
+    color: #666;
+    line-height: 1.5;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.contact-details a:hover {
+    color: rgb(255, 149, 0);
+}
+
 .map-wrapper {
     margin-top: 15px;
 }

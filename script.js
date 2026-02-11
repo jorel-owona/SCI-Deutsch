@@ -206,17 +206,17 @@ document.addEventListener('DOMContentLoaded', function () {
     const SUPABASE_URL = 'https://rosaunkspusxefmqpcfg.supabase.co';
     const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJvc2F1bmtzcHVzeGVmbXFwY2ZnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzAzMzA0ODcsImV4cCI6MjA4NTkwNjQ4N30.voclCHjsEgvFSlRHyla21se3Qr3ouwfzmol2B0olRh8';
 
-    const EMAILJS_PUBLIC_KEY = 'VOTRE_PUBLIC_KEY_EMAILJS';
-    const EMAILJS_SERVICE_ID = 'VOTRE_SERVICE_ID';
-    const EMAILJS_TEMPLATE_ID = 'VOTRE_TEMPLATE_ID';
+    const EMAILJS_PUBLIC_KEY = 'l2o1aPLHxsWxRzR-i';
+    const EMAILJS_SERVICE_ID = 'service_0mg1yy1';
+    const EMAILJS_TEMPLATE_ID = 'template_284gcpk';
 
     // Initialisation
     const supabase = window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY) : null;
 
     // Vérification de la configuration EmailJS
-    if (EMAILJS_PUBLIC_KEY === 'VOTRE_PUBLIC_KEY_EMAILJS' ||
-        EMAILJS_SERVICE_ID === 'VOTRE_SERVICE_ID' ||
-        EMAILJS_TEMPLATE_ID === 'VOTRE_TEMPLATE_ID') {
+    if (EMAILJS_PUBLIC_KEY === 'l2o1aPLHxsWxRzR-i' ||
+        EMAILJS_SERVICE_ID === 'service_0mg1yy1' ||
+        EMAILJS_TEMPLATE_ID === 'template_284gcpk') {
         console.error("CONFIGURATION MANQUANTE : Veuillez configurer vos clés EmailJS dans script.js");
         // Optionnel : Alert pour le développeur (commenté pour la prod)
         // alert("Attention : Les clés EmailJS ne sont pas configurées. Le formulaire ne fonctionnera pas.");
@@ -260,8 +260,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 // 2. Envoi par EmailJS
                 if (window.emailjs) {
                     await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
-                        from_name: formData.name,
-                        from_email: formData.email,
+                        name: formData.name, // Modifié pour correspondre à {{name}}
+                        email: formData.email, // Modifié pour correspondre à {{email}}
                         phone: formData.phone,
                         subject: formData.subject,
                         message: formData.message
