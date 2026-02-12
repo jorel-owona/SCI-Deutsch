@@ -260,8 +260,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 // 2. Envoi par EmailJS
                 if (window.emailjs) {
                     await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
-                        name: formData.name, // Modifié pour correspondre à {{name}}
-                        email: formData.email, // Modifié pour correspondre à {{email}}
+                        name: formData.name,
+                        email: formData.email,
                         phone: formData.phone,
                         subject: formData.subject,
                         message: formData.message
