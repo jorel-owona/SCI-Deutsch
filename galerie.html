@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCI Deutsch - Galerie</title>
+    <link rel="stylesheet" href="style5.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">SCI <span>Deutsch</span></a>
+            <nav class="nav-desktop">
+                <ul>
+                    <li><a href="index.html#accueil">Accueil</a></li>
+                    <li><a href="index.html#apropos">À propos</a></li>
+                    <li><a href="index.html#biens">Nos Biens</a></li>
+                    <li><a href="terrain.html">Vente de terrains</a></li>
+                    <li><a href="voitures.html">Location de voitures</a></li>
+                    <li><a href="import-export.html">Import-export</a></li>
+                    <li><a href="galerie.html" class="active">Galerie</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Menu Burger pour mobile -->
+            <button class="burger-menu" id="burgerBtn" aria-label="Menu mobile">
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+            </button>
+
+            <!-- Navigation Mobile -->
+            <nav class="nav-mobile" id="mobileNav">
+                <ul>
+                    <li><a href="index.html#accueil">Accueil</a></li>
+                    <li><a href="index.html#apropos">À propos</a></li>
+                    <li><a href="index.html#biens">Nos Biens</a></li>
+                    <li><a href="terrain.html">Vente de terrains</a></li>
+                    <li><a href="voitures.html">Location de voitures</a></li>
+                    <li><a href="import-export.html">Import-export</a></li>
+                    <li><a href="galerie.html" class="active">Galerie</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- ============================================== -->
+    <!-- NOUVELLE SECTION : GALERIE DES LOCAUX -->
+    <!-- ============================================== -->
+
+    <!-- Section Galerie des Locaux -->
+    <section id="galerie" class="gallery-section">
+        <!-- Éléments d'arrière-plan animés -->
+        <div class="gallery-bg-elements">
+            <div class="floating-frame"></div>
+            <div class="floating-frame2"></div>
+            <div class="light-beam"></div>
+            <div class="light-beam2"></div>
+            <div class="particles">
+                <span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>Notre <span class="highlight">Espace</span></h2>
+                <p>Découvrez nos locaux modernes et notre environnement de travail premium</p>
+            </div>
+
+            <!-- Visite Virtuelle 360° -->
+            <div class="virtual-tour-container animate-on-scroll">
+                <div class="virtual-tour-header">
+                    <h3><i class="fas fa-vr-cardboard"></i> Visite Virtuelle 360°</h3>
+                    <p>Explorez nos locaux comme si vous y étiez</p>
+                </div>
+                <div class="virtual-tour-360" id="virtualTour">
+                    <div class="tour-viewer">
+                        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80"
+                            alt="Vue 360°" class="panorama-image" id="panoramaImage">
+
+                        <!-- Contrôles de navigation 360 -->
+                        <div class="tour-controls">
+                            <button class="tour-control rotate-left" id="rotateLeft">
+                                <i class="fas fa-undo-alt"></i>
+                            </button>
+                            <button class="tour-control zoom-in" id="zoomIn">
+                                <i class="fas fa-search-plus"></i>
+                            </button>
+                            <button class="tour-control zoom-out" id="zoomOut">
+                                <i class="fas fa-search-minus"></i>
+                            </button>
+                            <button class="tour-control rotate-right" id="rotateRight">
+                                <i class="fas fa-redo-alt"></i>
+                            </button>
+                        </div>
+
+                        <!-- Points d'intérêt -->
+                        <div class="hotspot" style="top: 30%; left: 40%;" data-info="Hall d'accueil">
+                            <span class="hotspot-dot"></span>
+                            <div class="hotspot-tooltip">Hall d'accueil</div>
+                        </div>
+                        <div class="hotspot" style="top: 50%; left: 60%;" data-info="Salle de réunion">
+                            <span class="hotspot-dot"></span>
+                            <div class="hotspot-tooltip">Salle de réunion</div>
+                        </div>
+                        <div class="hotspot" style="top: 70%; left: 30%;" data-info="Espace détente">
+                            <span class="hotspot-dot"></span>
+                            <div class="hotspot-tooltip">Espace détente</div>
+                        </div>
+                    </div>
+
+                    <!-- Miniatures des vues 360 -->
+                    <div class="tour-thumbnails">
+                        <div class="tour-thumb active" data-view="reception">
+                            <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80"
+                                alt="Réception">
+                            <span>Réception</span>
+                        </div>
+                        <div class="tour-thumb" data-view="conference">
+                            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80"
+                                alt="Salle conférence">
+                            <span>Salle conférence</span>
+                        </div>
+                        <div class="tour-thumb" data-view="bureaux">
+                            <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80"
+                                alt="Bureaux">
+                            <span>Bureaux</span>
+                        </div>
+                        <div class="tour-thumb" data-view="terrasse">
+                            <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80"
+                                alt="Terrasse">
+                            <span>Terrasse</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filtres de la galerie -->
+            <div class="gallery-filters animate-on-scroll">
+                <div class="filter-tabs">
+                    <button class="gallery-filter-btn active" data-filter="all">Tous les espaces</button>
+                    <button class="gallery-filter-btn" data-filter="exterieur">Extérieur</button>
+                    <button class="gallery-filter-btn" data-filter="interieur">Intérieur</button>
+                    <button class="gallery-filter-btn" data-filter="bureaux">Bureaux</button>
+                    <button class="gallery-filter-btn" data-filter="salles">Salles de réunion</button>
+                    <button class="gallery-filter-btn" data-filter="detente">Espaces détente</button>
+                </div>
+
+                <div class="gallery-view-options">
+                    <button class="view-option active" data-view="grid">
+                        <i class="fas fa-th"></i>
+                    </button>
+                    <button class="view-option" data-view="masonry">
+                        <i class="fas fa-th-large"></i>
+                    </button>
+                    <button class="view-option" data-view="list">
+                        <i class="fas fa-list"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Galerie principale -->
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Image 1 - Façade -->
+                <div class="gallery-item animate-on-scroll" data-category="exterieur" data-aos="fade-up">
+                    <div class="gallery-item-inner">
+                        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80"
+                            alt="Façade du bâtiment" loading="lazy" class="gallery-image">
+
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h4>Façade principale</h4>
+                                <p>Notre bâtiment emblématique au cœur de Douala</p>
+                                <div class="gallery-meta">
+                                    <span><i class="fas fa-camera"></i> Extérieur</span>
+                                    <span><i class="fas fa-calendar"></i> 2024</span>
+                                </div>
+                                <div class="gallery-actions">
+                                    <button class="gallery-zoom" data-index="0">
+                                        <i class="fas fa-search-plus"></i>
+                                    </button>
+                                    <button class="gallery-info-btn" data-index="0">
+                                        <i class="fas fa-info-circle"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Badge catégorie -->
+                        <div class="gallery-badge">Extérieur</div>
+                    </div>
+                </div>
+
+                <!-- Image 2 - Hall d'accueil -->
+                <div class="gallery-item animate-on-scroll" data-category="interieur" data-aos="fade-up"
+                    data-aos-delay="100">
+                    <div class="gallery-item-inner">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80"
+                            alt="Hall d'accueil" loading="lazy" class="gallery-image">
+
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h4>Hall d'accueil</h4>
+                                <p>Un espace chaleureux pour nos visiteurs</p>
+                                <div class="gallery-meta">
+                                    <span><i class="fas fa-camera"></i> Intérieur</span>
+                                    <span><i class="fas fa-ruler"></i> 150m²</span>
+                                </div>
+                                <div class="gallery-actions">
+                                    <button class="gallery-zoom" data-index="1">
+                                        <i class="fas fa-search-plus"></i>
+                                    </button>
+                                    <button class="gallery-info-btn" data-index="1">
+                                        <i class="fas fa-info-circle"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="gallery-badge">Intérieur</div>
+                    </div>
+                </div>
+
+                <!-- Image 3 - Salle de réunion panoramique -->
+                <div class="gallery-item animate-on-scroll" data-category="salles" data-aos="fade-up"
+                    data-aos-delay="200">
+                    <div class="gallery-item-inner">
+                        <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80"
+                            alt="Salle de réunion" loading="lazy" class="gallery-image">
+
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h4>Salle de réunion panoramique</h4>
+                                <p>Équipée des dernières technologies</p>
+                                <div class="gallery-meta">
+                                    <span><i class="fas fa-users"></i> 20 personnes</span>
+                                    <span><i class="fas fa-video"></i> Visio-conférence</span>
+                                </div>
+                                <div class="gallery-actions">
+                                    <button class="gallery-zoom" data-index="2">
+                                        <i class="fas fa-search-plus"></i>
+                                    </button>
+                                    <button class="gallery-info-btn" data-index="2">
+                                        <i class="fas fa-info-circle"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="gallery-badge">Salle de réunion</div>
+                    </div>
+                </div>
+
+                <!-- Image 4 - Espace détente -->
+                <div class="gallery-item animate-on-scroll" data-category="detente" data-aos="fade-up"
+                    data-aos-delay="300">
+                    <div class="gallery-item-inner">
+                        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80"
+                            alt="Espace détente" loading="lazy" class="gallery-image">
+
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h4>Espace détente</h4>
+                                <p>Un lieu convivial pour nos équipes</p>
+                                <div class="gallery-meta">
+                                    <span><i class="fas fa-coffee"></i> Café</span>
+                                    <span><i class="fas fa-wifi"></i> Wi-Fi</span>
+                                </div>
+                                <div class="gallery-actions">
+                                    <button class="gallery-zoom" data-index="3">
+                                        <i class="fas fa-search-plus"></i>
+                                    </button>
+                                    <button class="gallery-info-btn" data-index="3">
+                                        <i class="fas fa-info-circle"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="gallery-badge">Détente</div>
+                    </div>
+                </div>
+
+                <!-- Image 5 - Open space -->
+                <div class="gallery-item animate-on-scroll" data-category="bureaux" data-aos="fade-up"
+                    data-aos-delay="400">
+                    <div class="gallery-item-inner">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80"
+                            alt="Open space" loading="lazy" class="gallery-image">
+
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h4>Open space moderne</h4>
+                                <p>Un environnement de travail collaboratif</p>
+                                <div class="gallery-meta">
+                                    <span><i class="fas fa-desktop"></i> 30 postes</span>
+                                    <span><i class="fas fa-phone"></i> 5 salles d'appel</span>
+                                </div>
+                                <div class="gallery-actions">
+                                    <button class="gallery-zoom" data-index="4">
+                                        <i class="fas fa-search-plus"></i>
+                                    </button>
+                                    <button class="gallery-info-btn" data-index="4">
+                                        <i class="fas fa-info-circle"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="gallery-badge">Bureaux</div>
+                    </div>
+                </div>
+
+                <!-- Image 6 - Terrasse -->
+                <div class="gallery-item animate-on-scroll" data-category="exterieur" data-aos="fade-up"
+                    data-aos-delay="500">
+                    <div class="gallery-item-inner">
+                        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80"
+                            alt="Terrasse" loading="lazy" class="gallery-image">
+
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h4>Terrasse panoramique</h4>
+                                <p>Vue imprenable sur la ville</p>
+                                <div class="gallery-meta">
+                                    <span><i class="fas fa-umbrella-beach"></i> 80m²</span>
+                                    <span><i class="fas fa-tree"></i> Espace vert</span>
+                                </div>
+                                <div class="gallery-actions">
+                                    <button class="gallery-zoom" data-index="5">
+                                        <i class="fas fa-search-plus"></i>
+                                    </button>
+                                    <button class="gallery-info-btn" data-index="5">
+                                        <i class="fas fa-info-circle"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="gallery-badge">Extérieur</div>
+                    </div>
+                </div>
+
+                <!-- Image 7 - Salle de formation -->
+                <div class="gallery-item animate-on-scroll" data-category="salles" data-aos="fade-up"
+                    data-aos-delay="600">
+                    <div class="gallery-item-inner">
+                        <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80"
+                            alt="Salle de formation" loading="lazy" class="gallery-image">
+
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h4>Salle de formation</h4>
+                                <p>Équipée pour vos sessions de formation</p>
+                                <div class="gallery-meta">
+                                    <span><i class="fas fa-chalkboard-teacher"></i> 25 places</span>
+                                    <span><i class="fas fa-projector"></i> Vidéoprojecteur</span>
+                                </div>
+                                <div class="gallery-actions">
+                                    <button class="gallery-zoom" data-index="6">
+                                        <i class="fas fa-search-plus"></i>
+                                    </button>
+                                    <button class="gallery-info-btn" data-index="6">
+                                        <i class="fas fa-info-circle"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="gallery-badge">Formation</div>
+                    </div>
+                </div>
+
+                <!-- Image 8 - Espace café -->
+                <div class="gallery-item animate-on-scroll" data-category="detente" data-aos="fade-up"
+                    data-aos-delay="700">
+                    <div class="gallery-item-inner">
+                        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80"
+                            alt="Espace café" loading="lazy" class="gallery-image">
+
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h4>Espace café</h4>
+                                <p>Un coin convivial pour faire une pause</p>
+                                <div class="gallery-meta">
+                                    <span><i class="fas fa-mug-hot"></i> Café offert</span>
+                                    <span><i class="fas fa-cookie"></i> Snacks</span>
+                                </div>
+                                <div class="gallery-actions">
+                                    <button class="gallery-zoom" data-index="7">
+                                        <i class="fas fa-search-plus"></i>
+                                    </button>
+                                    <button class="gallery-info-btn" data-index="7">
+                                        <i class="fas fa-info-circle"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="gallery-badge">Cafétéria</div>
+                    </div>
+                </div>
+
+                <!-- Image 9 - Parking -->
+                <div class="gallery-item animate-on-scroll" data-category="exterieur" data-aos="fade-up"
+                    data-aos-delay="800">
+                    <div class="gallery-item-inner">
+                        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80"
+                            alt="Parking" loading="lazy" class="gallery-image">
+
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h4>Parking sécurisé</h4>
+                                <p>Stationnement pour nos collaborateurs et visiteurs</p>
+                                <div class="gallery-meta">
+                                    <span><i class="fas fa-car"></i> 50 places</span>
+                                    <span><i class="fas fa-shield-alt"></i> Vidéosurveillance</span>
+                                </div>
+                                <div class="gallery-actions">
+                                    <button class="gallery-zoom" data-index="8">
+                                        <i class="fas fa-search-plus"></i>
+                                    </button>
+                                    <button class="gallery-info-btn" data-index="8">
+                                        <i class="fas fa-info-circle"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="gallery-badge">Parking</div>
+                    </div>
+                </div>
+
+                <!-- Image 10 - Bureau directeur -->
+                <div class="gallery-item animate-on-scroll" data-category="bureaux" data-aos="fade-up"
+                    data-aos-delay="900">
+                    <div class="gallery-item-inner">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80"
+                            alt="Bureau directeur" loading="lazy" class="gallery-image">
+
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h4>Bureau de direction</h4>
+                                <p>Un espace élégant et fonctionnel</p>
+                                <div class="gallery-meta">
+                                    <span><i class="fas fa-crown"></i> Prestige</span>
+                                    <span><i class="fas fa-phone-alt"></i> Ligne directe</span>
+                                </div>
+                                <div class="gallery-actions">
+                                    <button class="gallery-zoom" data-index="9">
+                                        <i class="fas fa-search-plus"></i>
+                                    </button>
+                                    <button class="gallery-info-btn" data-index="9">
+                                        <i class="fas fa-info-circle"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="gallery-badge">Direction</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bouton Voir Plus -->
+            <div class="view-more-container">
+                <button id="loadMoreGallery" class="btn-load-more">
+                    <span>Charger plus de photos</span>
+                    <i class="fas fa-camera"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Modal Lightbox -->
+        <div id="galleryLightbox" class="gallery-lightbox">
+            <span class="lightbox-close">&times;</span>
+
+            <div class="lightbox-content">
+                <div class="lightbox-image-container">
+                    <img id="lightboxImage" src="" alt="Galerie">
+
+                    <!-- Contrôles avancés -->
+                    <div class="lightbox-controls">
+                        <button class="lightbox-prev">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="lightbox-next">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+
+                    <div class="lightbox-toolbar">
+                        <button class="lightbox-tool" id="zoomInBtn">
+                            <i class="fas fa-search-plus"></i>
+                        </button>
+                        <button class="lightbox-tool" id="zoomOutBtn">
+                            <i class="fas fa-search-minus"></i>
+                        </button>
+                        <button class="lightbox-tool" id="rotateLeftBtn">
+                            <i class="fas fa-undo-alt"></i>
+                        </button>
+                        <button class="lightbox-tool" id="rotateRightBtn">
+                            <i class="fas fa-redo-alt"></i>
+                        </button>
+                        <button class="lightbox-tool" id="fullscreenBtn">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                        <button class="lightbox-tool" id="downloadBtn">
+                            <i class="fas fa-download"></i>
+                        </button>
+                        <button class="lightbox-tool" id="shareBtn">
+                            <i class="fas fa-share-alt"></i>
+                        </button>
+                    </div>
+
+                    <!-- Informations image -->
+                    <div class="lightbox-info-panel">
+                        <h4 id="lightboxTitle"></h4>
+                        <p id="lightboxDescription"></p>
+                        <div class="lightbox-meta" id="lightboxMeta"></div>
+                    </div>
+                </div>
+
+                <!-- Miniatures en bas -->
+                <div class="lightbox-thumbnails" id="lightboxThumbnails"></div>
+            </div>
+        </div>
+
+        <!-- Modal Informations détaillées -->
+        <div id="infoModal" class="info-modal">
+            <div class="info-modal-content">
+                <span class="info-modal-close">&times;</span>
+                <div class="info-modal-body" id="infoModalBody">
+                    <!-- Contenu dynamique -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Notification -->
+        <div id="galleryNotification" class="gallery-notification">
+            <div class="notification-content">
+                <i class="fas fa-check-circle"></i>
+                <span>Image téléchargée avec succès</span>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="logo">SCI <span>Deutsch</span></a>
+                    <p>Gestion et valorisation de patrimoine immobilier depuis peu.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/scideutsch?igsh=MTVpNjU0djBha2VreQ=="><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/237691739200"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/share/1Abh75LWGm/" aria-label="Facebook"><i
+                                class="fab fa-facebook"></i></a>
+                        <a href="https://pro.tiktok.com/t/ZG9JaYvkkTkET-uSYJ6/" aria-label="tiktok"><i
+                                class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Liens rapides</h4>
+                    <ul>
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#apropos">À propos</a></li>
+                        <li><a href="#biens">Nos Biens</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#biens">Gestion résidentielle</a></li>
+                        <li><a href="#biens">Gestion commerciale</a></li>
+                        <li><a href="#biens">Gestion de bureaux</a></li>
+                        <li><a href="#contact">Audit patrimonial</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Galeries et Ventes</h4>
+                    <ul>
+                        <li><a href="terrain.html">Vente de terrains</a></li>
+                        <li><a href="import-export.html">Import export</a></li>
+                        <li><a href="galerie.html">Galerie</a></li>
+                        <li><a href="voitures.html">Location de voitures</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 SCI Deutsch. Tous droits réservés.</p>
+                <p>Construire aujourd'hui un patrimoine immobilier durable et valorisé.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script5.js"></script>
+</body>
+
+</html>

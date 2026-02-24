@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCI Deutsch - Terrains à Vendre</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="logo.png" alt="SCI Deutsch Logo">
+                SCI <span>Deutsch</span>
+            </a>
+
+            <!-- Navigation Desktop -->
+            <nav class="nav-desktop">
+                <ul>
+                    <li><a href="index.html#accueil">Accueil</a></li>
+                    <li><a href="index.html#apropos">À propos</a></li>
+                    <li><a href="index.html#biens">Nos Biens</a></li>
+                    <li><a href="terrain.html" class="active">Vente de terrains</a></li>
+                    <li><a href="voitures.html">Location de voitures</a></li>
+                    <li><a href="import-export.html">Import-export</a></li>
+                    <li><a href="galerie.html">Galerie</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Menu Burger pour mobile -->
+            <button class="burger-menu" id="burgerBtn" aria-label="Menu mobile">
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+            </button>
+
+            <!-- Navigation Mobile -->
+            <nav class="nav-mobile" id="mobileNav">
+                <ul>
+                    <li><a href="index.html#accueil">Accueil</a></li>
+                    <li><a href="index.html#apropos">À propos</a></li>
+                    <li><a href="index.html#biens">Nos Biens</a></li>
+                    <li><a href="terrain.html" class="active">Vente de terrains</a></li>
+                    <li><a href="voitures.html">Location de voitures</a></li>
+                    <li><a href="import-export.html">Import-export</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="terrains" class="terrains-section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>Terrains à Vendre <span class="highlight">Cameroun</span></h2>
+                <p>Découvrez notre sélection exclusive de terrains viabilisés dans les meilleures localités du Cameroun
+                </p>
+            </div>
+
+            <!-- Filtres par région -->
+            <div class="filters-container animate-on-scroll">
+                <div class="filter-group">
+                    <button class="filter-btn active" data-filter="all">Tous les terrains</button>
+                    <button class="filter-btn" data-filter="centre">Centre</button>
+                    <button class="filter-btn" data-filter="littoral">Littoral</button>
+                    <button class="filter-btn" data-filter="ouest">Ouest</button>
+                    <button class="filter-btn" data-filter="sud">Sud</button>
+                </div>
+
+                <div class="filter-group secondary">
+                    <select class="filter-select" id="arrondissement">
+                        <option value="">Tous les arrondissements</option>
+                        <option value="yaounde">Yaoundé</option>
+                        <option value="douala">Douala</option>
+                        <option value="bafoussam">Bafoussam</option>
+                        <option value="ebolowa">Ebolowa</option>
+                        <option value="mbalmayo">Mbalmayo</option>
+                    </select>
+
+                    <select class="filter-select" id="prixRange">
+                        <option value="">Tous les prix</option>
+                        <option value="0-25">Moins de 25M FCFA</option>
+                        <option value="25-50">25M - 50M FCFA</option>
+                        <option value="50-100">50M - 100M FCFA</option>
+                        <option value="100+">Plus de 100M FCFA</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Grille des terrains -->
+            <div class="terrains-grid" id="terrainsGrid">
+                <!-- Carte Terrain 1 - Yaoundé, Centre -->
+                <div class="terrain-card animate-on-scroll" data-region="centre" data-arrondissement="yaounde"
+                    data-prix="45000000">
+                    <div class="card-media">
+                        <!-- Video Player pour ce terrain -->
+                        <div class="video-container">
+                            <video class="terrain-video"
+                                poster="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1932&q=80">
+                                <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                                    type="video/mp4">
+                                Votre navigateur ne supporte pas la vidéo.
+                            </video>
+
+                            <!-- Contrôles vidéo personnalisés -->
+                            <div class="video-controls">
+                                <button class="video-play-pause" aria-label="Lecture/Pause">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <div class="video-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-filled"></div>
+                                    </div>
+                                </div>
+                                <div class="video-time">
+                                    <span class="current-time">0:00</span> / <span class="duration">0:00</span>
+                                </div>
+
+                                <!-- Contrôles avancés -->
+                                <div class="video-settings">
+                                    <button class="settings-btn" aria-label="Paramètres">
+                                        <i class="fas fa-cog"></i>
+                                    </button>
+
+                                    <!-- Menu des paramètres -->
+                                    <div class="settings-menu">
+                                        <div class="settings-group">
+                                            <h4>Vitesse</h4>
+                                            <div class="speed-options">
+                                                <button class="speed-option" data-speed="0.5">0.5x</button>
+                                                <button class="speed-option active" data-speed="1">1x</button>
+                                                <button class="speed-option" data-speed="1.5">1.5x</button>
+                                                <button class="speed-option" data-speed="2">2x</button>
+                                            </div>
+                                        </div>
+
+                                        <div class="settings-group">
+                                            <h4>Luminosité</h4>
+                                            <input type="range" class="brightness-control" min="0" max="200"
+                                                value="100">
+                                        </div>
+
+                                        <div class="settings-group">
+                                            <h4>Contraste</h4>
+                                            <input type="range" class="contrast-control" min="0" max="200" value="100">
+                                        </div>
+
+                                        <div class="settings-group">
+                                            <h4>Volume</h4>
+                                            <input type="range" class="volume-control" min="0" max="100" value="50">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button class="video-fullscreen" aria-label="Plein écran">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+
+                            <!-- Overlay de lecture -->
+                            <div class="video-overlay">
+                                <i class="fas fa-play-circle"></i>
+                            </div>
+                        </div>
+
+                        <!-- Badge région -->
+                        <div class="region-badge centre">Centre</div>
+
+                        <!-- Badge statut -->
+                        <div class="status-badge disponible">Disponible</div>
+                    </div>
+
+                    <div class="card-content">
+                        <h3>Terrain résidentiel - Nkolbisson</h3>
+
+                        <div class="terrain-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Yaoundé 4, Nkolbisson - Centre</span>
+                        </div>
+
+                        <div class="terrain-features">
+                            <div class="feature">
+                                <i class="fas fa-vector-square"></i>
+                                <span>500 m²</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-road"></i>
+                                <span>Bitumé</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-bolt"></i>
+                                <span>Électricité</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-water"></i>
+                                <span>Eau</span>
+                            </div>
+                        </div>
+
+                        <div class="terrain-description">
+                            <p>Terrain plat, viabilisé, à proximité des universités et des commerces. Titre foncier
+                                disponible.</p>
+                        </div>
+
+                        <div class="terrain-price">
+                            <span class="price">45 000 000 FCFA</span>
+                            <span class="price-details">(90 000 FCFA/m²)</span>
+                        </div>
+
+                        <div class="terrain-actions">
+                            <button class="btn-whatsapp" data-terrain="Nkolbisson" title="Contacter sur WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                            <button class="btn-contact" data-terrain="Nkolbisson">
+                                <i class="fas fa-envelope"></i> Contacter
+                            </button>
+                            <button class="btn-details" data-terrain="Nkolbisson">
+                                <i class="fas fa-images"></i> Détails
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carte Terrain 2 - Douala, Littoral -->
+                <div class="terrain-card animate-on-scroll" data-region="littoral" data-arrondissement="douala"
+                    data-prix="75000000">
+                    <div class="card-media">
+                        <div class="video-container">
+                            <video class="terrain-video"
+                                poster="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1973&q=80">
+                                <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+                                    type="video/mp4">
+                            </video>
+
+                        </div>
+
+                        <div class="region-badge littoral">Littoral</div>
+                        <div class="status-badge reserve">Réservé</div>
+                    </div>
+
+                    <div class="card-content">
+                        <h3>Terrain commercial - Bonapriso</h3>
+
+                        <div class="terrain-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Douala 1, Bonapriso - Littoral</span>
+                        </div>
+
+                        <div class="terrain-features">
+                            <div class="feature">
+                                <i class="fas fa-vector-square"></i>
+                                <span>800 m²</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-road"></i>
+                                <span>Bitumé</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-bolt"></i>
+                                <span>Électricité</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-water"></i>
+                                <span>Eau</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-wifi"></i>
+                                <span>Fibre</span>
+                            </div>
+                        </div>
+
+                        <div class="terrain-description">
+                            <p>Terrain d'angle en zone commerciale, idéal pour immeuble de bureaux ou commerce. Titre
+                                foncier en cours.</p>
+                        </div>
+
+                        <div class="terrain-price">
+                            <span class="price">75 000 000 FCFA</span>
+                            <span class="price-details">(93 750 FCFA/m²)</span>
+                        </div>
+
+                        <div class="terrain-actions">
+                            <button class="btn-whatsapp" data-terrain="Bonapriso" title="Contacter sur WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                            <button class="btn-contact" data-terrain="Bonapriso">
+                                <i class="fas fa-envelope"></i> Contacter
+                            </button>
+                            <button class="btn-details" data-terrain="Bonapriso">
+                                <i class="fas fa-images"></i> Détails
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carte Terrain 3 - Bafoussam, Ouest -->
+                <div class="terrain-card animate-on-scroll" data-region="ouest" data-arrondissement="bafoussam"
+                    data-prix="35000000">
+                    <div class="card-media">
+                        <div class="video-container">
+                            <video class="terrain-video"
+                                poster="https://images.unsplash.com/photo-1500076656116-558758c991c1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80">
+                                <source
+                                    src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+                                    type="video/mp4">
+                            </video>
+                        </div>
+
+                        <div class="region-badge ouest">Ouest</div>
+                        <div class="status-badge disponible">Disponible</div>
+                    </div>
+
+                    <div class="card-content">
+                        <h3>Terrain résidentiel - Quartier Tamdja</h3>
+
+                        <div class="terrain-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Bafoussam 2, Tamdja - Ouest</span>
+                        </div>
+
+                        <div class="terrain-features">
+                            <div class="feature">
+                                <i class="fas fa-vector-square"></i>
+                                <span>400 m²</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-road"></i>
+                                <span>Piste</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-bolt"></i>
+                                <span>À proximité</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-water"></i>
+                                <span>Puits</span>
+                            </div>
+                        </div>
+
+                        <div class="terrain-description">
+                            <p>Terrain en légère pente avec vue panoramique. Calme et verdoyant, idéal pour villa de
+                                standing.</p>
+                        </div>
+
+                        <div class="terrain-price">
+                            <span class="price">35 000 000 FCFA</span>
+                            <span class="price-details">(87 500 FCFA/m²)</span>
+                        </div>
+
+                        <div class="terrain-actions">
+                            <button class="btn-whatsapp" data-terrain="Tamdja" title="Contacter sur WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                            <button class="btn-contact" data-terrain="Tamdja">
+                                <i class="fas fa-envelope"></i> Contacter
+                            </button>
+                            <button class="btn-details" data-terrain="Tamdja">
+                                <i class="fas fa-images"></i> Détails
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carte Terrain 4 - Ebolowa, Sud -->
+                <div class="terrain-card animate-on-scroll" data-region="sud" data-arrondissement="ebolowa"
+                    data-prix="25000000">
+                    <div class="card-media">
+                        <div class="video-container">
+                            <video class="terrain-video"
+                                poster="https://images.unsplash.com/photo-1542601098-8fc114e148e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80">
+                                <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4"
+                                    type="video/mp4">
+                            </video>
+                        </div>
+
+                        <div class="region-badge sud">Sud</div>
+                        <div class="status-badge disponible">Disponible</div>
+                    </div>
+
+                    <div class="card-content">
+                        <h3>Terrain agricole - Mvangan</h3>
+
+                        <div class="terrain-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Ebolowa, Mvangan - Sud</span>
+                        </div>
+
+                        <div class="terrain-features">
+                            <div class="feature">
+                                <i class="fas fa-vector-square"></i>
+                                <span>2000 m²</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-road"></i>
+                                <span>Piste</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-tint"></i>
+                                <span>Ruisseau</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-seedling"></i>
+                                <span>Terres fertiles</span>
+                            </div>
+                        </div>
+
+                        <div class="terrain-description">
+                            <p>Grand terrain agricole avec ruisseau, idéal pour plantation ou projet d'agriculture
+                                biologique.</p>
+                        </div>
+
+                        <div class="terrain-price">
+                            <span class="price">25 000 000 FCFA</span>
+                            <span class="price-details">(12 500 FCFA/m²)</span>
+                        </div>
+
+                        <div class="terrain-actions">
+                            <button class="btn-whatsapp" data-terrain="Mvangan" title="Contacter sur WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                            <button class="btn-contact" data-terrain="Mvangan">
+                                <i class="fas fa-envelope"></i> Contacter
+                            </button>
+                            <button class="btn-details" data-terrain="Mvangan">
+                                <i class="fas fa-images"></i> Détails
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carte Terrain 5 - Mbalmayo, Centre -->
+                <div class="terrain-card animate-on-scroll" data-region="centre" data-arrondissement="mbalmayo"
+                    data-prix="30000000">
+                    <div class="card-media">
+                        <div class="video-container">
+                            <video class="terrain-video"
+                                poster="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1932&q=80">
+                                <source
+                                    src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4"
+                                    type="video/mp4">
+                            </video>
+                        </div>
+
+                        <div class="region-badge centre">Centre</div>
+                        <div class="status-badge reserve">Réservé</div>
+                    </div>
+
+                    <div class="card-content">
+                        <h3>Terrain constructible - Centre-ville</h3>
+
+                        <div class="terrain-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Mbalmayo, Centre-ville - Centre</span>
+                        </div>
+
+                        <div class="terrain-features">
+                            <div class="feature">
+                                <i class="fas fa-vector-square"></i>
+                                <span>300 m²</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-road"></i>
+                                <span>Bitumé</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-bolt"></i>
+                                <span>Électricité</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-water"></i>
+                                <span>Eau</span>
+                            </div>
+                        </div>
+
+                        <div class="terrain-description">
+                            <p>Terrain en plein centre-ville, à 200m du marché. Parfait pour construction commerciale ou
+                                résidentielle.</p>
+                        </div>
+
+                        <div class="terrain-price">
+                            <span class="price">30 000 000 FCFA</span>
+                            <span class="price-details">(100 000 FCFA/m²)</span>
+                        </div>
+
+                        <div class="terrain-actions">
+                            <button class="btn-whatsapp" data-terrain="Mbalmayo" title="Contacter sur WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                            <button class="btn-contact" data-terrain="Mbalmayo">
+                                <i class="fas fa-envelope"></i> Contacter
+                            </button>
+                            <button class="btn-details" data-terrain="Mbalmayo">
+                                <i class="fas fa-images"></i> Détails
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carte Terrain 6 - Douala, Littoral -->
+                <div class="terrain-card animate-on-scroll" data-region="littoral" data-arrondissement="douala"
+                    data-prix="95000000">
+                    <div class="card-media">
+                        <div class="video-container">
+                            <video class="terrain-video"
+                                poster="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1973&q=80">
+                                <source
+                                    src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4"
+                                    type="video/mp4">
+                            </video>
+                        </div>
+
+                        <div class="region-badge littoral">Littoral</div>
+                        <div class="status-badge disponible">Disponible</div>
+                    </div>
+
+                    <div class="card-content">
+                        <h3>Terrain industriel - Bonabéri</h3>
+
+                        <div class="terrain-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Douala 4, Bonabéri - Littoral</span>
+                        </div>
+
+                        <div class="terrain-features">
+                            <div class="feature">
+                                <i class="fas fa-vector-square"></i>
+                                <span>1500 m²</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-road"></i>
+                                <span>Bitumé</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-bolt"></i>
+                                <span>HT/BT</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-water"></i>
+                                <span>Eau industrielle</span>
+                            </div>
+                        </div>
+
+                        <div class="terrain-description">
+                            <p>Grand terrain à proximité du port, idéal pour entrepôt ou activité industrielle. Accès
+                                poids lourds.</p>
+                        </div>
+
+                        <div class="terrain-price">
+                            <span class="price">95 000 000 FCFA</span>
+                            <span class="price-details">(63 333 FCFA/m²)</span>
+                        </div>
+
+                        <div class="terrain-actions">
+                            <button class="btn-whatsapp" data-terrain="Bonabéri" title="Contacter sur WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                            <button class="btn-contact" data-terrain="Bonabéri">
+                                <i class="fas fa-envelope"></i> Contacter
+                            </button>
+                            <button class="btn-details" data-terrain="Bonabéri">
+                                <i class="fas fa-images"></i> Détails
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bouton Voir Plus -->
+            <div class="view-more-container animate-on-scroll">
+                <button id="loadMoreTerrains" class="btn-load-more">
+                    <span>Voir plus de terrains</span>
+                    <i class="fas fa-arrow-down"></i>
+                </button>
+            </div>
+
+            <!-- Modal Détails Terrain (caché par défaut) -->
+            <div id="terrainModal" class="modal">
+                <div class="modal-content">
+                    <span class="close-modal">&times;</span>
+
+                    <div class="modal-body">
+                        <!-- Contenu dynamique chargé par JS -->
+                        <div class="modal-loader">
+                            <div class="spinner"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Notification Toast -->
+            <div id="notificationToast" class="toast-notification">
+                <div class="toast-content">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Message envoyé avec succès !</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="logo">SCI <span>Deutsch</span></a>
+                    <p>Gestion et valorisation de patrimoine immobilier depuis peu.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/scideutsch?igsh=MTVpNjU0djBha2VreQ=="><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/237691739200"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/share/1Abh75LWGm/" aria-label="Facebook"><i
+                                class="fab fa-facebook"></i></a>
+                        <a href="https://pro.tiktok.com/t/ZG9JaYvkkTkET-uSYJ6/" aria-label="tiktok"><i
+                                class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Liens rapides</h4>
+                    <ul>
+                        <li><a href="index.html#accueil">Accueil</a></li>
+                        <li><a href="index.html#apropos">À propos</a></li>
+                        <li><a href="index.html#biens">Nos Biens</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#biens">Gestion résidentielle</a></li>
+                        <li><a href="#biens">Gestion commerciale</a></li>
+                        <li><a href="#biens">Gestion de bureaux</a></li>
+                        <li><a href="#contact">Audit patrimonial</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Galeries et Ventes</h4>
+                    <ul>
+                        <li><a href="terrain.html">Vente de terrains</a></li>
+                        <li><a href="import-export.html">Import export</a></li>
+                        <li><a href="galerie.html">Galerie</a></li>
+                        <li><a href="voitures.html">Location de voitures</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 SCI Deutsch. Tous droits réservés.</p>
+                <p>Construire aujourd'hui un patrimoine immobilier durable et valorisé.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script2.js"></script>
+
+</body>
+
+</html>

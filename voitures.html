@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCI Deutsch - Location de voitures</title>
+    <link rel="stylesheet" href="style3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">SCI <span>Deutsch</span></a>
+            <nav class="nav-desktop">
+                <ul>
+                    <li><a href="index.html#accueil">Accueil</a></li>
+                    <li><a href="index.html#apropos">À propos</a></li>
+                    <li><a href="index.html#biens">Nos Biens</a></li>
+                    <li><a href="terrain.html">Vente de terrains</a></li>
+                    <li><a href="voitures.html" class="active">Location de voitures</a></li>
+                    <li><a href="import-export.html">Import-export</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- ============================================== -->
+    <!-- NOUVELLE SECTION : LOCATION DE VOITURES -->
+    <!-- ============================================== -->
+
+    <!-- Section Location de Voitures -->
+    <section id="location-voitures" class="cars-section">
+
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>Location de <span class="highlight">Voitures</span></h2>
+                <p>Découvrez notre flotte de véhicules premium pour tous vos déplacements au Cameroun</p>
+            </div>
+
+            <!-- Filtres par catégorie -->
+            <div class="car-filters animate-on-scroll">
+                <div class="filter-group">
+                    <button class="car-filter-btn active" data-category="all">Tous les véhicules</button>
+                    <button class="car-filter-btn" data-category="suv">SUV & 4x4</button>
+                    <button class="car-filter-btn" data-category="berline">Berlines</button>
+                    <button class="car-filter-btn" data-category="economique">Économique</button>
+                    <button class="car-filter-btn" data-category="luxe">Luxe</button>
+                </div>
+
+                <div class="filter-group secondary">
+                    <select class="car-filter-select" id="prixLocation">
+                        <option value="">Budget par jour</option>
+                        <option value="0-50000">Moins de 50 000 FCFA</option>
+                        <option value="50000-100000">50 000 - 100 000 FCFA</option>
+                        <option value="100000-200000">100 000 - 200 000 FCFA</option>
+                        <option value="200000+">Plus de 200 000 FCFA</option>
+                    </select>
+
+                    <select class="car-filter-select" id="typeCarburant">
+                        <option value="">Tous carburants</option>
+                        <option value="essence">Essence</option>
+                        <option value="diesel">Diesel</option>
+                        <option value="hybride">Hybride</option>
+                        <option value="electrique">Électrique</option>
+                    </select>
+
+                    <select class="car-filter-select" id="transmission">
+                        <option value="">Transmission</option>
+                        <option value="automatique">Automatique</option>
+                        <option value="manuelle">Manuelle</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Grille des voitures -->
+            <div class="cars-grid" id="carsGrid">
+                <!-- Carte Voiture 1 - SUV Toyota Land Cruiser -->
+                <div class="car-card animate-on-scroll" data-category="suv" data-prix="150000" data-carburant="diesel"
+                    data-transmission="automatique">
+                    <div class="car-card-inner">
+                        <div class="car-media">
+                            <!-- Image principale avec badge -->
+                            <div class="car-image-container">
+                                <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                                    alt="Toyota Land Cruiser" class="car-main-image" loading="lazy">
+
+                                <!-- Overlay avec zoom -->
+                                <div class="car-image-overlay">
+                                    <button class="car-zoom-btn" data-image="landcruiser">
+                                        <i class="fas fa-search-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Badges -->
+                            <div class="car-badge popular">Populaire</div>
+                            <div class="car-badge condition">4x4</div>
+
+                            <!-- Mini gallery -->
+                            <div class="car-thumbnails">
+                                <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                                    alt="Vue 1" class="thumbnail active"
+                                    data-full="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80">
+                                <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&auto=format&fit=crop&w=1964&q=80"
+                                    alt="Vue 2" class="thumbnail"
+                                    data-full="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&auto=format&fit=crop&w=1964&q=80">
+                                <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                                    alt="Vue 3" class="thumbnail"
+                                    data-full="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80">
+                            </div>
+                        </div>
+
+                        <div class="car-info">
+                            <div class="car-header">
+                                <h3>Toyota Land Cruiser Prado</h3>
+                                <div class="car-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span>(24 avis)</span>
+                                </div>
+                            </div>
+
+                            <div class="car-specs">
+                                <div class="spec">
+                                    <i class="fas fa-users"></i>
+                                    <span>7 places</span>
+                                </div>
+                                <div class="spec">
+                                    <i class="fas fa-gas-pump"></i>
+                                    <span>Diesel</span>
+                                </div>
+                                <div class="spec">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                    <span>Automatique</span>
+                                </div>
+                                <div class="spec">
+                                    <i class="fas fa-snowflake"></i>
+                                    <span>Climatisation</span>
+                                </div>
+                                <div class="spec">
+                                    <i class="fas fa-wifi"></i>
+                                    <span>Wi-Fi</span>
+                                </div>
+                                <div class="spec">
+                                    <i class="fas fa-battery-full"></i>
+                                    <span>GPS</span>
+                                </div>
+                            </div>
+
+                            <div class="car-features">
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check-circle"></i> Kilométrage illimité</li>
+                                    <li><i class="fas fa-check-circle"></i> Assurance tous risques</li>
+                                    <li><i class="fas fa-check-circle"></i> Livraison aéroport</li>
+                                    <li><i class="fas fa-check-circle"></i> Assistance 24/7</li>
+                                </ul>
+                            </div>
+
+                            <div class="car-price-section">
+                                <div class="price-tag">
+                                    <span class="price">150 000 FCFA</span>
+                                    <span class="price-period">/jour</span>
+                                </div>
+                                <div class="price-options">
+                                    <span class="weekly">700 000 FCFA/semaine</span>
+                                    <span class="monthly">2 500 000 FCFA/mois</span>
+                                </div>
+                            </div>
+
+                            <div class="car-actions">
+                                <button class="btn-reserver" data-car="Land Cruiser">
+                                    <i class="fas fa-calendar-check"></i> Réserver
+                                </button>
+                                <button class="btn-details-car" data-car="Land Cruiser">
+                                    <i class="fas fa-info-circle"></i> Détails
+                                </button>
+                                <button class="btn-whatsapp" data-car="Land Cruiser">
+                                    <i class="fab fa-whatsapp"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carte Voiture 2 - Berline Mercedes Classe E -->
+                <div class="car-card animate-on-scroll" data-category="berline luxe" data-prix="200000"
+                    data-carburant="diesel" data-transmission="automatique">
+                    <div class="car-card-inner">
+                        <div class="car-media">
+                            <div class="car-image-container">
+                                <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                                    alt="Mercedes Classe E" class="car-main-image" loading="lazy">
+
+                                <div class="car-image-overlay">
+                                    <button class="car-zoom-btn" data-image="mercedes">
+                                        <i class="fas fa-search-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="car-badge premium">Premium</div>
+                            <div class="car-badge condition">Neuf</div>
+
+                            <div class="car-thumbnails">
+                                <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                                    alt="Vue 1" class="thumbnail active"
+                                    data-full="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80">
+                                <img src="https://images.unsplash.com/photo-1617814065893-0078b5437edb?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                                    alt="Vue 2" class="thumbnail"
+                                    data-full="https://images.unsplash.com/photo-1617814065893-0078b5437edb?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80">
+                                <img src="https://images.unsplash.com/photo-1617814076231-2c58846db944?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                                    alt="Vue 3" class="thumbnail"
+                                    data-full="https://images.unsplash.com/photo-1617814076231-2c58846db944?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80">
+                            </div>
+                        </div>
+
+                        <div class="car-info">
+                            <div class="car-header">
+                                <h3>Mercedes-Benz Classe E</h3>
+                                <div class="car-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>(56 avis)</span>
+                                </div>
+                            </div>
+
+                            <div class="car-specs">
+                                <div class="spec">
+                                    <i class="fas fa-users"></i>
+                                    <span>5 places</span>
+                                </div>
+                                <div class="spec">
+                                    <i class="fas fa-gas-pump"></i>
+                                    <span>Diesel</span>
+                                </div>
+                                <div class="spec">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                    <span>Automatique</span>
+                                </div>
+                                <div class="spec">
+                                    <i class="fas fa-snowflake"></i>
+                                    <span>Climatisation</span>
+                                </div>
+                                <div class="spec">
+                                    <i class="fas fa-couch"></i>
+                                    <span>Cuir</span>
+                                </div>
+                                <div class="spec">
+                                    <i class="fas fa-music"></i>
+                                    <span>Premium Sound</span>
+                                </div>
+                            </div>
+
+                            <div class="car-features">
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check-circle"></i> Kilométrage illimité</li>
+                                    <li><i class="fas fa-check-circle"></i> Assurance tous risques</li>
+                                    <li><i class="fas fa-check-circle"></i> Chauffeur optionnel</li>
+                                    <li><i class="fas fa-check-circle"></i> Conciergerie</li>
+                                </ul>
+                            </div>
+
+                            <div class="car-price-section">
+                                <div class="price-tag">
+                                    <span class="price">200 000 FCFA</span>
+                                    <span class="price-period">/jour</span>
+                                </div>
+                                <div class="price-options">
+                                    <span class="weekly">950 000 FCFA/semaine</span>
+                                    <span class="monthly">3 500 000 FCFA/mois</span>
+                                </div>
+                            </div>
+
+                            <div class="car-actions">
+                                <button class="btn-reserver" data-car="Mercedes Classe E">
+                                    <i class="fas fa-calendar-check"></i> Réserver
+                                </button>
+                                <button class="btn-details-car" data-car="Mercedes Classe E">
+                                    <i class="fas fa-info-circle"></i> Détails
+                                </button>
+                                <button class="btn-whatsapp" data-car="Mercedes Classe E">
+                                    <i class="fab fa-whatsapp"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carte Voiture 3 - Économique Toyota Yaris -->
+                <div class="car-card animate-on-scroll" data-category="economique" data-prix="35000"
+                    data-carburant="essence" data-transmission="manuelle">
+                    <div class="car-card-inner">
+                        <div class="car-media">
+                            <div class="car-image-container">
+                                <img src="https://images.unsplash.com/photo-1559416523-140ddc3d238c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                                    alt="Toyota Yaris" class="car-main-image" loading="lazy">
+
+                                <div class="car-image-overlay">
+                                    <button class="car-zoom-btn" data-image="yaris">
+                                        <i class="fas fa-search-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="car-badge eco">Économique</div>
+
+                            <div class="car-thumbnails">
+                                <img src="https://images.unsplash.com/photo-1559416523-140ddc3d238c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                                    alt="Vue 1" class="thumbnail active"
+                                    data-full="https://images.unsplash.com/photo-1559416523-140ddc3d238c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80">
+                                <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&auto=format&fit=crop&w=1964&q=80"
+                                    alt="Vue 2" class="thumbnail"
+                                    data-full="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&auto=format&fit=crop&w=1964&q=80">
+                            </div>
+                        </div>
+
+                        <div class="car-info">
+                            <div class="car-header">
+                                <h3>Toyota Yaris</h3>
+                                <div class="car-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>(128 avis)</span>
+                                </div>
+                            </div>
+
+                            <div class="car-specs">
+                                <div class="spec">
+                                    <i class="fas fa-users"></i>
+                                    <span>5 places</span>
+                                </div>
+                                <div class="spec">
+                                    <i class="fas fa-gas-pump"></i>
+                                    <span>Essence</span>
+                                </div>
+                                <div class="spec">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                    <span>Manuelle</span>
+                                </div>
+                                <div class="spec">
+                                    <i class="fas fa-snowflake"></i>
+                                    <span>Climatisation</span>
+                                </div>
+                                <div class="spec">
+                                    <i class="fas fa-battery-quarter"></i>
+                                    <span>Faible conso</span>
+                                </div>
+                            </div>
+
+                            <div class="car-features">
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check-circle"></i> 200 km/jour inclus</li>
+                                    <li><i class="fas fa-check-circle"></i> Assurance basique</li>
+                                    <li><i class="fas fa-check-circle"></i> Livraison possible</li>
+                                </ul>
+                            </div>
+
+                            <div class="car-price-section">
+                                <div class="price-tag">
+                                    <span class="price">35 000 FCFA</span>
+                                    <span class="price-period">/jour</span>
+                                </div>
+                                <div class="price-options">
+                                    <span class="weekly">175 000 FCFA/semaine</span>
+                                    <span class="monthly">600 000 FCFA/mois</span>
+                                </div>
+                            </div>
+
+                            <div class="car-actions">
+                                <button class="btn-reserver" data-car="Toyota Yaris">
+                                    <i class="fas fa-calendar-check"></i> Réserver
+                                </button>
+                                <button class="btn-details-car" data-car="Toyota Yaris">
+                                    <i class="fas fa-info-circle"></i> Détails
+                                </button>
+                                <button class="btn-whatsapp" data-car="Toyota Yaris">
+                                    <i class="fab fa-whatsapp"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carte Voiture 4 - Luxe Range Rover Velar -->
+                <div class="car-card animate-on-scroll" data-category="suv luxe" data-prix="250000"
+                    data-carburant="diesel" data-transmission="automatique">
+                    <div class="car-card-inner">
+                        <div class="car-media">
+                            <div class="car-image-container">
+                                <img src="https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                                    alt="Range Rover Velar" class="car-main-image" loading="lazy">
+
+                                <div class="car-image-overlay">
+                                    <button class="car-zoom-btn" data-image="velar">
+                                        <i class="fas fa-search-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="car-badge luxe">Luxe</div>
+                            <div class="car-badge condition">2024</div>
+
+                            <div class="car-thumbnails">
+                                <img src="https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                                    alt="Vue 1" class="thumbnail active"
+                                    data-full="https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80">
+                                <img src="https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1974&q=80"
+                                    alt="Vue 2" class="thumbnail"
+                                    data-full="https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1974&q=80">
+                            </div>
+                        </div>
+
+                        <div class="car-info">
+                            <div class="car-header">
+                                <h3>Range Rover Velar</h3>
+                                <div class="car-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span>(18 avis)</span>
+                                </div>
+                            </div>
+
+                            <div class="car-specs">
+                                <div class="spec">
+                                    <i class="fas fa-users"></i>
+                                    <span>5 places</span>
+                                </div>
+                                <div class="spec">
+                                    <i class="fas fa-gas-pump"></i>
+                                    <span>Diesel</span>
+                                </div>
+                                <div class="spec">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                    <span>Automatique</span>
+                                </div>
+                                <div class="spec">
+                                    <i class="fas fa-snowflake"></i>
+                                    <span>Climatisation</span>
+                                </div>
+                                <div class="spec">
+                                    <i class="fas fa-couch"></i>
+                                    <span>Massage</span>
+                                </div>
+                                <div class="spec">
+                                    <i class="fas fa-sun"></i>
+                                    <span>Panoramique</span>
+                                </div>
+                            </div>
+
+                            <div class="car-features">
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check-circle"></i> Kilométrage illimité</li>
+                                    <li><i class="fas fa-check-circle"></i> Assurance premium</li>
+                                    <li><i class="fas fa-check-circle"></i> Chauffeur inclus</li>
+                                    <li><i class="fas fa-check-circle"></i> Accès lounge VIP</li>
+                                </ul>
+                            </div>
+
+                            <div class="car-price-section">
+                                <div class="price-tag">
+                                    <span class="price">250 000 FCFA</span>
+                                    <span class="price-period">/jour</span>
+                                </div>
+                                <div class="price-options">
+                                    <span class="weekly">1 200 000 FCFA/semaine</span>
+                                    <span class="monthly">4 500 000 FCFA/mois</span>
+                                </div>
+                            </div>
+
+                            <div class="car-actions">
+                                <button class="btn-reserver" data-car="Range Rover Velar">
+                                    <i class="fas fa-calendar-check"></i> Réserver
+                                </button>
+                                <button class="btn-details-car" data-car="Range Rover Velar">
+                                    <i class="fas fa-info-circle"></i> Détails
+                                </button>
+                                <button class="btn-whatsapp" data-car="Range Rover Velar">
+                                    <i class="fab fa-whatsapp"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carte Voiture 5 - Berline Toyota Camry Hybride -->
+                <div class="car-card animate-on-scroll" data-category="berline economique" data-prix="60000"
+                    data-carburant="hybride" data-transmission="automatique">
+                    <div class="car-card-inner">
+                        <div class="car-media">
+                            <div class="car-image-container">
+                                <img src="https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                                    alt="Toyota Camry Hybride" class="car-main-image" loading="lazy">
+
+                                <div class="car-image-overlay">
+                                    <button class="car-zoom-btn" data-image="camry">
+                                        <i class="fas fa-search-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="car-badge eco">Hybride</div>
+
+                            <div class="car-thumbnails">
+                                <img src="https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                                    alt="Vue 1" class="thumbnail active"
+                                    data-full="https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80">
+                                <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                                    alt="Vue 2" class="thumbnail"
+                                    data-full="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80">
+                            </div>
+                        </div>
+
+                        <div class="car-info">
+                            <div class="car-header">
+                                <h3>Toyota Camry Hybride</h3>
+                                <div class="car-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>(42 avis)</span>
+                                </div>
+                            </div>
+
+                            <div class="car-specs">
+                                <div class="spec">
+                                    <i class="fas fa-users"></i>
+                                    <span>5 places</span>
+                                </div>
+                                <div class="spec">
+                                    <i class="fas fa-leaf"></i>
+                                    <span>Hybride</span>
+                                </div>
+                                <div class="spec">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                    <span>Automatique</span>
+                                </div>
+                                <div class="spec">
+                                    <i class="fas fa-snowflake"></i>
+                                    <span>Climatisation</span>
+                                </div>
+                                <div class="spec">
+                                    <i class="fas fa-bolt"></i>
+                                    <span>3.5L/100km</span>
+                                </div>
+                            </div>
+
+                            <div class="car-features">
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check-circle"></i> 300 km/jour inclus</li>
+                                    <li><i class="fas fa-check-circle"></i> Assurance tous risques</li>
+                                    <li><i class="fas fa-check-circle"></i> Livraison aéroport</li>
+                                </ul>
+                            </div>
+
+                            <div class="car-price-section">
+                                <div class="price-tag">
+                                    <span class="price">60 000 FCFA</span>
+                                    <span class="price-period">/jour</span>
+                                </div>
+                                <div class="price-options">
+                                    <span class="weekly">300 000 FCFA/semaine</span>
+                                    <span class="monthly">1 100 000 FCFA/mois</span>
+                                </div>
+                            </div>
+
+                            <div class="car-actions">
+                                <button class="btn-reserver" data-car="Toyota Camry">
+                                    <i class="fas fa-calendar-check"></i> Réserver
+                                </button>
+                                <button class="btn-details-car" data-car="Toyota Camry">
+                                    <i class="fas fa-info-circle"></i> Détails
+                                </button>
+                                <button class="btn-whatsapp" data-car="Toyota Camry">
+                                    <i class="fab fa-whatsapp"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carte Voiture 6 - SUV Mitsubishi Pajero -->
+                <div class="car-card animate-on-scroll" data-category="suv" data-prix="120000" data-carburant="diesel"
+                    data-transmission="manuelle">
+                    <div class="car-card-inner">
+                        <div class="car-media">
+                            <div class="car-image-container">
+                                <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                                    alt="Mitsubishi Pajero" class="car-main-image" loading="lazy">
+
+                                <div class="car-image-overlay">
+                                    <button class="car-zoom-btn" data-image="pajero">
+                                        <i class="fas fa-search-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="car-badge">4x4</div>
+
+                            <div class="car-thumbnails">
+                                <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                                    alt="Vue 1" class="thumbnail active"
+                                    data-full="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80">
+                                <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&auto=format&fit=crop&w=1964&q=80"
+                                    alt="Vue 2" class="thumbnail"
+                                    data-full="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&auto=format&fit=crop&w=1964&q=80">
+                            </div>
+                        </div>
+
+                        <div class="car-info">
+                            <div class="car-header">
+                                <h3>Mitsubishi Pajero</h3>
+                                <div class="car-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>(67 avis)</span>
+                                </div>
+                            </div>
+
+                            <div class="car-specs">
+                                <div class="spec">
+                                    <i class="fas fa-users"></i>
+                                    <span>7 places</span>
+                                </div>
+                                <div class="spec">
+                                    <i class="fas fa-gas-pump"></i>
+                                    <span>Diesel</span>
+                                </div>
+                                <div class="spec">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                    <span>Manuelle</span>
+                                </div>
+                                <div class="spec">
+                                    <i class="fas fa-snowflake"></i>
+                                    <span>Climatisation</span>
+                                </div>
+                                <div class="spec">
+                                    <i class="fas fa-mountain"></i>
+                                    <span>Off-road</span>
+                                </div>
+                            </div>
+
+                            <div class="car-features">
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check-circle"></i> Kilométrage illimité</li>
+                                    <li><i class="fas fa-check-circle"></i> Assurance tout terrain</li>
+                                    <li><i class="fas fa-check-circle"></i> Kit de survie inclus</li>
+                                </ul>
+                            </div>
+
+                            <div class="car-price-section">
+                                <div class="price-tag">
+                                    <span class="price">120 000 FCFA</span>
+                                    <span class="price-period">/jour</span>
+                                </div>
+                                <div class="price-options">
+                                    <span class="weekly">600 000 FCFA/semaine</span>
+                                    <span class="monthly">2 200 000 FCFA/mois</span>
+                                </div>
+                            </div>
+
+                            <div class="car-actions">
+                                <button class="btn-reserver" data-car="Mitsubishi Pajero">
+                                    <i class="fas fa-calendar-check"></i> Réserver
+                                </button>
+                                <button class="btn-details-car" data-car="Mitsubishi Pajero">
+                                    <i class="fas fa-info-circle"></i> Détails
+                                </button>
+                                <button class="btn-whatsapp" data-car="Mitsubishi Pajero">
+                                    <i class="fab fa-whatsapp"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bouton Voir Plus -->
+            <div class="view-more-container">
+                <button id="loadMoreCars" class="btn-load-more">
+                    <span>Charger plus de véhicules</span>
+                    <i class="fas fa-car-side"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Modal Galerie Voiture -->
+        <div id="carGalleryModal" class="car-modal">
+            <span class="car-modal-close">&times;</span>
+            <div class="car-modal-content">
+                <img id="modalImage" src="" alt="Galerie voiture">
+                <div class="modal-nav">
+                    <button class="modal-prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="modal-next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Détails Voiture -->
+        <div id="carDetailsModal" class="car-modal">
+            <span class="car-modal-close details-close">&times;</span>
+            <div class="modal-details-content">
+                <div class="details-grid">
+                    <div class="details-media">
+                        <img id="detailsMainImage" src="" alt="Détails voiture">
+                        <div class="details-thumbnails" id="detailsThumbnails"></div>
+                    </div>
+                    <div class="details-info">
+                        <h2 id="detailsTitle">Nom de la voiture</h2>
+                        <div class="details-price">
+                            <span id="detailsPrice">0 FCFA</span>
+                            <span class="period">/ jour</span>
+                        </div>
+                        <div class="details-specs-grid" id="detailsSpecs">
+                            <!-- Les specs seront injectées par JS -->
+                        </div>
+                        <div class="details-description">
+                            <h3>Description & Options</h3>
+                            <ul id="detailsFeatures">
+                                <!-- Les options seront injectées par JS -->
+                            </ul>
+                        </div>
+                        <div class="details-actions">
+                            <button class="btn-reserver-direct">
+                                <i class="fas fa-calendar-check"></i> Réserver maintenant
+                            </button>
+                            <a href="#" class="btn-whatsapp-direct" target="_blank">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="logo">SCI <span>Deutsch</span></a>
+                    <p>Gestion et valorisation de patrimoine immobilier depuis peu.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/scideutsch?igsh=MTVpNjU0djBha2VreQ=="><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/237691739200"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/share/1Abh75LWGm/" aria-label="Facebook"><i
+                                class="fab fa-facebook"></i></a>
+                        <a href="https://pro.tiktok.com/t/ZG9JaYvkkTkET-uSYJ6/" aria-label="tiktok"><i
+                                class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Liens rapides</h4>
+                    <ul>
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#apropos">À propos</a></li>
+                        <li><a href="#biens">Nos Biens</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#biens">Gestion résidentielle</a></li>
+                        <li><a href="#biens">Gestion commerciale</a></li>
+                        <li><a href="#biens">Gestion de bureaux</a></li>
+                        <li><a href="#contact">Audit patrimonial</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Galeries et Ventes</h4>
+                    <ul>
+                        <li><a href="terrain.html">Vente de terrains</a></li>
+                        <li><a href="import-export.html">Import export</a></li>
+                        <li><a href="galerie.html">Galerie</a></li>
+                        <li><a href="voitures.html">Location de voitures</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 SCI Deutsch. Tous droits réservés.</p>
+                <p>Construire aujourd'hui un patrimoine immobilier durable et valorisé.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script3.js"></script>
+</body>
+
+</html>
