@@ -375,6 +375,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 { type: 'video', url: 'image/terrain bastos ekoudou yaoundé I plusieurs lot.mp4' }
             ],
             'Nkozoa': [
+                { type: 'video', url: 'image/Nkozoa.mp4' },
                 { type: 'video', url: 'image/terrain Nkozoa derriere dispensaire 500mcarré 20m de la nationale N°2 ouest .mp4' }
             ],
             'awae': [
