@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Modals
     const galleryModal = document.getElementById('carGalleryModal');
     const modalImage = document.getElementById('modalImage');
+    const modalVideo = document.getElementById('modalVideo');
 
     // État actuel de la galerie
     let currentGalleryImages = [];
@@ -128,10 +129,10 @@ document.addEventListener('DOMContentLoaded', function () {
     // ==============================================
 
     function initGallery() {
-        const zoomButtons = document.querySelectorAll('.car-zoom-btn');
+        const galleryTriggers = document.querySelectorAll('.car-zoom-btn, .btn-details-car');
         const thumbnails = document.querySelectorAll('.thumbnail');
 
-        zoomButtons.forEach(btn => {
+        galleryTriggers.forEach(btn => {
             btn.addEventListener('click', function (e) {
                 e.preventDefault();
                 const carCard = this.closest('.car-card');
@@ -139,7 +140,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 // Récupérer toutes les images de la carte
                 carCard.querySelectorAll('.thumbnail').forEach(thumb => {
-                    images.push(thumb.dataset.full);
+                    const src = thumb.src; // Utiliser thumb.src ou dataset.full
+                    // Si src contient .mp4, c'est une vidéo
+                    images.push(src.includes('.mp4') ? src : thumb.dataset.full);
                 });
 
                 // Si pas de miniatures, utiliser l'image principale
@@ -173,7 +176,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function showGalleryImage(index) {
         if (currentGalleryImages.length > 0) {
-            modalImage.src = currentGalleryImages[index];
+            const url = currentGalleryImages[index];
+            const isVideo = url.toLowerCase().endsWith('.mp4');
+
+            if (isVideo) {
+                modalImage.style.display = 'none';
+                modalVideo.style.display = 'block';
+                modalVideo.src = url;
+                modalVideo.play().catch(e => console.log("Auto-play blocked"));
+            } else {
+                modalVideo.style.display = 'none';
+                modalVideo.pause();
+                modalImage.style.display = 'block';
+                modalImage.src = url;
+            }
         }
     }
 
@@ -191,12 +207,14 @@ document.addEventListener('DOMContentLoaded', function () {
     // Fermeture de la galerie
     document.querySelector('.car-modal-close')?.addEventListener('click', () => {
         galleryModal.style.display = 'none';
+        modalVideo.pause();
         document.body.style.overflow = 'auto';
     });
 
     window.addEventListener('click', (e) => {
         if (e.target === galleryModal) {
             galleryModal.style.display = 'none';
+            modalVideo.pause();
             document.body.style.overflow = 'auto';
         }
     });
@@ -228,22 +246,22 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    initReservation();
-
     // ==============================================
     // BOUTONS WHATSAPP
     // ==============================================
 
-    document.querySelectorAll('.btn-whatsapp').forEach(btn => {
-        btn.addEventListener('click', function (e) {
-            e.preventDefault();
-            const carName = this.dataset.car;
-            const message = encodeURIComponent(`Bonjour, je suis intéressé par la location du ${carName}. Pourriez-vous me donner plus d'informations ?`);
-            window.open(`https://wa.me/237691739200?text=${message}`, '_blank');
+    function initWhatsapp() {
+        document.querySelectorAll('.btn-whatsapp').forEach(btn => {
+            btn.addEventListener('click', function (e) {
+                e.preventDefault();
+                const carName = this.dataset.car;
+                const message = encodeURIComponent(`Bonjour, je suis intéressé par la location du ${carName}. Pourriez-vous me donner plus d'informations ?`);
+                window.open(`https://wa.me/237691739200?text=${message}`, '_blank');
 
-            showNotification(`Redirection vers WhatsApp pour ${carName}`);
+                showNotification(`Redirection vers WhatsApp pour ${carName}`);
+            });
         });
-    });
+    }
 
     // ==============================================
     // NOTIFICATION
@@ -286,6 +304,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // Réinitialiser les événements
             initGallery();
             initReservation();
+            initWhatsapp();
             attachCarEvents();
 
             // Animation d'apparition
@@ -386,12 +405,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function attachCarEvents() {
         // Réattacher tous les événements nécessaires
-        const newZoomBtns = document.querySelectorAll('.car-zoom-btn:not([data-listener])');
+        const newZoomBtns = document.querySelectorAll('.car-zoom-btn:not([data-listener]), .btn-details-car:not([data-listener])');
         newZoomBtns.forEach(btn => {
             btn.setAttribute('data-listener', 'true');
             btn.addEventListener('click', function (e) {
                 e.preventDefault();
-                // Logique de zoom
+                // La galerie est déjà initialisée par initGallery sur tous les boutons (futurs inclus via loadMore inversement)
             });
         });
 
@@ -417,60 +436,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 
-    function initDetails() {
-        const detailsButtons = document.querySelectorAll('.btn-details-car');
-        const detailsModal = document.getElementById('carDetailsModal');
-
-        detailsButtons.forEach(btn => {
-            btn.addEventListener('click', function (e) {
-                e.preventDefault();
-                const carCard = this.closest('.car-card');
-                const carName = carCard.querySelector('h3').textContent;
-                const carPrice = carCard.querySelector('.price').textContent;
-                const carImage = carCard.querySelector('.car-main-image').src;
-                const specs = carCard.querySelector('.car-specs').innerHTML;
-                const features = carCard.querySelector('.feature-list').innerHTML;
-
-                // Remplir le modal
-                document.getElementById('detailsTitle').textContent = carName;
-                document.getElementById('detailsPrice').innerHTML = carPrice;
-                document.getElementById('detailsMainImage').src = carImage;
-                document.getElementById('detailsSpecs').innerHTML = specs;
-                document.getElementById('detailsFeatures').innerHTML = features;
-
-                // Configurer les boutons d'action dans le modal
-                const reserverBtn = detailsModal.querySelector('.btn-reserver-direct');
-                reserverBtn.onclick = () => window.location.href = 'index.html#contact';
-
-                const whatsappBtn = detailsModal.querySelector('.btn-whatsapp-direct');
-                const msg = encodeURIComponent(`Bonjour, je souhaite plus d'infos sur : ${carName}`);
-                whatsappBtn.href = `https://wa.me/237691739200?text=${msg}`;
-
-                detailsModal.style.display = 'block';
-                document.body.style.overflow = 'hidden';
-            });
-        });
-
-        document.querySelector('.details-close')?.addEventListener('click', () => {
-            detailsModal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        });
-
-        window.addEventListener('click', (e) => {
-            if (e.target === detailsModal) {
-                detailsModal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        });
-    }
-
     // ==============================================
     // INITIALISATION
     // ==============================================
 
     initGallery();
     initReservation();
-    initDetails();
+    initWhatsapp();
 
     console.log('Section Location de Voitures finalisée');
 });

@@ -315,6 +315,29 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function generateSpecsContent(product) {
+        const productLower = product.toLowerCase();
+        let specs = {
+            origin: 'Allemagne / Japon / Chine',
+            certification: 'CE, ISO 9001, TUV',
+            packaging: 'Emballage d\'origine / Palette',
+            min_stock: '1 unité / lot',
+            delivery: '20-30 jours'
+        };
+
+        // Personnalisation selon le produit
+        if (productLower.includes('electromenager')) {
+            specs.min_stock = '5 unités';
+            specs.certification = 'CE, RoHS, Classe A+++';
+        } else if (productLower.includes('pièce') || productLower.includes('auto')) {
+            specs.packaging = 'Carton renforcé / Caisse bois';
+            specs.certification = 'OEM, ISO/TS 16949';
+        } else if (productLower.includes('cacao') || productLower.includes('café') || productLower.includes('agricole')) {
+            specs.origin = 'Cameroun';
+            specs.certification = 'Fairtrade, Bio, Rainforest';
+            specs.packaging = 'Sacs de 25kg/50kg';
+            specs.min_stock = '1 conteneur 20\'';
+        }
+
         return `
             <div class="specs-pdf">
                 <h3 style="color: #1a3a5f; margin-bottom: 20px;">Fiche technique - ${product}</h3>
@@ -326,32 +349,32 @@ document.addEventListener('DOMContentLoaded', function () {
                     </tr>
                     <tr>
                         <td style="padding: 10px; border-bottom: 1px solid #ddd;">Origine</td>
-                        <td style="padding: 10px; border-bottom: 1px solid #ddd;">Cameroun</td>
+                        <td style="padding: 10px; border-bottom: 1px solid #ddd;">${specs.origin}</td>
                     </tr>
                     <tr>
                         <td style="padding: 10px; border-bottom: 1px solid #ddd;">Certification</td>
-                        <td style="padding: 10px; border-bottom: 1px solid #ddd;">ISO 9001, Bio</td>
+                        <td style="padding: 10px; border-bottom: 1px solid #ddd;">${specs.certification}</td>
                     </tr>
                     <tr>
                         <td style="padding: 10px; border-bottom: 1px solid #ddd;">Emballage</td>
-                        <td style="padding: 10px; border-bottom: 1px solid #ddd;">Sacs de 50kg</td>
+                        <td style="padding: 10px; border-bottom: 1px solid #ddd;">${specs.packaging}</td>
                     </tr>
                     <tr>
                         <td style="padding: 10px; border-bottom: 1px solid #ddd;">Stock minimum</td>
-                        <td style="padding: 10px; border-bottom: 1px solid #ddd;">1 conteneur</td>
+                        <td style="padding: 10px; border-bottom: 1px solid #ddd;">${specs.min_stock}</td>
                     </tr>
                     <tr>
                         <td style="padding: 10px; border-bottom: 1px solid #ddd;">Délai de livraison</td>
-                        <td style="padding: 10px; border-bottom: 1px solid #ddd;">15-20 jours</td>
+                        <td style="padding: 10px; border-bottom: 1px solid #ddd;">${specs.delivery}</td>
                     </tr>
                 </table>
                 
                 <div style="margin-top: 30px;">
                     <h4 style="color: #c19a5b;">Conditions commerciales</h4>
                     <ul style="margin-top: 10px;">
-                        <li>Paiement : Lettre de crédit irrévocable</li>
-                        <li>Incoterms : FOB Douala / CIF destination</li>
-                        <li>Inspection : SGS ou équivalent</li>
+                        <li>Paiement : Lettre de crédit / Virement bancaire</li>
+                        <li>Incoterms : EXW / FOB / CIF / DDP</li>
+                        <li>Inspection : Contrôle qualité inclus</li>
                     </ul>
                 </div>
             </div>
@@ -579,10 +602,107 @@ document.addEventListener('DOMContentLoaded', function () {
     document.head.appendChild(style);
 
     // ==============================================
+    // DÉTAILS DU PRODUIT (Lien avec la vue détaillée)
+    // ==============================================
+    // ==============================================
+    // GALERIE MÉDIAS (Import-Export)
+    // ==============================================
+    let currentTradeGallery = [];
+    let currentTradeIndex = 0;
+
+    function initTradeGallery() {
+        const detailsButtons = document.querySelectorAll('.btn-details-trade');
+        const galleryModal = document.getElementById('tradeGalleryModal');
+        const modalImage = document.getElementById('modalTradeImage');
+        const modalVideo = document.getElementById('modalTradeVideo');
+        const modalTitle = document.getElementById('modalTradeTitle');
+        const galleryClose = galleryModal?.querySelector('.gallery-close');
+
+        detailsButtons.forEach(btn => {
+            btn.addEventListener('click', function (e) {
+                e.preventDefault();
+                const card = this.closest('.trade-card');
+                const title = card.querySelector('h3').textContent;
+                const thumbs = card.querySelectorAll('.trade-thumb');
+                const mediaSet = [];
+
+                thumbs.forEach(thumb => {
+                    const src = thumb.src;
+                    mediaSet.push({
+                        url: src,
+                        type: src.toLowerCase().endsWith('.mp4') ? 'video' : 'image'
+                    });
+                });
+
+                if (mediaSet.length === 0) {
+                    const mainImg = card.querySelector('.trade-image').src;
+                    mediaSet.push({
+                        url: mainImg,
+                        type: mainImg.toLowerCase().endsWith('.mp4') ? 'video' : 'image'
+                    });
+                }
+
+                currentTradeGallery = mediaSet;
+                currentTradeIndex = 0;
+                if (modalTitle) modalTitle.textContent = title;
+
+                showTradeMedia(0);
+                if (galleryModal) {
+                    galleryModal.style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        });
+
+        function showTradeMedia(index) {
+            if (currentTradeGallery.length > 0) {
+                const item = currentTradeGallery[index];
+                if (item.type === 'video') {
+                    modalImage.style.display = 'none';
+                    modalVideo.style.display = 'block';
+                    modalVideo.src = item.url;
+                    modalVideo.play().catch(e => console.log("Auto-play blocked"));
+                } else {
+                    modalVideo.pause();
+                    modalVideo.style.display = 'none';
+                    modalImage.style.display = 'block';
+                    modalImage.src = item.url;
+                }
+            }
+        }
+
+        // Navigation
+        galleryModal?.querySelector('.modal-prev')?.addEventListener('click', () => {
+            currentTradeIndex = (currentTradeIndex - 1 + currentTradeGallery.length) % currentTradeGallery.length;
+            showTradeMedia(currentTradeIndex);
+        });
+
+        galleryModal?.querySelector('.modal-next')?.addEventListener('click', () => {
+            currentTradeIndex = (currentTradeIndex + 1) % currentTradeGallery.length;
+            showTradeMedia(currentTradeIndex);
+        });
+
+        galleryClose?.addEventListener('click', () => {
+            galleryModal.style.display = 'none';
+            modalVideo.pause();
+            document.body.style.overflow = 'auto';
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === galleryModal) {
+                galleryModal.style.display = 'none';
+                modalVideo.pause();
+                document.body.style.overflow = 'auto';
+            }
+        });
+    }
+
+    // ==============================================
     // INITIALISATION
     // ==============================================
 
     initTradeThumbnails();
+    initTradeGallery();
     attachTradeEvents();
 
     console.log('Section Import-Export initialisée avec succès !');

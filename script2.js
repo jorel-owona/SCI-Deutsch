@@ -351,13 +351,42 @@ document.addEventListener('DOMContentLoaded', function () {
         modal.style.display = 'block';
         document.body.style.overflow = 'hidden';
 
-        // Données étendues pour la galerie (normalement via une base de données)
-        // Ici on simule des médias pour chaque terrain
-        currentGalleryData = [
-            { type: 'image', url: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1932&q=80' },
-            { type: 'video', url: 'https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4' },
-            { type: 'image', url: 'https://images.unsplash.com/photo-1500076656116-558758c991c1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80' },
-            { type: 'image', url: 'https://images.unsplash.com/photo-1542601098-8fc114e148e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' }
+        // Mapping des terrains avec leurs médias spécifiques
+        const terrainMap = {
+            'bankolo petit paris': [
+                { type: 'video', url: 'image/terrain banjkolo Yaoundé petit paris.mp4' },
+                { type: 'image', url: 'image/topo.jpeg' },
+                { type: 'image', url: 'image/topo2.jpeg' }
+            ],
+            'Bastos': [
+                { type: 'video', url: 'image/terrain baste 476 yaoundé I.mp4' },
+                { type: 'video', url: 'image/terrain yaoudé 1 toungou (bastos).mp4' },
+                { type: 'video', url: 'image/terrain entrer bastos 476.mp4' },
+                { type: 'image', url: 'image/topo.jpeg' }
+            ],
+            'Nouvelle route Bastos': [
+                { type: 'video', url: 'image/terrain nouvelle route bastos 943mcarré.mp4' },
+                { type: 'video', url: 'image/terrain nouvelle route bastos.mp4' },
+                { type: 'image', url: 'image/topo2.jpeg' }
+            ],
+            'Bastos Ekoudou': [
+                { type: 'video', url: 'image/terrain bastos ekoudou yaoundé I plusieurs lot.mp4' },
+                { type: 'image', url: 'image/topo.jpeg' }
+            ],
+            'Nkozoa': [
+                { type: 'video', url: 'image/terrain Nkozoa derriere dispensaire 500mcarré 20m de la nationale N°2 ouest .mp4' },
+                { type: 'image', url: 'image/topo2.jpeg' }
+            ],
+            'awae': [
+                { type: 'video', url: 'image/terrain awae3.jpeg' },
+                { type: 'image', url: 'image/terrain awae.jpeg' }
+            ]
+        };
+
+        // Si le terrain n'est pas dans la liste, on met des données par défaut ou vides
+        currentGalleryData = terrainMap[terrainName] || [
+            { type: 'image', url: 'image/topo.jpeg' },
+            { type: 'image', url: 'image/topo2.jpeg' }
         ];
 
         currentMediaIndex = 0;

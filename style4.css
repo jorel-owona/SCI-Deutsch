@@ -1012,6 +1012,28 @@ section {
     transform: translateY(-2px) rotate(360deg);
 }
 
+.btn-details-trade {
+    flex: 1;
+    padding: 14px;
+    background: #1a3a5f;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-details-trade:hover {
+    background: #0d213a;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(26, 58, 95, 0.3);
+}
+
 /* ===== SERVICES COMPLÉMENTAIRES ===== */
 .additional-services {
     margin: 80px 0;
@@ -1806,5 +1828,186 @@ section {
 
     .countries-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+/* ===== MODAL DÉTAILS PRODUIT ===== */
+.details-content {
+    max-width: 1000px !important;
+    width: 95% !important;
+    padding: 0 !important;
+    overflow: hidden;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 0;
+    min-height: 500px;
+}
+
+.details-media {
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    padding: 20px;
+}
+
+.details-main-image-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#detailsMainImage {
+    max-width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.details-thumbnails {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-thumb {
+    width: 60px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    opacity: 0.6;
+}
+
+.modal-thumb:hover,
+.modal-thumb.active {
+    opacity: 1;
+    border-color: #c19a5b;
+    transform: scale(1.05);
+}
+
+.details-info {
+    padding: 40px;
+    background: white;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+}
+
+#detailsTitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #1a3a5f;
+    margin-bottom: 10px;
+}
+
+.details-price {
+    font-size: 1.5rem;
+    color: #c19a5b;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.details-description h3 {
+    font-size: 1.1rem;
+    color: #1a3a5f;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+}
+
+.details-specs-list {
+    margin-bottom: 20px;
+}
+
+.details-features-list {
+    list-style: none;
+    margin-bottom: 30px;
+    padding-left: 0;
+}
+
+.details-features-list li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+    color: #555;
+    text-align: left;
+}
+
+.details-features-list i {
+    color: #27ae60;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.details-actions {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.btn-whatsapp-direct {
+    background: #25d366 !important;
+    color: white !important;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-decoration: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.btn-whatsapp-direct:hover {
+    background: #128c7e !important;
+    transform: translateY(-2px);
+    color: white !important;
+}
+
+.btn-inquiry-direct {
+    background: #1a3a5f !important;
+    color: white !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-inquiry-direct:hover {
+    background: #0d213a !important;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .details-info {
+        padding: 30px;
+    }
+
+    #detailsTitle {
+        font-size: 1.8rem;
     }
 }

@@ -79,15 +79,14 @@
                         <option value="douala">Douala</option>
                         <option value="bafoussam">Bafoussam</option>
                         <option value="ebolowa">Ebolowa</option>
-                        <option value="mbalmayo">Mbalmayo</option>
                     </select>
 
                     <select class="filter-select" id="prixRange">
                         <option value="">Tous les prix</option>
-                        <option value="0-25">Moins de 25M FCFA</option>
-                        <option value="25-50">25M - 50M FCFA</option>
-                        <option value="50-100">50M - 100M FCFA</option>
-                        <option value="100+">Plus de 100M FCFA</option>
+                        <option value="0-25">10.000FCFA/m² - 25.000FCFA/m²</option>
+                        <option value="50-75">50.000FCAFA /m² - 75.000FCAFA /m²</option>
+                        <option value="100-125">100.000FCAFA /m² - 125.000FCAFA /m²</option>
+                        <option value="100+">1.000.000FCAFA /m² et plus</option>
                     </select>
                 </div>
             </div>
@@ -96,14 +95,12 @@
             <div class="terrains-grid" id="terrainsGrid">
                 <!-- Carte Terrain 1 - Yaoundé, Centre -->
                 <div class="terrain-card animate-on-scroll" data-region="centre" data-arrondissement="yaounde"
-                    data-prix="45000000">
+                    data-prix="37500000">
                     <div class="card-media">
                         <!-- Video Player pour ce terrain -->
                         <div class="video-container">
-                            <video class="terrain-video"
-                                poster="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1932&q=80">
-                                <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-                                    type="video/mp4">
+                            <video class="terrain-video" poster="image/terrain banjkolo Yaoundé petit paris.mp4">
+                                <source src="image/terrain banjkolo Yaoundé petit paris.mp4" type="video/mp4">
                                 Votre navigateur ne supporte pas la vidéo.
                             </video>
 
@@ -176,11 +173,11 @@
                     </div>
 
                     <div class="card-content">
-                        <h3>Terrain résidentiel - Nkolbisson</h3>
+                        <h3>Terrain Résidentiel - Mbankolo Petit Paris</h3>
 
                         <div class="terrain-location">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Yaoundé 4, Nkolbisson - Centre</span>
+                            <span>Yaoundé Ier , Mbankolo Petit Paris - Centre</span>
                         </div>
 
                         <div class="terrain-features">
@@ -203,58 +200,118 @@
                         </div>
 
                         <div class="terrain-description">
-                            <p>Terrain plat, viabilisé, à proximité des universités et des commerces. Titre foncier
+                            <p>Terrain titré, viabilisé,des commerces et une belle vue montagieurse de la capitale.
+                                Titre foncier
                                 disponible.</p>
                         </div>
 
                         <div class="terrain-price">
-                            <span class="price">45 000 000 FCFA</span>
-                            <span class="price-details">(90 000 FCFA/m²)</span>
+                            <span class="price">37 500 000 FCFA</span>
+                            <span class="price-details">(75 000 FCFA/m²)</span>
                         </div>
 
                         <div class="terrain-actions">
-                            <button class="btn-whatsapp" data-terrain="Nkolbisson" title="Contacter sur WhatsApp">
+                            <button class="btn-whatsapp" data-terrain="bankolo petit paris"
+                                title="Contacter sur WhatsApp">
                                 <i class="fab fa-whatsapp"></i>
                             </button>
-                            <button class="btn-contact" data-terrain="Nkolbisson">
+                            <button class="btn-contact" data-terrain="bankolo petit paris">
                                 <i class="fas fa-envelope"></i> Contacter
                             </button>
-                            <button class="btn-details" data-terrain="Nkolbisson">
+                            <button class="btn-details" data-terrain="bankolo petit paris">
                                 <i class="fas fa-images"></i> Détails
                             </button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Carte Terrain 2 - Douala, Littoral -->
-                <div class="terrain-card animate-on-scroll" data-region="littoral" data-arrondissement="douala"
-                    data-prix="75000000">
+                <!-- Carte Terrain 2 - Yaoundé, Centre -->
+                <div class="terrain-card animate-on-scroll" data-region="centre" data-arrondissement="yaounde"
+                    data-prix="119000000">
                     <div class="card-media">
                         <div class="video-container">
-                            <video class="terrain-video"
-                                poster="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1973&q=80">
-                                <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
-                                    type="video/mp4">
+                            <video class="terrain-video" poster="image/terrain baste 476 yaoundé I.mp4">
+                                <source src="image/terrain baste 476 yaoundé I.mp4" type="video/mp4">
+                                Votre navigateur ne supporte pas la vidéo.
                             </video>
 
+                            <!-- Contrôles vidéo personnalisés -->
+                            <div class="video-controls">
+                                <button class="video-play-pause" aria-label="Lecture/Pause">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <div class="video-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-filled"></div>
+                                    </div>
+                                </div>
+                                <div class="video-time">
+                                    <span class="current-time">0:00</span> / <span class="duration">0:00</span>
+                                </div>
+
+                                <!-- Contrôles avancés -->
+                                <div class="video-settings">
+                                    <button class="settings-btn" aria-label="Paramètres">
+                                        <i class="fas fa-cog"></i>
+                                    </button>
+
+                                    <!-- Menu des paramètres -->
+                                    <div class="settings-menu">
+                                        <div class="settings-group">
+                                            <h4>Vitesse</h4>
+                                            <div class="speed-options">
+                                                <button class="speed-option" data-speed="0.5">0.5x</button>
+                                                <button class="speed-option active" data-speed="1">1x</button>
+                                                <button class="speed-option" data-speed="1.5">1.5x</button>
+                                                <button class="speed-option" data-speed="2">2x</button>
+                                            </div>
+                                        </div>
+
+                                        <div class="settings-group">
+                                            <h4>Luminosité</h4>
+                                            <input type="range" class="brightness-control" min="0" max="200"
+                                                value="100">
+                                        </div>
+
+                                        <div class="settings-group">
+                                            <h4>Contraste</h4>
+                                            <input type="range" class="contrast-control" min="0" max="200" value="100">
+                                        </div>
+
+                                        <div class="settings-group">
+                                            <h4>Volume</h4>
+                                            <input type="range" class="volume-control" min="0" max="100" value="50">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button class="video-fullscreen" aria-label="Plein écran">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+
+                            <!-- Overlay de lecture -->
+                            <div class="video-overlay">
+                                <i class="fas fa-play-circle"></i>
+                            </div>
                         </div>
 
-                        <div class="region-badge littoral">Littoral</div>
-                        <div class="status-badge reserve">Réservé</div>
+                        <div class="region-badge centre">Centre</div>
+                        <div class="status-badge disponible">Disponible</div>
                     </div>
 
                     <div class="card-content">
-                        <h3>Terrain commercial - Bonapriso</h3>
+                        <h3>Terrain Résidentiel - Bastos</h3>
 
                         <div class="terrain-location">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Douala 1, Bonapriso - Littoral</span>
+                            <span>Yaoundé Ier Toungou, Bastos - Centre</span>
                         </div>
 
                         <div class="terrain-features">
                             <div class="feature">
                                 <i class="fas fa-vector-square"></i>
-                                <span>800 m²</span>
+                                <span>476 m²</span>
                             </div>
                             <div class="feature">
                                 <i class="fas fa-road"></i>
@@ -275,193 +332,381 @@
                         </div>
 
                         <div class="terrain-description">
-                            <p>Terrain d'angle en zone commerciale, idéal pour immeuble de bureaux ou commerce. Titre
-                                foncier en cours.</p>
+                            <p>Terrain d'angle en zone résidentielle, idéal pour immeuble de bureaux ou commerce. Titre
+                                foncier disponible transaction par un notaire.</p>
                         </div>
 
                         <div class="terrain-price">
-                            <span class="price">75 000 000 FCFA</span>
-                            <span class="price-details">(93 750 FCFA/m²)</span>
+                            <span class="price">119 000 000 FCFA</span>
+                            <span class="price-details">(250 000 FCFA/m²)</span>
                         </div>
 
                         <div class="terrain-actions">
-                            <button class="btn-whatsapp" data-terrain="Bonapriso" title="Contacter sur WhatsApp">
+                            <button class="btn-whatsapp" data-terrain="Bastos" title="Contacter sur WhatsApp">
                                 <i class="fab fa-whatsapp"></i>
                             </button>
-                            <button class="btn-contact" data-terrain="Bonapriso">
+                            <button class="btn-contact" data-terrain="Bastos">
                                 <i class="fas fa-envelope"></i> Contacter
                             </button>
-                            <button class="btn-details" data-terrain="Bonapriso">
+                            <button class="btn-details" data-terrain="Bastos">
                                 <i class="fas fa-images"></i> Détails
                             </button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Carte Terrain 3 - Bafoussam, Ouest -->
-                <div class="terrain-card animate-on-scroll" data-region="ouest" data-arrondissement="bafoussam"
-                    data-prix="35000000">
+                <!-- Carte Terrain 3 - Yaoundé, Centre -->
+                <div class="terrain-card animate-on-scroll" data-region="centre" data-arrondissement="yaounde"
+                    data-prix="330050000">
                     <div class="card-media">
                         <div class="video-container">
-                            <video class="terrain-video"
-                                poster="https://images.unsplash.com/photo-1500076656116-558758c991c1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80">
-                                <source
-                                    src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
-                                    type="video/mp4">
+                            <video class="terrain-video" poster="image/terrain nouvelle route bastos 943mcarré.mp4">
+                                <source src="image/terrain nouvelle route bastos 943mcarré.mp4" type="video/mp4">
+                                Votre navigateur ne supporte pas la vidéo.
                             </video>
+
+                            <!-- Contrôles vidéo personnalisés -->
+                            <div class="video-controls">
+                                <button class="video-play-pause" aria-label="Lecture/Pause">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <div class="video-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-filled"></div>
+                                    </div>
+                                </div>
+                                <div class="video-time">
+                                    <span class="current-time">0:00</span> / <span class="duration">0:00</span>
+                                </div>
+
+                                <!-- Contrôles avancés -->
+                                <div class="video-settings">
+                                    <button class="settings-btn" aria-label="Paramètres">
+                                        <i class="fas fa-cog"></i>
+                                    </button>
+
+                                    <!-- Menu des paramètres -->
+                                    <div class="settings-menu">
+                                        <div class="settings-group">
+                                            <h4>Vitesse</h4>
+                                            <div class="speed-options">
+                                                <button class="speed-option" data-speed="0.5">0.5x</button>
+                                                <button class="speed-option active" data-speed="1">1x</button>
+                                                <button class="speed-option" data-speed="1.5">1.5x</button>
+                                                <button class="speed-option" data-speed="2">2x</button>
+                                            </div>
+                                        </div>
+
+                                        <div class="settings-group">
+                                            <h4>Luminosité</h4>
+                                            <input type="range" class="brightness-control" min="0" max="200"
+                                                value="100">
+                                        </div>
+
+                                        <div class="settings-group">
+                                            <h4>Contraste</h4>
+                                            <input type="range" class="contrast-control" min="0" max="200" value="100">
+                                        </div>
+
+                                        <div class="settings-group">
+                                            <h4>Volume</h4>
+                                            <input type="range" class="volume-control" min="0" max="100" value="50">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button class="video-fullscreen" aria-label="Plein écran">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+
+                            <!-- Overlay de lecture -->
+                            <div class="video-overlay">
+                                <i class="fas fa-play-circle"></i>
+                            </div>
                         </div>
 
-                        <div class="region-badge ouest">Ouest</div>
+                        <div class="region-badge centre">Centre</div>
                         <div class="status-badge disponible">Disponible</div>
                     </div>
 
                     <div class="card-content">
-                        <h3>Terrain résidentiel - Quartier Tamdja</h3>
+                        <h3>Terrain Résidentiel - Nouvelle route Bastos</h3>
 
                         <div class="terrain-location">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Bafoussam 2, Tamdja - Ouest</span>
+                            <span>Yaoundé Ier, Bastos - Centre</span>
                         </div>
 
                         <div class="terrain-features">
                             <div class="feature">
                                 <i class="fas fa-vector-square"></i>
-                                <span>400 m²</span>
+                                <span>943 m²</span>
                             </div>
                             <div class="feature">
                                 <i class="fas fa-road"></i>
-                                <span>Piste</span>
+                                <span>Bitumé</span>
                             </div>
                             <div class="feature">
                                 <i class="fas fa-bolt"></i>
-                                <span>À proximité</span>
+                                <span>Électricité</span>
                             </div>
                             <div class="feature">
                                 <i class="fas fa-water"></i>
-                                <span>Puits</span>
+                                <span>Eau</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-wifi"></i>
+                                <span>Fibre</span>
                             </div>
                         </div>
 
                         <div class="terrain-description">
                             <p>Terrain en légère pente avec vue panoramique. Calme et verdoyant, idéal pour villa de
-                                standing.</p>
+                                standing, titre foncier disponible transaction par un notaire.</p>
                         </div>
 
                         <div class="terrain-price">
-                            <span class="price">35 000 000 FCFA</span>
-                            <span class="price-details">(87 500 FCFA/m²)</span>
+                            <span class="price">330 050 000 FCFA</span>
+                            <span class="price-details">(350 000 FCFA/m²)</span>
                         </div>
 
                         <div class="terrain-actions">
-                            <button class="btn-whatsapp" data-terrain="Tamdja" title="Contacter sur WhatsApp">
+                            <button class="btn-whatsapp" data-terrain="Nouvelle route Bastos"
+                                title="Contacter sur WhatsApp">
                                 <i class="fab fa-whatsapp"></i>
                             </button>
-                            <button class="btn-contact" data-terrain="Tamdja">
+                            <button class="btn-contact" data-terrain="Nouvelle route Bastos">
                                 <i class="fas fa-envelope"></i> Contacter
                             </button>
-                            <button class="btn-details" data-terrain="Tamdja">
+                            <button class="btn-details" data-terrain="Nouvelle route Bastos">
                                 <i class="fas fa-images"></i> Détails
                             </button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Carte Terrain 4 - Ebolowa, Sud -->
-                <div class="terrain-card animate-on-scroll" data-region="sud" data-arrondissement="ebolowa"
-                    data-prix="25000000">
+                <!-- Carte Terrain 4 - Yaoundé, Centre -->
+                <div class="terrain-card animate-on-scroll" data-region="centre" data-arrondissement="yaounde"
+                    data-prix="Au choix">
                     <div class="card-media">
                         <div class="video-container">
                             <video class="terrain-video"
-                                poster="https://images.unsplash.com/photo-1542601098-8fc114e148e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80">
-                                <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4"
-                                    type="video/mp4">
+                                poster="image/terrain bastos ekoudou yaoundé I plusieurs lot.mp4">
+                                <source src="image/terrain bastos ekoudou yaoundé I plusieurs lot.mp4" type="video/mp4">
+                                Votre navigateur ne supporte pas la vidéo.
                             </video>
+
+                            <!-- Contrôles vidéo personnalisés -->
+                            <div class="video-controls">
+                                <button class="video-play-pause" aria-label="Lecture/Pause">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <div class="video-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-filled"></div>
+                                    </div>
+                                </div>
+                                <div class="video-time">
+                                    <span class="current-time">0:00</span> / <span class="duration">0:00</span>
+                                </div>
+
+                                <!-- Contrôles avancés -->
+                                <div class="video-settings">
+                                    <button class="settings-btn" aria-label="Paramètres">
+                                        <i class="fas fa-cog"></i>
+                                    </button>
+
+                                    <!-- Menu des paramètres -->
+                                    <div class="settings-menu">
+                                        <div class="settings-group">
+                                            <h4>Vitesse</h4>
+                                            <div class="speed-options">
+                                                <button class="speed-option" data-speed="0.5">0.5x</button>
+                                                <button class="speed-option active" data-speed="1">1x</button>
+                                                <button class="speed-option" data-speed="1.5">1.5x</button>
+                                                <button class="speed-option" data-speed="2">2x</button>
+                                            </div>
+                                        </div>
+
+                                        <div class="settings-group">
+                                            <h4>Luminosité</h4>
+                                            <input type="range" class="brightness-control" min="0" max="200"
+                                                value="100">
+                                        </div>
+
+                                        <div class="settings-group">
+                                            <h4>Contraste</h4>
+                                            <input type="range" class="contrast-control" min="0" max="200" value="100">
+                                        </div>
+
+                                        <div class="settings-group">
+                                            <h4>Volume</h4>
+                                            <input type="range" class="volume-control" min="0" max="100" value="50">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button class="video-fullscreen" aria-label="Plein écran">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+
+                            <!-- Overlay de lecture -->
+                            <div class="video-overlay">
+                                <i class="fas fa-play-circle"></i>
+                            </div>
                         </div>
 
-                        <div class="region-badge sud">Sud</div>
+                        <div class="region-badge centre">Centre</div>
                         <div class="status-badge disponible">Disponible</div>
                     </div>
 
                     <div class="card-content">
-                        <h3>Terrain agricole - Mvangan</h3>
+                        <h3>Terrain Résidentiel - Bastos Ekoudou</h3>
 
                         <div class="terrain-location">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Ebolowa, Mvangan - Sud</span>
+                            <span>Yaoundé Ier, Bastos Ekoudou - Centre</span>
                         </div>
 
                         <div class="terrain-features">
                             <div class="feature">
                                 <i class="fas fa-vector-square"></i>
-                                <span>2000 m²</span>
+                                <span>plusieurs lots</span>
                             </div>
                             <div class="feature">
                                 <i class="fas fa-road"></i>
-                                <span>Piste</span>
+                                <span>Bitumé</span>
                             </div>
                             <div class="feature">
-                                <i class="fas fa-tint"></i>
-                                <span>Ruisseau</span>
+                                <i class="fas fa-bolt"></i>
+                                <span>Électricité</span>
                             </div>
                             <div class="feature">
-                                <i class="fas fa-seedling"></i>
-                                <span>Terres fertiles</span>
+                                <i class="fas fa-water"></i>
+                                <span>Eau</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-wifi"></i>
+                                <span>Fibre</span>
                             </div>
                         </div>
 
                         <div class="terrain-description">
-                            <p>Grand terrain agricole avec ruisseau, idéal pour plantation ou projet d'agriculture
-                                biologique.</p>
+                            <p>Plusieurs lots de terrains viabilisés, idéal pour construction de villas ou immeubles
+                                R+4, titre foncier disponible transaction par un notaire.</p>
                         </div>
 
                         <div class="terrain-price">
-                            <span class="price">25 000 000 FCFA</span>
-                            <span class="price-details">(12 500 FCFA/m²)</span>
+                            <span class="price">AU choix</span>
+                            <span class="price-details">(250 000 FCFA/m²)</span>
                         </div>
 
                         <div class="terrain-actions">
-                            <button class="btn-whatsapp" data-terrain="Mvangan" title="Contacter sur WhatsApp">
+                            <button class="btn-whatsapp" data-terrain="Bastos Ekoudou" title="Contacter sur WhatsApp">
                                 <i class="fab fa-whatsapp"></i>
                             </button>
-                            <button class="btn-contact" data-terrain="Mvangan">
+                            <button class="btn-contact" data-terrain="Bastos Ekoudou">
                                 <i class="fas fa-envelope"></i> Contacter
                             </button>
-                            <button class="btn-details" data-terrain="Mvangan">
+                            <button class="btn-details" data-terrain="Bastos Ekoudou">
                                 <i class="fas fa-images"></i> Détails
                             </button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Carte Terrain 5 - Mbalmayo, Centre -->
-                <div class="terrain-card animate-on-scroll" data-region="centre" data-arrondissement="mbalmayo"
-                    data-prix="30000000">
+                <!-- Carte Terrain 5 - Yaoundé, Centre -->
+                <div class="terrain-card animate-on-scroll" data-region="centre" data-arrondissement="yaounde"
+                    data-prix="25000000">
                     <div class="card-media">
                         <div class="video-container">
                             <video class="terrain-video"
-                                poster="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1932&q=80">
+                                poster="image/terrain Nkozoa derriere dispensaire 500mcarré 20m de la nationale N°2 ouest .mp4">
                                 <source
-                                    src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4"
+                                    src="image/terrain Nkozoa derriere dispensaire 500mcarré 20m de la nationale N°2 ouest .mp4"
                                     type="video/mp4">
+                                Votre navigateur ne supporte pas la vidéo.
                             </video>
+
+                            <!-- Contrôles vidéo personnalisés -->
+                            <div class="video-controls">
+                                <button class="video-play-pause" aria-label="Lecture/Pause">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <div class="video-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-filled"></div>
+                                    </div>
+                                </div>
+                                <div class="video-time">
+                                    <span class="current-time">0:00</span> / <span class="duration">0:00</span>
+                                </div>
+
+                                <!-- Contrôles avancés -->
+                                <div class="video-settings">
+                                    <button class="settings-btn" aria-label="Paramètres">
+                                        <i class="fas fa-cog"></i>
+                                    </button>
+
+                                    <!-- Menu des paramètres -->
+                                    <div class="settings-menu">
+                                        <div class="settings-group">
+                                            <h4>Vitesse</h4>
+                                            <div class="speed-options">
+                                                <button class="speed-option" data-speed="0.5">0.5x</button>
+                                                <button class="speed-option active" data-speed="1">1x</button>
+                                                <button class="speed-option" data-speed="1.5">1.5x</button>
+                                                <button class="speed-option" data-speed="2">2x</button>
+                                            </div>
+                                        </div>
+
+                                        <div class="settings-group">
+                                            <h4>Luminosité</h4>
+                                            <input type="range" class="brightness-control" min="0" max="200"
+                                                value="100">
+                                        </div>
+
+                                        <div class="settings-group">
+                                            <h4>Contraste</h4>
+                                            <input type="range" class="contrast-control" min="0" max="200" value="100">
+                                        </div>
+
+                                        <div class="settings-group">
+                                            <h4>Volume</h4>
+                                            <input type="range" class="volume-control" min="0" max="100" value="50">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button class="video-fullscreen" aria-label="Plein écran">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+
+                            <!-- Overlay de lecture -->
+                            <div class="video-overlay">
+                                <i class="fas fa-play-circle"></i>
+                            </div>
                         </div>
 
                         <div class="region-badge centre">Centre</div>
-                        <div class="status-badge reserve">Réservé</div>
+                        <div class="status-badge disponible">Disponible</div>
                     </div>
 
                     <div class="card-content">
-                        <h3>Terrain constructible - Centre-ville</h3>
+                        <h3>Terrain Résidentiel - Nkozoa</h3>
 
                         <div class="terrain-location">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Mbalmayo, Centre-ville - Centre</span>
+                            <span>Yaoundé 1er, Nkozoa derriere le dispensaire - Centre</span>
                         </div>
 
                         <div class="terrain-features">
                             <div class="feature">
                                 <i class="fas fa-vector-square"></i>
-                                <span>300 m²</span>
+                                <span>500 m²</span>
                             </div>
                             <div class="feature">
                                 <i class="fas fa-road"></i>
@@ -479,57 +724,115 @@
 
                         <div class="terrain-description">
                             <p>Terrain en plein centre-ville, à 200m du marché. Parfait pour construction commerciale ou
-                                résidentielle.</p>
+                                résidentielle, titre foncier disponible transaction par un notaire.</p>
                         </div>
 
                         <div class="terrain-price">
-                            <span class="price">30 000 000 FCFA</span>
-                            <span class="price-details">(100 000 FCFA/m²)</span>
+                            <span class="price">25 000 000 FCFA</span>
+                            <span class="price-details">(50 000 FCFA/m²)</span>
                         </div>
 
                         <div class="terrain-actions">
-                            <button class="btn-whatsapp" data-terrain="Mbalmayo" title="Contacter sur WhatsApp">
+                            <button class="btn-whatsapp" data-terrain="Nkozoa" title="Contacter sur WhatsApp">
                                 <i class="fab fa-whatsapp"></i>
                             </button>
-                            <button class="btn-contact" data-terrain="Mbalmayo">
+                            <button class="btn-contact" data-terrain="Nkozoa">
                                 <i class="fas fa-envelope"></i> Contacter
                             </button>
-                            <button class="btn-details" data-terrain="Mbalmayo">
+                            <button class="btn-details" data-terrain="Nkozoa">
                                 <i class="fas fa-images"></i> Détails
                             </button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Carte Terrain 6 - Douala, Littoral -->
-                <div class="terrain-card animate-on-scroll" data-region="littoral" data-arrondissement="douala"
+                <!-- Carte Terrain 6 - Yaoundé, Centre -->
+                <div class="terrain-card animate-on-scroll" data-region="centre" data-arrondissement="yaounde"
                     data-prix="95000000">
                     <div class="card-media">
                         <div class="video-container">
-                            <video class="terrain-video"
-                                poster="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1973&q=80">
-                                <source
-                                    src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4"
-                                    type="video/mp4">
+                            <video class="terrain-video" poster="image/terrain awae3.jpeg">
+                                <source src="image/terrain awae3.jpeg" type="image/jpeg">
+                                Votre navigateur ne supporte pas la vidéo.
                             </video>
+
+                            <!-- Contrôles vidéo personnalisés -->
+                            <div class="video-controls">
+                                <button class="video-play-pause" aria-label="Lecture/Pause">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <div class="video-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-filled"></div>
+                                    </div>
+                                </div>
+                                <div class="video-time">
+                                    <span class="current-time">0:00</span> / <span class="duration">0:00</span>
+                                </div>
+
+                                <!-- Contrôles avancés -->
+                                <div class="video-settings">
+                                    <button class="settings-btn" aria-label="Paramètres">
+                                        <i class="fas fa-cog"></i>
+                                    </button>
+
+                                    <!-- Menu des paramètres -->
+                                    <div class="settings-menu">
+                                        <div class="settings-group">
+                                            <h4>Vitesse</h4>
+                                            <div class="speed-options">
+                                                <button class="speed-option" data-speed="0.5">0.5x</button>
+                                                <button class="speed-option active" data-speed="1">1x</button>
+                                                <button class="speed-option" data-speed="1.5">1.5x</button>
+                                                <button class="speed-option" data-speed="2">2x</button>
+                                            </div>
+                                        </div>
+
+                                        <div class="settings-group">
+                                            <h4>Luminosité</h4>
+                                            <input type="range" class="brightness-control" min="0" max="200"
+                                                value="100">
+                                        </div>
+
+                                        <div class="settings-group">
+                                            <h4>Contraste</h4>
+                                            <input type="range" class="contrast-control" min="0" max="200" value="100">
+                                        </div>
+
+                                        <div class="settings-group">
+                                            <h4>Volume</h4>
+                                            <input type="range" class="volume-control" min="0" max="100" value="50">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button class="video-fullscreen" aria-label="Plein écran">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+
+                            <!-- Overlay de lecture -->
+                            <div class="video-overlay">
+                                <i class="fas fa-play-circle"></i>
+                            </div>
                         </div>
 
-                        <div class="region-badge littoral">Littoral</div>
+                        <div class="region-badge centre">Centre</div>
                         <div class="status-badge disponible">Disponible</div>
                     </div>
 
                     <div class="card-content">
-                        <h3>Terrain industriel - Bonabéri</h3>
+                        <h3>Terrain Résidentiel - Awae Village 20m Avant le Carrefour Elat </h3>
 
                         <div class="terrain-location">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Douala 4, Bonabéri - Littoral</span>
+                            <span>Mfou, Awae (Mefou & Afamba) - Centre</span>
                         </div>
 
                         <div class="terrain-features">
                             <div class="feature">
                                 <i class="fas fa-vector-square"></i>
-                                <span>1500 m²</span>
+                                <span>Plusieurs Lots</span>
                             </div>
                             <div class="feature">
                                 <i class="fas fa-road"></i>
@@ -537,22 +840,22 @@
                             </div>
                             <div class="feature">
                                 <i class="fas fa-bolt"></i>
-                                <span>HT/BT</span>
+                                <span>Électricité</span>
                             </div>
                             <div class="feature">
                                 <i class="fas fa-water"></i>
-                                <span>Eau industrielle</span>
+                                <span>Eau</span>
                             </div>
                         </div>
 
                         <div class="terrain-description">
-                            <p>Grand terrain à proximité du port, idéal pour entrepôt ou activité industrielle. Accès
-                                poids lourds.</p>
+                            <p>Terrain, pas très loin de la route principale. Parfait pour construction commerciale ou
+                                résidentielle, titre foncier disponible transaction par un notaire.</p>
                         </div>
 
                         <div class="terrain-price">
-                            <span class="price">95 000 000 FCFA</span>
-                            <span class="price-details">(63 333 FCFA/m²)</span>
+                            <span class="price">Au choix</span>
+                            <span class="price-details">(10 000 FCFA/m²)</span>
                         </div>
 
                         <div class="terrain-actions">
@@ -568,6 +871,169 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Carte Terrain 7 - Yaoundé, Centre -->
+                <div class="terrain-card animate-on-scroll" data-region="centre" data-arrondissement="yaounde"
+                    data-prix="95000000">
+                    <div class="card-media">
+                        <div class="video-container">
+                            <video class="terrain-video" poster="image/terrain ahala3.jpeg">
+                                <source src="image/terrain ahala3.jpeg" type="image/jpeg">
+                                Votre navigateur ne supporte pas la vidéo.
+                            </video>
+
+                            <!-- Contrôles vidéo personnalisés -->
+                            <div class="video-controls">
+                                <button class="video-play-pause" aria-label="Lecture/Pause">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <div class="video-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-filled"></div>
+                                    </div>
+                                </div>
+                                <div class="video-time">
+                                    <span class="current-time">0:00</span> / <span class="duration">0:00</span>
+                                </div>
+
+                                <!-- Contrôles avancés -->
+                                <div class="video-settings">
+                                    <button class="settings-btn" aria-label="Paramètres">
+                                        <i class="fas fa-cog"></i>
+                                    </button>
+
+                                    <!-- Menu des paramètres -->
+                                    <div class="settings-menu">
+                                        <div class="settings-group">
+                                            <h4>Vitesse</h4>
+                                            <div class="speed-options">
+                                                <button class="speed-option" data-speed="0.5">0.5x</button>
+                                                <button class="speed-option active" data-speed="1">1x</button>
+                                                <button class="speed-option" data-speed="1.5">1.5x</button>
+                                                <button class="speed-option" data-speed="2">2x</button>
+                                            </div>
+                                        </div>
+
+                                        <div class="settings-group">
+                                            <h4>Luminosité</h4>
+                                            <input type="range" class="brightness-control" min="0" max="200"
+                                                value="100">
+                                        </div>
+
+                                        <div class="settings-group">
+                                            <h4>Contraste</h4>
+                                            <input type="range" class="contrast-control" min="0" max="200" value="100">
+                                        </div>
+
+                                        <div class="settings-group">
+                                            <h4>Volume</h4>
+                                            <input type="range" class="volume-control" min="0" max="100" value="50">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button class="video-fullscreen" aria-label="Plein écran">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+
+                            <!-- Overlay de lecture -->
+                            <div class="video-overlay">
+                                <i class="fas fa-play-circle"></i>
+                            </div>
+                        </div>
+
+                        <div class="region-badge centre">Centre</div>
+                        <div class="status-badge disponible">Disponible</div>
+                    </div>
+
+                    <div class="card-content">
+                        <h3>Terrain résidentielle - Ahala En Face du camps site Tunisien </h3>
+
+                        <div class="terrain-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Ahala - Centre</span>
+                        </div>
+
+                        <div class="terrain-features">
+                            <div class="feature">
+                                <i class="fas fa-vector-square"></i>
+                                <span>725 m²</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-road"></i>
+                                <span>Bitumé</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-bolt"></i>
+                                <span>Électricité</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-water"></i>
+                                <span>Eau</span>
+                            </div>
+                        </div>
+
+                        <div class="terrain-description">
+                            <p>Terrain, pas très loin de la route principale. Parfait pour construction commerciale ou
+                                résidentielle, <strong>en cours d'immatriculation</strong>.</p>
+                        </div>
+
+                        <div class="terrain-price">
+                            <span class="price">36 250 000 FCFA</span>
+                            <span class="price-details">(50 000 FCFA/m²)</span>
+                        </div>
+
+                        <div class="terrain-actions">
+                            <button class="btn-whatsapp" data-terrain="Ahala" title="Contacter sur WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                            <button class="btn-contact" data-terrain="Ahala">
+                                <i class="fas fa-envelope"></i> Contacter
+                            </button>
+                            <button class="btn-details" data-terrain="Ahala">
+                                <i class="fas fa-images"></i> Détails
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ESPACE POUR AJOUTER D'AUTRES TERRAINS ET VIDÉOS -->
+                <!-- Pour ajouter un terrain, copiez-collez le bloc suivant et adaptez le contenu -->
+                <!-- 
+                <div class="terrain-card animate-on-scroll" data-region="VOTRE_REGION" data-arrondissement="VOTRE_ARRONDISSEMENT" data-prix="VOTRE_PRIX">
+                    <div class="card-media">
+                        <div class="video-container">
+                            <video class="terrain-video" poster="CHEMIN_VERS_VOTRE_IMAGE_OU_VIDEO">
+                                <source src="CHEMIN_VERS_VOTRE_VIDEO.mp4" type="video/mp4">
+                                Votre navigateur ne supporte pas la vidéo.
+                            </video>
+                            <div class="video-controls">
+                                ... (Copiez les contrôles d'un autre terrain) ...
+                            </div>
+                            <div class="video-overlay">
+                                <i class="fas fa-play-circle"></i>
+                            </div>
+                        </div>
+                        <div class="region-badge VOTRE_REGION">VOTRE_REGION</div>
+                        <div class="status-badge disponible">Disponible</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>VOTRE_TITRE</h3>
+                        <div class="terrain-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>VOTRE_LOCALISATION</span>
+                        </div>
+                        ... (Remplissez les caractéristiques et prix) ...
+                        <div class="terrain-actions">
+                            <button class="btn-whatsapp" data-terrain="VOTRE_NOM_TERRAIN"> ... </button>
+                            <button class="btn-contact" data-terrain="VOTRE_NOM_TERRAIN"> ... </button>
+                            <button class="btn-details" data-terrain="VOTRE_NOM_TERRAIN"> ... </button>
+                        </div>
+                    </div>
+                </div>
+                -->
+                <!-- FIN ESPACE POUR AJOUTER D'AUTRES TERRAINS -->
             </div>
 
             <!-- Bouton Voir Plus -->

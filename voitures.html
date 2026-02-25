@@ -26,9 +26,6 @@
             </nav>
         </div>
     </header>
-    <!-- ============================================== -->
-    <!-- NOUVELLE SECTION : LOCATION DE VOITURES -->
-    <!-- ============================================== -->
 
     <!-- Section Location de Voitures -->
     <section id="location-voitures" class="cars-section">
@@ -63,7 +60,6 @@
                         <option value="essence">Essence</option>
                         <option value="diesel">Diesel</option>
                         <option value="hybride">Hybride</option>
-                        <option value="electrique">Électrique</option>
                     </select>
 
                     <select class="car-filter-select" id="transmission">
@@ -83,8 +79,8 @@
                         <div class="car-media">
                             <!-- Image principale avec badge -->
                             <div class="car-image-container">
-                                <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-                                    alt="Toyota Land Cruiser" class="car-main-image" loading="lazy">
+                                <img src="image/voiture land cruiser 2020.jpeg" alt="Toyota Land Cruiser"
+                                    class="car-main-image" loading="lazy">
 
                                 <!-- Overlay avec zoom -->
                                 <div class="car-image-overlay">
@@ -100,15 +96,12 @@
 
                             <!-- Mini gallery -->
                             <div class="car-thumbnails">
-                                <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-                                    alt="Vue 1" class="thumbnail active"
-                                    data-full="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80">
-                                <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&auto=format&fit=crop&w=1964&q=80"
-                                    alt="Vue 2" class="thumbnail"
-                                    data-full="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&auto=format&fit=crop&w=1964&q=80">
-                                <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-                                    alt="Vue 3" class="thumbnail"
-                                    data-full="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80">
+                                <img src="image/voiture land cruiser.mp4" alt="Vue 1" class="thumbnail active"
+                                    data-full="image/voiture land cruiser.mp4">
+                                <img src="image/land cruiser3.jpeg" alt="Vue 2" class="thumbnail"
+                                    data-full="image/land cruiser3.jpeg">
+                                <img src="image/land cruiser5.jpeg" alt="Vue 3" class="thumbnail"
+                                    data-full="image/land cruiser5.jpeg">
                             </div>
                         </div>
 
@@ -707,6 +700,8 @@
             <span class="car-modal-close">&times;</span>
             <div class="car-modal-content">
                 <img id="modalImage" src="" alt="Galerie voiture">
+                <video id="modalVideo" src="" controls
+                    style="display: none; width: 100%; max-height: 80vh; border-radius: 8px;"></video>
                 <div class="modal-nav">
                     <button class="modal-prev"><i class="fas fa-chevron-left"></i></button>
                     <button class="modal-next"><i class="fas fa-chevron-right"></i></button>
