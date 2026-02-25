@@ -134,19 +134,22 @@ document.addEventListener('DOMContentLoaded', function () {
             let showByPrix = true;
 
             if (selectedPrixRange) {
-                const [min, max] = selectedPrixRange.split('-').map(val => {
-                    if (val === '25') return 25000000;
-                    if (val === '50') return 50000000;
-                    if (val === '100') return 100000000;
-                    if (val === '25+') return 25000000;
-                    if (val === '100+') return Infinity;
-                    return parseInt(val) * 1000000;
-                });
+                let min = 0, max = Infinity;
 
-                if (max) {
-                    showByPrix = prix >= min && prix <= max;
+                if (selectedPrixRange.includes('-')) {
+                    const parts = selectedPrixRange.split('-');
+                    min = parseInt(parts[0]) * 1000000;
+                    max = parseInt(parts[1]) * 1000000;
+                } else if (selectedPrixRange.includes('+')) {
+                    min = parseInt(selectedPrixRange) * 1000000;
+                    max = Infinity;
+                }
+
+                if (isNaN(prix)) {
+                    // Les terrains "Au choix" ou "VOTRE_PRIX" s'affichent toujours
+                    showByPrix = true;
                 } else {
-                    showByPrix = prix >= min;
+                    showByPrix = prix >= min && prix <= max;
                 }
             }
 
@@ -353,40 +356,43 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Mapping des terrains avec leurs médias spécifiques
         const terrainMap = {
-            'bankolo petit paris': [
+            'Mbankolo petit paris': [
                 { type: 'video', url: 'image/terrain banjkolo Yaoundé petit paris.mp4' },
-                { type: 'image', url: 'image/topo.jpeg' },
-                { type: 'image', url: 'image/topo2.jpeg' }
+                { type: 'image', url: 'image/Mbankolo.mp4' },
+                { type: 'image', url: 'image/Mbankolo2.mp4' }
             ],
             'Bastos': [
                 { type: 'video', url: 'image/terrain baste 476 yaoundé I.mp4' },
                 { type: 'video', url: 'image/terrain yaoudé 1 toungou (bastos).mp4' },
                 { type: 'video', url: 'image/terrain entrer bastos 476.mp4' },
-                { type: 'image', url: 'image/topo.jpeg' }
+                { type: 'image', url: 'image/Ntoungou.mp4' }
             ],
             'Nouvelle route Bastos': [
                 { type: 'video', url: 'image/terrain nouvelle route bastos 943mcarré.mp4' },
-                { type: 'video', url: 'image/terrain nouvelle route bastos.mp4' },
-                { type: 'image', url: 'image/topo2.jpeg' }
+                { type: 'video', url: 'image/terrain nouvelle route bastos.mp4' }
             ],
             'Bastos Ekoudou': [
-                { type: 'video', url: 'image/terrain bastos ekoudou yaoundé I plusieurs lot.mp4' },
-                { type: 'image', url: 'image/topo.jpeg' }
+                { type: 'video', url: 'image/terrain bastos ekoudou yaoundé I plusieurs lot.mp4' }
             ],
             'Nkozoa': [
-                { type: 'video', url: 'image/terrain Nkozoa derriere dispensaire 500mcarré 20m de la nationale N°2 ouest .mp4' },
-                { type: 'image', url: 'image/topo2.jpeg' }
+                { type: 'video', url: 'image/terrain Nkozoa derriere dispensaire 500mcarré 20m de la nationale N°2 ouest .mp4' }
             ],
             'awae': [
                 { type: 'video', url: 'image/terrain awae3.jpeg' },
-                { type: 'image', url: 'image/terrain awae.jpeg' }
+                { type: 'image', url: 'image/terrain awae.jpeg' },
+                { type: 'image', url: 'image/terrain awae2.jpeg' }
+            ],
+            'ahala': [
+                { type: 'video', url: 'image/terrain ahala3.jpeg' },
+                { type: 'image', url: 'image/terrain ahala.jpeg' },
+                { type: 'image', url: 'image/terrain ahala2.jpeg' }
             ]
         };
 
         // Si le terrain n'est pas dans la liste, on met des données par défaut ou vides
         currentGalleryData = terrainMap[terrainName] || [
-            { type: 'image', url: 'image/topo.jpeg' },
-            { type: 'image', url: 'image/topo2.jpeg' }
+            { type: 'video', url: 'image/Mbankolo.mp4' },
+            { type: 'video', url: 'image/Mbankolo2.mp4' }
         ];
 
         currentMediaIndex = 0;

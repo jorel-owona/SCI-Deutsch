@@ -46,19 +46,18 @@ document.addEventListener('DOMContentLoaded', function () {
             // Filtre par prix
             let showByPrix = true;
             if (selectedPrix) {
-                const [min, max] = selectedPrix.split('-').map(val => {
-                    if (val === '50000') return 50000;
-                    if (val === '100000') return 100000;
-                    if (val === '200000') return 200000;
-                    if (val === '200000+') return Infinity;
-                    return parseInt(val);
-                });
+                let min = 0, max = Infinity;
 
-                if (max) {
-                    showByPrix = prix >= min && prix <= max;
-                } else {
-                    showByPrix = prix >= min;
+                if (selectedPrix.includes('-')) {
+                    const parts = selectedPrix.split('-');
+                    min = parseInt(parts[0]);
+                    max = parseInt(parts[1]);
+                } else if (selectedPrix.includes('+')) {
+                    min = parseInt(selectedPrix);
+                    max = Infinity;
                 }
+
+                showByPrix = prix >= min && prix <= max;
             }
 
             // Filtre par carburant
