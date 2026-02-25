@@ -12,6 +12,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const prixSelect = document.getElementById('prixLocation');
     const carburantSelect = document.getElementById('typeCarburant');
     const transmissionSelect = document.getElementById('transmission');
+    const header = document.querySelector('.header');
+    const burgerBtn = document.getElementById('burgerBtn');
+    const mobileNav = document.getElementById('mobileNav');
 
     // Modals
     const galleryModal = document.getElementById('carGalleryModal');
@@ -21,6 +24,48 @@ document.addEventListener('DOMContentLoaded', function () {
     // État actuel de la galerie
     let currentGalleryImages = [];
     let currentImageIndex = 0;
+
+    // ==============================================
+    // GESTION DU HEADER ET MENU BURGER
+    // ==============================================
+
+    // Toggle Menu Mobile
+    if (burgerBtn && mobileNav) {
+        burgerBtn.addEventListener('click', function () {
+            this.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+
+            // Empêcher le défilement quand le menu est ouvert
+            if (mobileNav.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Fermer le menu au clic sur un lien
+        const mobileLinks = mobileNav.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                burgerBtn.classList.remove('active');
+                mobileNav.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+    }
+
+    // Effet Header au défilement
+    window.addEventListener('scroll', function () {
+        if (header) {
+            if (window.scrollY > 50) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.05)';
+            }
+        }
+    });
 
     // ==============================================
     // FILTRAGE DES VOITURES
