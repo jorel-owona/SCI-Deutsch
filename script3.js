@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
             name: 'Toyota Land Cruiser Prado',
             category: 'suv',
             price: 12000000,
-            carburant: 'Diesel',
+            carburant: 'Essance',
             transmission: 'Automatique',
             places: 7,
             images: [
@@ -583,10 +583,56 @@ document.addEventListener('DOMContentLoaded', function () {
         initGallery();
     }
 
+    // ==============================================
+    // ANIMATIONS AU DÉFILEMENT
+    // ==============================================
+    function initScrollAnimations() {
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+    }
+
     renderVenteCars();
     initGallery();
     initReservation();
     initWhatsapp();
+    initScrollAnimations();
+
+    // ==============================================
+    // GALERIE SPÉCIFIQUE REMORQUAGE
+    // ==============================================
+    const btnTowingDetails = document.getElementById('btnTowingDetails');
+    const towingGalleryData = document.getElementById('towingGalleryData');
+
+    if (btnTowingDetails && towingGalleryData) {
+        btnTowingDetails.addEventListener('click', function () {
+            const images = [];
+            towingGalleryData.querySelectorAll('img').forEach(img => {
+                images.push(img.src);
+            });
+
+            currentGalleryImages = images;
+            currentImageIndex = 0;
+
+            showGalleryImage(0);
+            galleryModal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        });
+    }
 
     console.log('Section Location de Voitures finalisée');
 });

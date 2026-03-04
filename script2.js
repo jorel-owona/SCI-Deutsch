@@ -387,6 +387,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 { type: 'video', url: 'image/terrain ahala3.jpeg' },
                 { type: 'image', url: 'image/terrain ahala.jpeg' },
                 { type: 'image', url: 'image/terrain ahala2.jpeg' }
+            ],
+            'GP biteng': [
+                { type: 'video', url: 'image/terrain GP biteng5.mp4' },
+                { type: 'image', url: 'image/terrain GP biteng.jpeg' },
+                { type: 'image', url: 'image/terrain GP biteng1.jpeg' },
+                { type: 'image', url: 'image/terrain GP biteng2.jpeg' },
+                { type: 'image', url: 'image/terrain GP biteng3.jpeg' }
             ]
         };
 

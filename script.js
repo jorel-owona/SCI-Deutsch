@@ -391,4 +391,45 @@ document.addEventListener('DOMContentLoaded', function () {
     // INITIALISATION GÉNÉRALE
     // ==============================================
     console.log('Site SCI Deutsch chargé avec succès');
+
+    // ==============================================
+    // GESTION DES PARAMÈTRES URL (PRÉ-REMPLISSAGE)
+    // ==============================================
+    function handleUrlParams() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const product = urlParams.get('product');
+        const type = urlParams.get('type');
+
+        if (product && contactForm) {
+            const messageInput = document.getElementById('message');
+            const subjectSelect = document.getElementById('subject');
+
+            if (messageInput) {
+                messageInput.value = `Bonjour, je souhaite obtenir un ${type || 'Devis'} pour : ${product}.`;
+            }
+            if (subjectSelect) {
+                subjectSelect.value = type?.toLowerCase().includes('devis') ? 'devis' : 'catalogue';
+            }
+
+            // Attendre un peu que le scroll smooth de l'ancre se termine ou forcer le nôtre
+            setTimeout(() => {
+                const contactSection = document.getElementById('contact');
+                if (contactSection) {
+                    const headerHeight = document.querySelector('.header').offsetHeight;
+                    const contactPosition = contactSection.getBoundingClientRect().top + window.pageYOffset - (headerHeight + 20);
+
+                    window.scrollTo({
+                        top: contactPosition,
+                        behavior: 'smooth'
+                    });
+
+                    // Highlight visuel
+                    contactForm.classList.add('pulse-highlight');
+                    setTimeout(() => contactForm.classList.remove('pulse-highlight'), 3000);
+                }
+            }, 800);
+        }
+    }
+
+    handleUrlParams();
 });
