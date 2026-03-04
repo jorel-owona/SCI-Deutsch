@@ -26,6 +26,36 @@ document.addEventListener('DOMContentLoaded', function () {
     let currentImageIndex = 0;
 
     // ==============================================
+    // DONNÉES DES VOITURESÀ VENDRE
+    // ==============================================
+    const carsVente = [
+        {
+            id: 'land-cruiser-prado',
+            name: 'Toyota Land Cruiser Prado',
+            category: 'suv',
+            price: 12000000,
+            carburant: 'Diesel',
+            transmission: 'Automatique',
+            places: 7,
+            images: [
+                'image/voiture land cruiser 2020.jpeg',
+                'image/voiture land cruiser.mp4',
+                'image/land cruiser3.jpeg',
+                'image/land cruiser5.jpeg'
+            ],
+            features: [
+                'Kilométrage illimité',
+                'Assurance tous risques',
+                'Livraison aéroport',
+                'Assistance 24/7'
+            ],
+            badges: ['Populaire', '4x4'],
+            avis: 24,
+            rating: 4.5
+        }
+    ];
+
+    // ==============================================
     // GESTION DU HEADER ET MENU BURGER
     // ==============================================
 
@@ -484,6 +514,76 @@ document.addEventListener('DOMContentLoaded', function () {
     // INITIALISATION
     // ==============================================
 
+    function renderVenteCars() {
+        const grid = document.getElementById('carsVenteGrid');
+        if (!grid) return;
+
+        grid.innerHTML = carsVente.map(car => `
+            <div class="car-card animate-on-scroll" data-category="${car.category}" data-prix="${car.price}">
+                <div class="car-card-inner">
+                    <div class="car-media">
+                        <div class="car-image-container">
+                            <img src="${car.images[0]}" alt="${car.name}" class="car-main-image" loading="lazy">
+                            <div class="car-image-overlay">
+                                <button class="car-zoom-btn" data-image="${car.id}">
+                                    <i class="fas fa-search-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        ${car.badges.map((b, i) => `<div class="car-badge ${i === 0 ? 'popular' : 'condition'}">${b}</div>`).join('')}
+                        <div class="car-thumbnails">
+                            ${car.images.map((img, i) => `
+                                <img src="${img}" alt="Vue ${i + 1}" class="thumbnail ${i === 0 ? 'active' : ''}" 
+                                     data-full="${img}">
+                            `).join('')}
+                        </div>
+                    </div>
+                    <div class="car-info">
+                        <div class="car-header">
+                            <h3>${car.name}</h3>
+                            <div class="car-rating">
+                                ${generateStars(car.rating)}
+                                <span>(${car.avis} avis)</span>
+                            </div>
+                        </div>
+                        <div class="car-specs">
+                            <div class="spec"><i class="fas fa-users"></i><span>${car.places} places</span></div>
+                            <div class="spec"><i class="fas fa-gas-pump"></i><span>${car.carburant}</span></div>
+                            <div class="spec"><i class="fas fa-tachometer-alt"></i><span>${car.transmission}</span></div>
+                            <div class="spec"><i class="fas fa-snowflake"></i><span>Climatisation</span></div>
+                        </div>
+                        <div class="car-features">
+                            <ul class="feature-list">
+                                ${car.features.map(f => `<li><i class="fas fa-check-circle"></i> ${f}</li>`).join('')}
+                            </ul>
+                        </div>
+                        <div class="car-price-section">
+                            <div class="price-tag">
+                                <span class="price">${car.price.toLocaleString()} FCFA</span>
+                            </div>
+                        </div>
+                        <div class="car-actions">
+                            <button class="btn-reserver" data-car="${car.name}">
+                                <i class="fas fa-shopping-cart"></i> Acheté
+                            </button>
+                            <button class="btn-details-car" data-car="${car.name}">
+                                <i class="fas fa-info-circle"></i> Détails
+                            </button>
+                            <button class="btn-whatsapp" data-car="${car.name}">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+
+        // Re-attach events for the new cards
+        attachCarEvents();
+        initGallery();
+    }
+
+    renderVenteCars();
     initGallery();
     initReservation();
     initWhatsapp();

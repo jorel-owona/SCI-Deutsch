@@ -261,6 +261,27 @@ section {
     min-height: 100vh;
 }
 
+#vente-voitures {
+    background: linear-gradient(135deg, #ffffff 0%, #f0f4f8 100%);
+    border-bottom: 2px solid #e1e8ef;
+}
+
+#vente-voitures .car-card {
+    border: 1px solid rgba(26, 58, 95, 0.05);
+}
+
+#vente-voitures .price-tag .price {
+    color: #c19a5b;
+}
+
+#vente-voitures .btn-reserver {
+    background: #1a3a5f;
+}
+
+#vente-voitures .btn-reserver:hover {
+    background: #0a2444;
+}
+
 /* ===== EFFET PARALLAX VOITURE EN MOUVEMENT ===== */
 
 @keyframes driveCar {

@@ -493,10 +493,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 meta: ['30 postes', 'WiFi haut débit']
             },
             {
-                title: 'Jardin intérieur',
-                category: 'detente',
-                description: 'Espace vert pour la détente',
-                meta: ['200m²', 'Plantes exotiques']
+                title: 'Nouveau hall d\'accueil',
+                category: 'interieur',
+                description: 'Extension de notre hall principal',
+                meta: ['80m²', 'Design épuré']
             }
         ];
 
