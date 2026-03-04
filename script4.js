@@ -261,6 +261,49 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // ==============================================
+    // EFFET COMPTEUR (Stats)
+    // ==============================================
+    function initCounters() {
+        const stats = document.querySelectorAll('.stat-value');
+        const speed = 200;
+
+        stats.forEach(counter => {
+            const updateCount = () => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const inc = target / speed;
+
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + inc);
+                    setTimeout(updateCount, 1);
+                } else {
+                    counter.innerText = target;
+                }
+            };
+            updateCount();
+        });
+    }
+
+    // Observer pour les animations au scroll (dont les compteurs)
+    const observerOptions = {
+        threshold: 0.2
+    };
+
+    const counterObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                initCounters();
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    const statsSection = document.querySelector('.trade-stats');
+    if (statsSection) {
+        counterObserver.observe(statsSection);
+    }
+
+    // ==============================================
     // INITIALISATION FINALE
     // ==============================================
     initTradeThumbnails();
