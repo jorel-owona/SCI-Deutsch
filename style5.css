@@ -1096,11 +1096,12 @@ section {
 }
 
 #lightboxImage {
-    max-width: 100%;
-    max-height: 70vh;
+    max-width: 95%;
+    max-height: 85vh;
     object-fit: contain;
     transition: transform 0.3s ease;
     cursor: grab;
+    image-rendering: -webkit-optimize-contrast;
 }
 
 #lightboxImage:active {

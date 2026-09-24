@@ -246,18 +246,32 @@ document.addEventListener('DOMContentLoaded', function () {
         `).join('');
     }
 
-    // Ouvrir lightbox
-    document.querySelectorAll('.gallery-zoom').forEach((btn) => {
-        btn.addEventListener('click', (e) => {
+    // Ouvrir la lightbox au clic sur le bouton zoom ou directement sur l'image
+    document.querySelectorAll('.gallery-zoom, .gallery-image, .gallery-item-inner').forEach((element) => {
+        element.addEventListener('click', (e) => {
+            if (e.target.closest('.gallery-info-btn')) return;
             e.preventDefault();
             updateCurrentImages();
-            const item = btn.closest('.gallery-item');
+            const item = element.closest('.gallery-item');
+            if (!item) return;
             const visibleItems = Array.from(document.querySelectorAll('.gallery-item')).filter(el => {
                 return getComputedStyle(el).display !== 'none';
             });
             const actualIndex = visibleItems.indexOf(item);
             openLightbox(actualIndex >= 0 ? actualIndex : 0);
         });
+    });
+
+    // Clic sur l'image 360° pour l'ouvrir en lightbox pleine résolution
+    const panorama = document.getElementById('panoramaImage');
+    panorama?.addEventListener('dblclick', function() {
+        currentImages = [{
+            src: this.src,
+            title: "Vue 360° Réception",
+            description: "Vue haute résolution des locaux SCI Deutsch",
+            meta: ["Haute Résolution", "360°"]
+        }];
+        openLightbox(0);
     });
 
     // Navigation lightbox

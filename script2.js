@@ -326,16 +326,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Mapping des terrains avec leurs médias spécifiques
         const terrainMap = {
+            'bankolo petit paris': [
+                { type: 'video', url: 'image/terrain banjkolo Yaoundé petit paris.mp4' },
+                { type: 'video', url: 'image/Mbankolo.mp4' },
+                { type: 'video', url: 'image/Mbankolo2.mp4' }
+            ],
             'Mbankolo petit paris': [
                 { type: 'video', url: 'image/terrain banjkolo Yaoundé petit paris.mp4' },
-                { type: 'image', url: 'image/Mbankolo.mp4' },
-                { type: 'image', url: 'image/Mbankolo2.mp4' }
+                { type: 'video', url: 'image/Mbankolo.mp4' },
+                { type: 'video', url: 'image/Mbankolo2.mp4' }
             ],
             'Bastos': [
                 { type: 'video', url: 'image/terrain baste 476 yaoundé I.mp4' },
                 { type: 'video', url: 'image/terrain yaoudé 1 toungou (bastos).mp4' },
                 { type: 'video', url: 'image/terrain entrer bastos 476.mp4' },
-                { type: 'image', url: 'image/Ntoungou.mp4' }
+                { type: 'video', url: 'image/Ntoungou.mp4' }
             ],
             'Nouvelle route Bastos': [
                 { type: 'video', url: 'image/terrain nouvelle route bastos 943mcarré.mp4' },
@@ -348,15 +353,29 @@ document.addEventListener('DOMContentLoaded', function () {
                 { type: 'video', url: 'image/Nkozoa.mp4' },
                 { type: 'video', url: 'image/terrain Nkozoa derriere dispensaire 500mcarré 20m de la nationale N°2 ouest .mp4' }
             ],
-            'awae': [
-                { type: 'video', url: 'image/terrain awae3.jpeg' },
+            'Awae': [
                 { type: 'image', url: 'image/terrain awae.jpeg' },
-                { type: 'image', url: 'image/terrain awae2.jpeg' }
+                { type: 'image', url: 'image/terrain awae route.jpeg' },
+                { type: 'image', url: 'image/terrain awae3.jpeg' },
+                { type: 'image', url: 'image/terrain awae4.jpeg' }
+            ],
+            'awae': [
+                { type: 'image', url: 'image/terrain awae.jpeg' },
+                { type: 'image', url: 'image/terrain awae route.jpeg' },
+                { type: 'image', url: 'image/terrain awae3.jpeg' },
+                { type: 'image', url: 'image/terrain awae4.jpeg' }
+            ],
+            'Ahala': [
+                { type: 'image', url: 'image/terrain ahala.jpeg' },
+                { type: 'image', url: 'image/terrain ahala2.jpeg' },
+                { type: 'image', url: 'image/terrain ahala3.jpeg' },
+                { type: 'image', url: 'image/terrain4 ahala.jpeg' }
             ],
             'ahala': [
-                { type: 'video', url: 'image/terrain ahala3.jpeg' },
                 { type: 'image', url: 'image/terrain ahala.jpeg' },
-                { type: 'image', url: 'image/terrain ahala2.jpeg' }
+                { type: 'image', url: 'image/terrain ahala2.jpeg' },
+                { type: 'image', url: 'image/terrain ahala3.jpeg' },
+                { type: 'image', url: 'image/terrain4 ahala.jpeg' }
             ],
             'GP biteng': [
                 { type: 'video', url: 'image/terrain GP biteng5.mp4' },
@@ -364,6 +383,20 @@ document.addEventListener('DOMContentLoaded', function () {
                 { type: 'image', url: 'image/terrain GP biteng1.jpeg' },
                 { type: 'image', url: 'image/terrain GP biteng2.jpeg' },
                 { type: 'image', url: 'image/terrain GP biteng3.jpeg' }
+            ],
+            'Ebang Mefou et Afamba': [
+                { type: 'video', url: 'image/Ebang.mp4' }
+            ],
+            'Ebang': [
+                { type: 'video', url: 'image/Ebang.mp4' }
+            ],
+            'Olembe Yaoundé': [
+                { type: 'image', url: 'image/Olembe.jpeg' },
+                { type: 'image', url: 'image/olembe2.jpeg' }
+            ],
+            'Olembe': [
+                { type: 'image', url: 'image/Olembe.jpeg' },
+                { type: 'image', url: 'image/olembe2.jpeg' }
             ]
         };
 
