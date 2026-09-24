@@ -552,35 +552,16 @@ document.addEventListener('DOMContentLoaded', function () {
     // ==============================================
 
     const loadMoreBtn = document.getElementById('loadMoreTerrains');
-    let currentPage = 1;
-    const cardsPerPage = 3;
 
     loadMoreBtn?.addEventListener('click', function () {
-        // Simuler le chargement de nouveaux terrains
-        this.innerHTML = '<span>Chargement...</span> <i class="fas fa-spinner fa-spin"></i>';
+        if (this.disabled) return;
+        this.innerHTML = '<span>Vérification...</span> <i class="fas fa-spinner fa-spin"></i>';
 
         setTimeout(() => {
-            // Ajouter de nouvelles cartes (simulées)
-            const newCards = generateNewCards(currentPage);
-            terrainsGrid.insertAdjacentHTML('beforeend', newCards);
-
-            this.innerHTML = '<span>Voir plus de terrains</span> <i class="fas fa-arrow-down"></i>';
-            currentPage++;
-
-            // Réinitialiser les lecteurs vidéo
-            initializeVideoPlayers();
-
-            // Ajouter les événements aux nouveaux boutons
-            attachButtonEvents();
-
-            // Animation d'apparition
-            const newCardsElements = document.querySelectorAll('.terrain-card:not(.animated)');
-            newCardsElements.forEach((card, index) => {
-                setTimeout(() => {
-                    card.classList.add('animated');
-                }, index * 100);
-            });
-        }, 1500);
+            this.innerHTML = '<span>Tous les terrains disponibles sont affichés</span> <i class="fas fa-check-circle"></i>';
+            this.disabled = true;
+            this.classList.add('disabled');
+        }, 800);
     });
 
     function generateNewCards(page) {

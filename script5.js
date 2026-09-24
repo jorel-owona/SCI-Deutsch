@@ -171,27 +171,26 @@ document.addEventListener('DOMContentLoaded', function () {
         const activeFilter = document.querySelector('.gallery-filter-btn.active')?.dataset.filter || 'all';
         const galleryItems = document.querySelectorAll('.gallery-item');
 
-        galleryItems.forEach((item, index) => {
+        galleryItems.forEach((item) => {
             const category = item.dataset.category;
             const shouldShow = activeFilter === 'all' || category === activeFilter;
 
-            // Animation de transition
             if (shouldShow) {
                 item.style.display = 'block';
-                setTimeout(() => {
-                    item.style.opacity = '1';
-                    item.style.transform = 'scale(1)';
-                }, 50);
+                item.style.opacity = '1';
+                item.style.transform = 'translateY(0) scale(1)';
+                item.classList.add('animated');
             } else {
                 item.style.opacity = '0';
                 item.style.transform = 'scale(0.8)';
                 setTimeout(() => {
-                    item.style.display = 'none';
-                }, 300);
+                    if (item.style.opacity === '0') {
+                        item.style.display = 'none';
+                    }
+                }, 200);
             }
         });
 
-        // Mettre à jour les images courantes pour la lightbox
         updateCurrentImages();
     }
 
@@ -459,148 +458,37 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // ==============================================
-    // CHARGER PLUS D'IMAGES
+    // CHARGER PLUS D'IMAGES (MESSAGE FIN)
     // ==============================================
 
     const loadMoreGallery = document.getElementById('loadMoreGallery');
-    let galleryPage = 1;
 
     loadMoreGallery?.addEventListener('click', function () {
-        this.innerHTML = '<span>Chargement...</span> <i class="fas fa-spinner fa-spin"></i>';
+        if (this.disabled) return;
+        this.innerHTML = '<span>Vérification...</span> <i class="fas fa-spinner fa-spin"></i>';
 
         setTimeout(() => {
-            const newImages = generateMoreGalleryImages(galleryPage);
-            galleryGrid.insertAdjacentHTML('beforeend', newImages);
-
-            this.innerHTML = '<span>Charger plus de photos</span> <i class="fas fa-camera"></i>';
-            galleryPage++;
-
-            // Réinitialiser les événements
-            attachGalleryEvents();
-
-            // Animation d'apparition
-            const newItems = document.querySelectorAll('.gallery-item:not(.animated)');
-            newItems.forEach((item, index) => {
-                setTimeout(() => {
-                    item.classList.add('animated');
-                }, index * 100);
-            });
-        }, 1500);
+            this.innerHTML = '<span>Toutes les photos ont été chargées</span> <i class="fas fa-check-circle"></i>';
+            this.disabled = true;
+            this.classList.add('disabled');
+        }, 800);
     });
-
-    function generateMoreGalleryImages(page) {
-        const images = [
-            {
-                title: 'Nouvel espace coworking',
-                category: 'bureaux',
-                description: 'Espace de coworking moderne',
-                meta: ['30 postes', 'WiFi haut débit']
-            },
-            {
-                title: 'Nouveau hall d\'accueil',
-                category: 'interieur',
-                description: 'Extension de notre hall principal',
-                meta: ['80m²', 'Design épuré']
-            }
-        ];
-
-        const img = images[page % images.length];
-
-        return `
-            <div class="gallery-item animate-on-scroll" data-category="${img.category}">
-                <div class="gallery-item-inner">
-                    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80" 
-                         alt="${img.title}" 
-                         loading="lazy"
-                         class="gallery-image">
-                    
-                    <div class="gallery-overlay">
-                        <div class="gallery-info">
-                            <h4>${img.title}</h4>
-                            <p>${img.description}</p>
-                            <div class="gallery-meta">
-                                <span><i class="fas fa-camera"></i> ${img.category}</span>
-                                <span><i class="fas fa-calendar"></i> 2024</span>
-                            </div>
-                            <div class="gallery-actions">
-                                <button class="gallery-zoom"><i class="fas fa-search-plus"></i></button>
-                                <button class="gallery-info-btn"><i class="fas fa-info-circle"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="gallery-badge">Nouveau</div>
-                </div>
-            </div>
-        `;
-    }
-
-    function attachGalleryEvents() {
-        // Réattacher les événements de zoom
-        document.querySelectorAll('.gallery-zoom:not([data-listener])').forEach((btn, index) => {
-            btn.setAttribute('data-listener', 'true');
-            btn.addEventListener('click', function (e) {
-                e.preventDefault();
-                const item = btn.closest('.gallery-item');
-                const allItems = Array.from(document.querySelectorAll('.gallery-item[style*="display: block"]'));
-                const actualIndex = allItems.indexOf(item);
-
-                updateCurrentImages();
-                openLightbox(actualIndex);
-            });
-        });
-
-        // Réattacher les événements d'information
-        document.querySelectorAll('.gallery-info-btn:not([data-listener])').forEach((btn, index) => {
-            btn.setAttribute('data-listener', 'true');
-            btn.addEventListener('click', function (e) {
-                e.preventDefault();
-                const item = btn.closest('.gallery-item');
-                const title = item.querySelector('h4')?.textContent || '';
-                const description = item.querySelector('p')?.textContent || '';
-                const meta = item.querySelectorAll('.gallery-meta span');
-
-                infoModalBody.innerHTML = `
-                    <h3>${title}</h3>
-                    <p>${description}</p>
-                    ${Array.from(meta).map(m => `
-                        <div class="info-detail">
-                            <i class="fas fa-info-circle"></i>
-                            <div>
-                                <h4>${m.textContent}</h4>
-                            </div>
-                        </div>
-                    `).join('')}
-                `;
-
-                infoModal.style.display = 'block';
-                document.body.style.overflow = 'hidden';
-            });
-        });
-    }
 
     // ==============================================
     // INITIALISATION
     // ==============================================
 
-    // Initialiser la visite virtuelle
     initVirtualTour();
-
-    // Mettre à jour les images courantes
+    filterGallery();
     updateCurrentImages();
 
-    // Ajouter le style pour les éléments animés
+    // Style pour l'animation fluide
     const style = document.createElement('style');
     style.textContent = `
         .gallery-item {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-        
-        .gallery-item.animated {
             opacity: 1;
             transform: translateY(0);
+            transition: opacity 0.4s ease, transform 0.4s ease;
         }
         
         .gallery-item[style*="display: none"] {

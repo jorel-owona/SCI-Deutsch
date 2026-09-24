@@ -359,36 +359,20 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // ==============================================
-    // CHARGER PLUS DE VOITURES
+    // CHARGER PLUS DE VOITURES (MESSAGE FIN)
     // ==============================================
 
     const loadMoreCars = document.getElementById('loadMoreCars');
-    let carPage = 1;
 
     loadMoreCars?.addEventListener('click', function () {
-        this.innerHTML = '<span>Chargement...</span> <i class="fas fa-spinner fa-spin"></i>';
+        if (this.disabled) return;
+        this.innerHTML = '<span>Vérification...</span> <i class="fas fa-spinner fa-spin"></i>';
 
         setTimeout(() => {
-            const newCars = generateMoreCars(carPage);
-            carsGrid.insertAdjacentHTML('beforeend', newCars);
-
-            this.innerHTML = '<span>Afficher plus de véhicules</span> <i class="fas fa-car-side"></i>';
-            carPage++;
-
-            // Réinitialiser les événements
-            initGallery();
-            initReservation();
-            initWhatsapp();
-            attachCarEvents();
-
-            // Animation d'apparition
-            const newCards = document.querySelectorAll('.car-card:not(.animated)');
-            newCards.forEach((card, index) => {
-                setTimeout(() => {
-                    card.classList.add('animated');
-                }, index * 100);
-            });
-        }, 1500);
+            this.innerHTML = '<span>Tous les véhicules disponibles sont affichés</span> <i class="fas fa-check-circle"></i>';
+            this.disabled = true;
+            this.classList.add('disabled');
+        }, 800);
     });
 
     function generateMoreCars(page) {

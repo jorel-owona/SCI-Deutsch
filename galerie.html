@@ -4,13 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SCI Deutsch - Galerie</title>
+    <title>SCI Deutsch - Galerie & Visite Virtuelle</title>
+    <link rel="stylesheet" href="common.css">
     <link rel="stylesheet" href="style5.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/png" href="logo.png">
 </head>
 
 <body>
+    <!-- En-tête Navigation Centralisée -->
     <header class="header">
         <div class="container">
             <a href="index.html" class="logo">
@@ -30,14 +32,14 @@
                 </ul>
             </nav>
 
-            <!-- Menu Burger pour mobile -->
+            <!-- Menu Burger Mobile -->
             <button class="burger-menu" id="burgerBtn" aria-label="Menu mobile">
                 <span class="burger-line"></span>
                 <span class="burger-line"></span>
                 <span class="burger-line"></span>
             </button>
 
-            <!-- Navigation Mobile -->
+            <!-- Navigation Mobile Drawer -->
             <nav class="nav-mobile" id="mobileNav">
                 <ul>
                     <li><a href="index.html#accueil">Accueil</a></li>
@@ -52,11 +54,8 @@
             </nav>
         </div>
     </header>
-    <!-- ============================================== -->
-    <!-- NOUVELLE SECTION : GALERIE DES LOCAUX -->
-    <!-- ============================================== -->
 
-    <!-- Section Galerie des Locaux -->
+    <!-- Section Galerie & Visite Virtuelle -->
     <section id="galerie" class="gallery-section">
         <!-- Éléments d'arrière-plan animés -->
         <div class="gallery-bg-elements">
@@ -80,31 +79,30 @@
             <div class="virtual-tour-container animate-on-scroll">
                 <div class="virtual-tour-header">
                     <h3><i class="fas fa-vr-cardboard"></i> Visite Virtuelle 360°</h3>
-                    <p>Explorez nos locaux comme si vous y étiez</p>
+                    <p>Explorez nos locaux interactifs en temps réel</p>
                 </div>
                 <div class="virtual-tour-360" id="virtualTour">
                     <div class="tour-viewer">
-                        <img src="image/PXL_20260304_112352421.jpg" alt="Vue 360°" class="panorama-image"
-                            id="panoramaImage">
+                        <img src="image/reception.jpeg" alt="Vue 360° Réception" class="panorama-image" id="panoramaImage">
 
                         <!-- Contrôles de navigation 360 -->
                         <div class="tour-controls">
-                            <button class="tour-control rotate-left" id="rotateLeft">
+                            <button class="tour-control rotate-left" id="rotateLeft" title="Pivoter à gauche">
                                 <i class="fas fa-undo-alt"></i>
                             </button>
-                            <button class="tour-control zoom-in" id="zoomIn">
+                            <button class="tour-control zoom-in" id="zoomIn" title="Zoom avant">
                                 <i class="fas fa-search-plus"></i>
                             </button>
-                            <button class="tour-control zoom-out" id="zoomOut">
+                            <button class="tour-control zoom-out" id="zoomOut" title="Zoom arrière">
                                 <i class="fas fa-search-minus"></i>
                             </button>
-                            <button class="tour-control rotate-right" id="rotateRight">
+                            <button class="tour-control rotate-right" id="rotateRight" title="Pivoter à droite">
                                 <i class="fas fa-redo-alt"></i>
                             </button>
                         </div>
 
                         <!-- Points d'intérêt -->
-                        <div class="hotspot" style="top: 30%; left: 40%;" data-info="Hall d'accueil">
+                        <div class="hotspot" style="top: 40%; left: 50%;" data-info="Réception principale SCI Deutsch">
                             <span class="hotspot-dot"></span>
                             <div class="hotspot-tooltip">Hall d'accueil</div>
                         </div>
@@ -113,23 +111,42 @@
                     <!-- Miniatures des vues 360 -->
                     <div class="tour-thumbnails">
                         <div class="tour-thumb active" data-view="reception">
-                            <img src="image/PXL_20260304_113642908.jpg" alt="Réception">
+                            <img src="image/reception.jpeg" alt="Réception">
                             <span>Réception</span>
                         </div>
-                        <div class="tour-thumb" data-view="conference">
-                            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80"
-                                alt="Salle conférence">
-                            <span>bureaux topographiques</span>
+                        <div class="tour-thumb" data-view="couloir">
+                            <img src="image/couloir.jpeg" alt="Couloir principal">
+                            <span>Couloir d'accès</span>
                         </div>
-                        <div class="tour-thumb" data-view="bureaux">
-                            <img src="image/bureau10.jpeg" alt="Bureaux">
-                            <span>Bureaux</span>
+                        <div class="tour-thumb" data-view="escalier">
+                            <img src="image/escalier.jpeg" alt="Escalier">
+                            <span>Escalier principal</span>
                         </div>
                         <div class="tour-thumb" data-view="terrasse">
-                            <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80"
-                                alt="Terrasse">
+                            <img src="image/Terrasse.jpeg" alt="Terrasse">
                             <span>Terrasse</span>
                         </div>
+                        <div class="tour-thumb" data-view="bureaux">
+                            <img src="image/bureau.jpeg" alt="Bureaux">
+                            <span>Direction</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================== -->
+            <!-- SECTION SHOWREEL VIDÉO BANNER (Format capture) -->
+            <!-- ============================================== -->
+            <div class="showreel-section animate-on-scroll">
+                <div class="showreel-banner">
+                    <img src="image/reception.jpeg" alt="Showreel SCI Deutsch" class="showreel-bg-image">
+                    <div class="showreel-overlay">
+                        <div class="showreel-tag">❖ FILM INSTITUTIONNEL SCI DEUTSCH</div>
+                        <button class="showreel-play-btn" data-video-src="image/ShowreelSci.MOV" aria-label="Lancer la vidéo Showreel">
+                            <i class="fas fa-play"></i>
+                        </button>
+                        <h3 class="showreel-title">Regarder le Showreel SCI Deutsch</h3>
+                        <p class="showreel-subtitle">Immersion vidéo au cœur de nos réalisations, nos infrastructures et notre espace de travail premium.</p>
                     </div>
                 </div>
             </div>
@@ -144,13 +161,13 @@
                 </div>
 
                 <div class="gallery-view-options">
-                    <button class="view-option active" data-view="grid">
+                    <button class="view-option active" data-view="grid" title="Vue Grille">
                         <i class="fas fa-th"></i>
                     </button>
-                    <button class="view-option" data-view="masonry">
+                    <button class="view-option" data-view="masonry" title="Vue Mosaïque">
                         <i class="fas fa-th-large"></i>
                     </button>
-                    <button class="view-option" data-view="list">
+                    <button class="view-option" data-view="list" title="Vue Liste">
                         <i class="fas fa-list"></i>
                     </button>
                 </div>
@@ -158,187 +175,184 @@
 
             <!-- Galerie principale -->
             <div class="gallery-grid" id="galleryGrid">
-                <!-- Image 1 - Façade -->
-                <div class="gallery-item animate-on-scroll" data-category="exterieur" data-aos="fade-up">
+                <!-- Image 1 : Réception -->
+                <div class="gallery-item animate-on-scroll animated" data-category="interieur">
                     <div class="gallery-item-inner">
-                        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80"
-                            alt="Façade du bâtiment" loading="lazy" class="gallery-image">
-
+                        <img src="image/reception.jpeg" alt="Réception SCI Deutsch" loading="lazy" class="gallery-image">
                         <div class="gallery-overlay">
                             <div class="gallery-info">
-                                <h4>Façade principale</h4>
-                                <p>Notre bâtiment emblématique au cœur de Yaoundé</p>
+                                <h4>Hall de Réception</h4>
+                                <p>Accueil chaleureux et design épuré</p>
                                 <div class="gallery-meta">
-                                    <span><i class="fas fa-camera"></i> Extérieur</span>
-                                    <span><i class="fas fa-calendar"></i> 2026</span>
+                                    <span><i class="fas fa-camera"></i> Intérieur</span>
+                                    <span><i class="fas fa-star"></i> Accueil</span>
                                 </div>
                                 <div class="gallery-actions">
-                                    <button class="gallery-zoom" data-index="0">
-                                        <i class="fas fa-search-plus"></i>
-                                    </button>
-                                    <button class="gallery-info-btn" data-index="0">
-                                        <i class="fas fa-info-circle"></i>
-                                    </button>
+                                    <button class="gallery-zoom"><i class="fas fa-search-plus"></i></button>
+                                    <button class="gallery-info-btn"><i class="fas fa-info-circle"></i></button>
                                 </div>
                             </div>
                         </div>
+                        <div class="gallery-badge">Intérieur</div>
+                    </div>
+                </div>
 
-                        <!-- Badge catégorie -->
+                <!-- Image 2 : Couloir -->
+                <div class="gallery-item animate-on-scroll animated" data-category="interieur">
+                    <div class="gallery-item-inner">
+                        <img src="image/couloir.jpeg" alt="Couloir principal" loading="lazy" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h4>Couloir d'accès</h4>
+                                <p>Circulation fluide vers les différents bureaux</p>
+                                <div class="gallery-meta">
+                                    <span><i class="fas fa-camera"></i> Intérieur</span>
+                                    <span><i class="fas fa-building"></i> Espace</span>
+                                </div>
+                                <div class="gallery-actions">
+                                    <button class="gallery-zoom"><i class="fas fa-search-plus"></i></button>
+                                    <button class="gallery-info-btn"><i class="fas fa-info-circle"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-badge">Intérieur</div>
+                    </div>
+                </div>
+
+                <!-- Image 3 : Escalier -->
+                <div class="gallery-item animate-on-scroll animated" data-category="interieur">
+                    <div class="gallery-item-inner">
+                        <img src="image/escalier.jpeg" alt="Escalier principal" loading="lazy" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h4>Escalier principal</h4>
+                                <p>Accès aux étages et bureaux de direction</p>
+                                <div class="gallery-meta">
+                                    <span><i class="fas fa-camera"></i> Intérieur</span>
+                                    <span><i class="fas fa-layer-group"></i> Étage</span>
+                                </div>
+                                <div class="gallery-actions">
+                                    <button class="gallery-zoom"><i class="fas fa-search-plus"></i></button>
+                                    <button class="gallery-info-btn"><i class="fas fa-info-circle"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-badge">Intérieur</div>
+                    </div>
+                </div>
+
+                <!-- Image 4 : Terrasse -->
+                <div class="gallery-item animate-on-scroll animated" data-category="exterieur">
+                    <div class="gallery-item-inner">
+                        <img src="image/Terrasse.jpeg" alt="Terrasse Extérieure" loading="lazy" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h4>Terrasse Panoramique</h4>
+                                <p>Espace de détente extérieur et vue dégagée</p>
+                                <div class="gallery-meta">
+                                    <span><i class="fas fa-umbrella-beach"></i> Extérieur</span>
+                                    <span><i class="fas fa-sun"></i> Détente</span>
+                                </div>
+                                <div class="gallery-actions">
+                                    <button class="gallery-zoom"><i class="fas fa-search-plus"></i></button>
+                                    <button class="gallery-info-btn"><i class="fas fa-info-circle"></i></button>
+                                </div>
+                            </div>
+                        </div>
                         <div class="gallery-badge">Extérieur</div>
                     </div>
                 </div>
 
-                <!-- Image 2 - Hall d'accueil -->
-                <div class="gallery-item animate-on-scroll" data-category="interieur" data-aos="fade-up"
-                    data-aos-delay="100">
+                <!-- Image 5 : Bureau Direction -->
+                <div class="gallery-item animate-on-scroll animated" data-category="bureaux">
                     <div class="gallery-item-inner">
-                        <img src="image/coulisse.jpeg" alt="Hall d'accueil" loading="lazy" class="gallery-image">
-
+                        <img src="image/bureau.jpeg" alt="Bureau de direction" loading="lazy" class="gallery-image">
                         <div class="gallery-overlay">
                             <div class="gallery-info">
-                                <h4>Nos locaux</h4>
-                                <p>Un espace chaleureux pour nos visiteurs</p>
+                                <h4>Bureau de Direction</h4>
+                                <p>Espace de travail exécutif et confidentiel</p>
                                 <div class="gallery-meta">
-                                    <span><i class="fas fa-camera"></i> Intérieur</span>
-                                    <span><i class="fas fa-ruler"></i> 150m²</span>
+                                    <span><i class="fas fa-crown"></i> Prestige</span>
+                                    <span><i class="fas fa-desktop"></i> Direction</span>
                                 </div>
                                 <div class="gallery-actions">
-                                    <button class="gallery-zoom" data-index="1">
-                                        <i class="fas fa-search-plus"></i>
-                                    </button>
-                                    <button class="gallery-info-btn" data-index="1">
-                                        <i class="fas fa-info-circle"></i>
-                                    </button>
+                                    <button class="gallery-zoom"><i class="fas fa-search-plus"></i></button>
+                                    <button class="gallery-info-btn"><i class="fas fa-info-circle"></i></button>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="gallery-badge">Intérieur</div>
-                    </div>
-                </div>
-
-                <!-- Image 11 - Hall d'accueil -->
-                <div class="gallery-item animate-on-scroll" data-category="interieur" data-aos="fade-up"
-                    data-aos-delay="100">
-                    <div class="gallery-item-inner">
-                        <img src="image/coulisse3.jpeg" alt="Hall d'accueil" loading="lazy" class="gallery-image">
-
-                        <div class="gallery-overlay">
-                            <div class="gallery-info">
-                                <h4>Nos locaux</h4>
-                                <p>Un espace chaleureux pour nos visiteurs</p>
-                                <div class="gallery-meta">
-                                    <span><i class="fas fa-camera"></i> Intérieur</span>
-                                    <span><i class="fas fa-ruler"></i> 150m²</span>
-                                </div>
-                                <div class="gallery-actions">
-                                    <button class="gallery-zoom" data-index="1">
-                                        <i class="fas fa-search-plus"></i>
-                                    </button>
-                                    <button class="gallery-info-btn" data-index="1">
-                                        <i class="fas fa-info-circle"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="gallery-badge">Intérieur</div>
-                    </div>
-                </div>
-
-
-                <!-- Image 5 - Open space -->
-                <div class="gallery-item animate-on-scroll" data-category="bureaux" data-aos="fade-up"
-                    data-aos-delay="400">
-                    <div class="gallery-item-inner">
-                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80"
-                            alt="Open space" loading="lazy" class="gallery-image">
-
-                        <div class="gallery-overlay">
-                            <div class="gallery-info">
-                                <h4>Open space moderne</h4>
-                                <p>Un environnement de travail collaboratif</p>
-                                <div class="gallery-meta">
-                                    <span><i class="fas fa-desktop"></i> 03 postes</span>
-                                    <span><i class="fas fa-phone"></i>02 salles d'appel</span>
-                                </div>
-                                <div class="gallery-actions">
-                                    <button class="gallery-zoom" data-index="4">
-                                        <i class="fas fa-search-plus"></i>
-                                    </button>
-                                    <button class="gallery-info-btn" data-index="4">
-                                        <i class="fas fa-info-circle"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
                         <div class="gallery-badge">Bureaux</div>
                     </div>
                 </div>
 
-                <!-- Image 6 - Terrasse -->
-                <div class="gallery-item animate-on-scroll" data-category="exterieur" data-aos="fade-up"
-                    data-aos-delay="500">
+                <!-- Image 6 : Espace Coulisses -->
+                <div class="gallery-item animate-on-scroll animated" data-category="interieur">
                     <div class="gallery-item-inner">
-                        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80"
-                            alt="Terrasse" loading="lazy" class="gallery-image">
-
+                        <img src="image/coulisse.jpeg" alt="Coulisses et couloirs" loading="lazy" class="gallery-image">
                         <div class="gallery-overlay">
                             <div class="gallery-info">
-                                <h4>Terrasse panoramique</h4>
-                                <p>Vue imprenable sur les alentours</p>
+                                <h4>Espace d'Accès</h4>
+                                <p>Architecture moderne et aménagements confortables</p>
                                 <div class="gallery-meta">
-                                    <span><i class="fas fa-umbrella-beach"></i> 80m²</span>
-                                    <span><i class="fas fa-tree"></i> Espace vert</span>
+                                    <span><i class="fas fa-camera"></i> Intérieur</span>
+                                    <span><i class="fas fa-ruler"></i> Espace</span>
                                 </div>
                                 <div class="gallery-actions">
-                                    <button class="gallery-zoom" data-index="5">
-                                        <i class="fas fa-search-plus"></i>
-                                    </button>
-                                    <button class="gallery-info-btn" data-index="5">
-                                        <i class="fas fa-info-circle"></i>
-                                    </button>
+                                    <button class="gallery-zoom"><i class="fas fa-search-plus"></i></button>
+                                    <button class="gallery-info-btn"><i class="fas fa-info-circle"></i></button>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="gallery-badge">Extérieur</div>
+                        <div class="gallery-badge">Intérieur</div>
                     </div>
                 </div>
 
-
-                <!-- Image 10 - Bureau directeur -->
-                <div class="gallery-item animate-on-scroll" data-category="bureaux" data-aos="fade-up"
-                    data-aos-delay="900">
+                <!-- Image 7 : Hall d'accueil 2 -->
+                <div class="gallery-item animate-on-scroll animated" data-category="interieur">
                     <div class="gallery-item-inner">
-                        <img src="image/bureau.jpeg" alt="Bureau directeur" loading="lazy" class="gallery-image">
-
+                        <img src="image/coulisse3.jpeg" alt="Espace détente" loading="lazy" class="gallery-image">
                         <div class="gallery-overlay">
                             <div class="gallery-info">
-                                <h4>Bureau de direction</h4>
-                                <p>Un espace élégant et fonctionnel</p>
+                                <h4>Espace Visiteurs</h4>
+                                <p>Zone d'attente et de convivialité</p>
                                 <div class="gallery-meta">
-                                    <span><i class="fas fa-crown"></i> Prestige</span>
-                                    <span><i class="fas fa-phone-alt"></i> Ligne directe</span>
+                                    <span><i class="fas fa-chair"></i> Confort</span>
+                                    <span><i class="fas fa-users"></i> Visiteurs</span>
                                 </div>
                                 <div class="gallery-actions">
-                                    <button class="gallery-zoom" data-index="9">
-                                        <i class="fas fa-search-plus"></i>
-                                    </button>
-                                    <button class="gallery-info-btn" data-index="9">
-                                        <i class="fas fa-info-circle"></i>
-                                    </button>
+                                    <button class="gallery-zoom"><i class="fas fa-search-plus"></i></button>
+                                    <button class="gallery-info-btn"><i class="fas fa-info-circle"></i></button>
                                 </div>
                             </div>
                         </div>
+                        <div class="gallery-badge">Intérieur</div>
+                    </div>
+                </div>
 
-                        <div class="gallery-badge">Direction</div>
+                <!-- Image 8 : Bureau Topographique -->
+                <div class="gallery-item animate-on-scroll animated" data-category="bureaux">
+                    <div class="gallery-item-inner">
+                        <img src="image/bureau10.jpeg" alt="Bureaux techniques" loading="lazy" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h4>Bureau Technique & Topographique</h4>
+                                <p>Postes de travail dédiés à la cartographie et l'urbanisme</p>
+                                <div class="gallery-meta">
+                                    <span><i class="fas fa-drafting-compass"></i> Expertise</span>
+                                    <span><i class="fas fa-map"></i> Topo</span>
+                                </div>
+                                <div class="gallery-actions">
+                                    <button class="gallery-zoom"><i class="fas fa-search-plus"></i></button>
+                                    <button class="gallery-info-btn"><i class="fas fa-info-circle"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-badge">Bureaux</div>
                     </div>
                 </div>
             </div>
 
-            <!-- Bouton Voir Plus -->
+            <!-- Bouton Charger Plus -->
             <div class="view-more-container">
                 <button id="loadMoreGallery" class="btn-load-more">
                     <span>Charger plus de photos</span>
@@ -350,110 +364,85 @@
         <!-- Modal Lightbox -->
         <div id="galleryLightbox" class="gallery-lightbox">
             <span class="lightbox-close">&times;</span>
-
             <div class="lightbox-content">
                 <div class="lightbox-image-container">
-                    <img id="lightboxImage" src="" alt="Galerie">
-
-                    <!-- Contrôles avancés -->
+                    <img id="lightboxImage" src="" alt="Galerie HD">
                     <div class="lightbox-controls">
-                        <button class="lightbox-prev">
-                            <i class="fas fa-chevron-left"></i>
-                        </button>
-                        <button class="lightbox-next">
-                            <i class="fas fa-chevron-right"></i>
-                        </button>
+                        <button class="lightbox-prev" title="Image précédente"><i class="fas fa-chevron-left"></i></button>
+                        <button class="lightbox-next" title="Image suivante"><i class="fas fa-chevron-right"></i></button>
                     </div>
 
                     <div class="lightbox-toolbar">
-                        <button class="lightbox-tool" id="zoomInBtn">
-                            <i class="fas fa-search-plus"></i>
-                        </button>
-                        <button class="lightbox-tool" id="zoomOutBtn">
-                            <i class="fas fa-search-minus"></i>
-                        </button>
-                        <button class="lightbox-tool" id="rotateLeftBtn">
-                            <i class="fas fa-undo-alt"></i>
-                        </button>
-                        <button class="lightbox-tool" id="rotateRightBtn">
-                            <i class="fas fa-redo-alt"></i>
-                        </button>
-                        <button class="lightbox-tool" id="fullscreenBtn">
-                            <i class="fas fa-expand"></i>
-                        </button>
-                        <button class="lightbox-tool" id="downloadBtn">
-                            <i class="fas fa-download"></i>
-                        </button>
-                        <button class="lightbox-tool" id="shareBtn">
-                            <i class="fas fa-share-alt"></i>
-                        </button>
+                        <button class="lightbox-tool" id="zoomInBtn" title="Zoom avant"><i class="fas fa-search-plus"></i></button>
+                        <button class="lightbox-tool" id="zoomOutBtn" title="Zoom arrière"><i class="fas fa-search-minus"></i></button>
+                        <button class="lightbox-tool" id="rotateLeftBtn" title="Pivoter à gauche"><i class="fas fa-undo-alt"></i></button>
+                        <button class="lightbox-tool" id="rotateRightBtn" title="Pivoter à droite"><i class="fas fa-redo-alt"></i></button>
+                        <button class="lightbox-tool" id="fullscreenBtn" title="Plein écran"><i class="fas fa-expand"></i></button>
+                        <button class="lightbox-tool" id="downloadBtn" title="Télécharger"><i class="fas fa-download"></i></button>
                     </div>
 
-                    <!-- Informations image -->
                     <div class="lightbox-info-panel">
                         <h4 id="lightboxTitle"></h4>
                         <p id="lightboxDescription"></p>
                         <div class="lightbox-meta" id="lightboxMeta"></div>
                     </div>
                 </div>
-
-                <!-- Miniatures en bas -->
                 <div class="lightbox-thumbnails" id="lightboxThumbnails"></div>
             </div>
         </div>
 
-        <!-- Modal Informations détaillées -->
+        <!-- Modal Informations Détaillées -->
         <div id="infoModal" class="info-modal">
             <div class="info-modal-content">
                 <span class="info-modal-close">&times;</span>
-                <div class="info-modal-body" id="infoModalBody">
-                    <!-- Contenu dynamique -->
-                </div>
-            </div>
-        </div>
-
-        <!-- Notification -->
-        <div id="galleryNotification" class="gallery-notification">
-            <div class="notification-content">
-                <i class="fas fa-check-circle"></i>
-                <span>Image téléchargée avec succès</span>
+                <div class="info-modal-body" id="infoModalBody"></div>
             </div>
         </div>
     </section>
+
+    <!-- Modal Vidéo Institutionnelle Showreel -->
+    <div id="videoModal" class="video-modal">
+        <div class="video-modal-content">
+            <span class="video-modal-close">&times;</span>
+            <video id="modalVideoPlayer" class="video-modal-player" controls poster="image/reception.jpeg">
+                <source src="image/ShowreelSci.MOV" type="video/mp4">
+                Votre navigateur ne supporte pas la lecture vidéo MP4/MOV.
+            </video>
+        </div>
+    </div>
+
+    <!-- Pied de Page Centralisé -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
                     <a href="#" class="logo">SCI <span>Deutsch</span></a>
-                    <p>Gestion et valorisation de patrimoine immobilier depuis peu.</p>
+                    <p>Gestion et valorisation de patrimoine immobilier d'exception.</p>
                     <div class="social-links">
-                        <a href="https://www.instagram.com/scideutsch?igsh=MTVpNjU0djBha2VreQ=="><i
-                                class="fab fa-instagram"></i></a>
-                        <a href="https://wa.me/237691739200"><i class="fab fa-whatsapp"></i></a>
-                        <a href="https://www.facebook.com/share/1Abh75LWGm/" aria-label="Facebook"><i
-                                class="fab fa-facebook"></i></a>
-                        <a href="https://pro.tiktok.com/t/ZG9JaYvkkTkET-uSYJ6/" aria-label="tiktok"><i
-                                class="fa-brands fa-tiktok"></i></a>
+                        <a href="https://www.instagram.com/scideutsch?igsh=MTVpNjU0djBha2VreQ==" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/237691739200" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/share/1Abh75LWGm/" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://pro.tiktok.com/t/ZG9JaYvkkTkET-uSYJ6/" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
                     </div>
                 </div>
 
                 <div class="footer-links">
                     <h4>Liens rapides</h4>
                     <ul>
-                        <li><a href="#accueil">Accueil</a></li>
-                        <li><a href="#apropos">À propos</a></li>
-                        <li><a href="#biens">Nos Biens</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="index.html#accueil">Accueil</a></li>
+                        <li><a href="index.html#apropos">À propos</a></li>
+                        <li><a href="index.html#biens">Nos Biens</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-links">
                     <h4>Services</h4>
                     <ul>
-                        <li><a href="#biens">Gestion résidentielle</a></li>
-                        <li><a href="#biens">Gestion commerciale</a></li>
-                        <li><a href="#biens">Gestion de bureaux</a></li>
-                        <li><a href="#contact">Audit patrimonial</a></li>
+                        <li><a href="index.html#biens">Gestion résidentielle</a></li>
+                        <li><a href="index.html#biens">Gestion commerciale</a></li>
+                        <li><a href="index.html#biens">Gestion de bureaux</a></li>
+                        <li><a href="index.html#contact">Audit patrimonial</a></li>
                     </ul>
                 </div>
 
@@ -469,11 +458,13 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2024 SCI Deutsch. Tous droits réservés.</p>
+                <p>&copy; 2026 SCI Deutsch. Tous droits réservés.</p>
                 <p>Construire aujourd'hui un patrimoine immobilier durable et valorisé.</p>
             </div>
         </div>
     </footer>
+
+    <script src="common.js"></script>
     <script src="script5.js"></script>
 </body>
 
