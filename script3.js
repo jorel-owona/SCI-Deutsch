@@ -13,8 +13,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const carburantSelect = document.getElementById('typeCarburant');
     const transmissionSelect = document.getElementById('transmission');
     const header = document.querySelector('.header');
-    const burgerBtn = document.getElementById('burgerBtn');
-    const mobileNav = document.getElementById('mobileNav');
 
     // Modals
     const galleryModal = document.getElementById('carGalleryModal');
@@ -56,35 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
     ];
 
     // ==============================================
-    // GESTION DU HEADER ET MENU BURGER
-    // ==============================================
-
-    // Toggle Menu Mobile
-    if (burgerBtn && mobileNav) {
-        burgerBtn.addEventListener('click', function () {
-            this.classList.toggle('active');
-            mobileNav.classList.toggle('active');
-
-            // Empêcher le défilement quand le menu est ouvert
-            if (mobileNav.classList.contains('active')) {
-                document.body.style.overflow = 'hidden';
-            } else {
-                document.body.style.overflow = 'auto';
-            }
-        });
-
-        // Fermer le menu au clic sur un lien
-        const mobileLinks = mobileNav.querySelectorAll('a');
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                burgerBtn.classList.remove('active');
-                mobileNav.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            });
-        });
-    }
-
-    // Effet Header au défilement
+    // EFFET HEADER AU DÉFILEMENT
     window.addEventListener('scroll', function () {
         if (header) {
             if (window.scrollY > 50) {

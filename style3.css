@@ -1592,18 +1592,22 @@ section {
 .towing-content-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    align-items: center;
+    align-items: stretch;
 }
 
 .towing-media {
     position: relative;
+    min-height: 500px;
     height: 100%;
+    overflow: hidden;
 }
 
 .towing-media img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center center;
+    display: block;
 }
 
 .towing-badge-live {
@@ -1782,7 +1786,8 @@ section {
     }
 
     .towing-media {
-        height: 350px;
+        height: 320px;
+        min-height: unset;
     }
 
     .towing-text {

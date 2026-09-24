@@ -28,12 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const tradeGrid = document.getElementById('tradeGrid');
     const filterButtons = document.querySelectorAll('.trade-filter-btn');
     const searchInput = document.getElementById('tradeSearch');
-    const header = document.querySelector('.header');
-    const burgerBtn = document.getElementById('burgerBtn');
-    const mobileNav = document.getElementById('mobileNav');
 
-    // ==============================================
-    // REDIRECTION VERS CONTACT (INDEX.HTML)
     // ==============================================
     function redirectToHomeContact(productName, type) {
         const url = `index.html?product=${encodeURIComponent(productName)}&type=${encodeURIComponent(type)}#contact`;
@@ -233,32 +228,6 @@ document.addEventListener('DOMContentLoaded', function () {
         notification.classList.add('show');
         setTimeout(() => notification.classList.remove('show'), 3000);
     }
-
-    // ==============================================
-    // HEADER & BURGER
-    // ==============================================
-    if (burgerBtn && mobileNav) {
-        burgerBtn.addEventListener('click', function () {
-            this.classList.toggle('active');
-            mobileNav.classList.toggle('active');
-            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : 'auto';
-        });
-
-        mobileNav.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                burgerBtn.classList.remove('active');
-                mobileNav.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            });
-        });
-    }
-
-    window.addEventListener('scroll', function () {
-        if (header) {
-            header.style.background = window.scrollY > 50 ? 'rgba(255, 255, 255, 0.98)' : 'rgba(255, 255, 255, 0.95)';
-            header.style.boxShadow = window.scrollY > 50 ? '0 5px 20px rgba(0, 0, 0, 0.1)' : '0 2px 10px rgba(0, 0, 0, 0.05)';
-        }
-    });
 
     // ==============================================
     // EFFET COMPTEUR (Stats)

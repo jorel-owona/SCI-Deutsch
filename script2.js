@@ -17,39 +17,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const closeModal = document.querySelector('.close-modal');
     const toast = document.getElementById('notificationToast');
     const header = document.querySelector('.header');
-    const burgerBtn = document.getElementById('burgerBtn');
-    const mobileNav = document.getElementById('mobileNav');
 
     // ==============================================
-    // GESTION DU HEADER ET MENU BURGER
-    // ==============================================
-
-    // Toggle Menu Mobile
-    if (burgerBtn && mobileNav) {
-        burgerBtn.addEventListener('click', function () {
-            this.classList.toggle('active');
-            mobileNav.classList.toggle('active');
-
-            // Empêcher le défilement quand le menu est ouvert
-            if (mobileNav.classList.contains('active')) {
-                document.body.style.overflow = 'hidden';
-            } else {
-                document.body.style.overflow = 'auto';
-            }
-        });
-
-        // Fermer le menu au clic sur un lien
-        const mobileLinks = mobileNav.querySelectorAll('a');
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                burgerBtn.classList.remove('active');
-                mobileNav.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            });
-        });
-    }
-
-    // Effet Header au défilement
+    // EFFET HEADER AU DÉFILEMENT
     window.addEventListener('scroll', function () {
         if (window.scrollY > 50) {
             header.style.background = 'rgba(255, 255, 255, 0.98)';

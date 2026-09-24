@@ -34,48 +34,6 @@ document.addEventListener('DOMContentLoaded', function () {
     let startX, startY, translateX = 0, translateY = 0;
 
     // ==============================================
-    // NAVIGATION ET HEADER
-    // ==============================================
-    const burgerBtn = document.getElementById('burgerBtn');
-    const mobileNav = document.getElementById('mobileNav');
-    const header = document.querySelector('.header');
-
-    // Menu Burger
-    burgerBtn?.addEventListener('click', function () {
-        this.classList.toggle('active');
-        mobileNav?.classList.toggle('active');
-        document.body.classList.toggle('overflow-hidden');
-    });
-
-    // Fermer le menu au clic sur un lien
-    document.querySelectorAll('.nav-mobile a').forEach(link => {
-        link.addEventListener('click', () => {
-            burgerBtn?.classList.remove('active');
-            mobileNav?.classList.remove('active');
-            document.body.classList.remove('overflow-hidden');
-        });
-    });
-
-    // Effet scroll header
-    let lastScroll = 0;
-    window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
-
-        if (currentScroll > 50) {
-            header?.classList.add('scrolled');
-        } else {
-            header?.classList.remove('scrolled');
-        }
-
-        if (currentScroll > lastScroll && currentScroll > 500) {
-            header.style.transform = 'translateY(-100%)';
-        } else {
-            header.style.transform = 'translateY(0)';
-        }
-        lastScroll = currentScroll;
-    });
-
-    // ==============================================
     // VISITE VIRTUELLE 360°
     // ==============================================
 
