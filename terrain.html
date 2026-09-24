@@ -1196,7 +1196,8 @@
 
                                         <div class="settings-group">
                                             <h4>Luminosité</h4>
-                                            <input type="range" class="brightness-control" min="0" max="200" value="100">
+                                            <input type="range" class="brightness-control" min="0" max="200"
+                                                value="100">
                                         </div>
 
                                         <div class="settings-group">
@@ -1282,6 +1283,97 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Carte Terrain 5 - Olembe (Yaoundé) -->
+                <div class="terrain-card animate-on-scroll" data-region="centre" data-arrondissement="yaounde"
+                    data-prix="Au choix">
+                    <div class="card-media">
+                        <div class="image-carousel" style="position:relative; height:100%; overflow:hidden;">
+                            <!-- Image principale -->
+                            <img class="terrain-img carousel-slide active"
+                                src="image/Olembe.jpeg"
+                                alt="Terrain Olembe vue 1"
+                                style="width:100%; height:100%; object-fit:cover; display:block; transition:opacity 0.4s;">
+                            <!-- Image secondaire -->
+                            <img class="terrain-img carousel-slide"
+                                src="image/olembe2.jpeg"
+                                alt="Terrain Olembe vue 2"
+                                style="width:100%; height:100%; object-fit:cover; display:none; position:absolute; top:0; left:0; transition:opacity 0.4s;">
+
+                            <!-- Flèches de navigation -->
+                            <button class="carousel-prev" onclick="prevSlideCard(this)"
+                                style="position:absolute;left:10px;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.5);color:#fff;border:none;border-radius:50%;width:32px;height:32px;cursor:pointer;z-index:5;font-size:1rem;">&#8249;</button>
+                            <button class="carousel-next" onclick="nextSlideCard(this)"
+                                style="position:absolute;right:10px;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.5);color:#fff;border:none;border-radius:50%;width:32px;height:32px;cursor:pointer;z-index:5;font-size:1rem;">&#8250;</button>
+
+                            <!-- Indicateurs -->
+                            <div style="position:absolute;bottom:8px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:5;">
+                                <span class="carousel-dot active" style="width:8px;height:8px;background:#fff;border-radius:50%;opacity:1;cursor:pointer;"></span>
+                                <span class="carousel-dot" style="width:8px;height:8px;background:#fff;border-radius:50%;opacity:0.5;cursor:pointer;"></span>
+                            </div>
+                        </div>
+
+                        <div class="region-badge centre">Centre</div>
+                        <div class="status-badge disponible">Disponible</div>
+                    </div>
+
+                    <div class="card-content">
+                        <h3>Olembe (Yaoundé) à 800m du stade</h3>
+
+                        <div class="terrain-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Yaoundé - Centre</span>
+                        </div>
+
+                        <div class="terrain-features">
+                            <div class="feature">
+                                <i class="fas fa-vector-square"></i>
+                                <span>Plusieurs lots</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-road"></i>
+                                <span>Bitumé</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-bolt"></i>
+                                <span>Électricité</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-water"></i>
+                                <span>Eau</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-wifi"></i>
+                                <span>Fibre</span>
+                            </div>
+                        </div>
+
+                        <div class="terrain-description">
+                            <p>Plusieurs lots de terrains viabilisés à 800m du stade d'Olembe, idéal pour construction
+                                de villas ou immeubles R+4, titre foncier disponible, transaction par notaire.</p>
+                        </div>
+
+                        <div class="terrain-price">
+                            <span class="price">AU choix</span>
+                            <span class="price-details">À partir de 80 000 FCFA/m²</span>
+                            <span class="price-details">*prix légèrement discutable*</span>
+                        </div>
+
+                        <div class="terrain-actions">
+                            <button class="btn-whatsapp" data-terrain="Olembe Yaoundé"
+                                title="Contacter sur WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                            <button class="btn-contact" data-terrain="Olembe Yaoundé">
+                                <i class="fas fa-envelope"></i> Contacter
+                            </button>
+                            <button class="btn-details" data-terrain="Olembe Yaoundé">
+                                <i class="fas fa-images"></i> Détails
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
 
                 <!-- ESPACE POUR AJOUTER D'AUTRES TERRAINS ET VIDÉOS -->
                 <!-- Pour ajouter un terrain, copiez-collez le bloc suivant et adaptez le contenu -->
