@@ -796,6 +796,12 @@ section {
     color: white;
 }
 
+.status-badge.vendu {
+    background: rgba(231, 76, 60, 0.95);
+    color: white;
+    font-weight: 700;
+}
+
 /* ===== CONTENU CARTE ===== */
 .card-content {
     padding: 25px;

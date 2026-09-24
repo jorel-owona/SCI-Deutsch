@@ -440,7 +440,7 @@ section {
     }
 }
 
-/* Modal Vidéo */
+/* Modal Vidéo (Style Capture) */
 .video-modal {
     display: none;
     position: fixed;
@@ -448,47 +448,184 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.92);
+    background: rgba(0, 0, 0, 0.78);
     z-index: 9999;
     align-items: center;
     justify-content: center;
     padding: 20px;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(8px);
 }
 
 .video-modal.active {
     display: flex;
 }
 
+/* Bouton Jaune Fermer en haut à droite (Capture) */
+.top-modal-close-yellow {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #e5c378;
+    color: #1a3a5f;
+    border: none;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10001;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.top-modal-close-yellow:hover {
+    transform: scale(1.1) rotate(90deg);
+    background: #ffffff;
+    color: #c19a5b;
+}
+
 .video-modal-content {
     position: relative;
     width: 100%;
-    max-width: 960px;
+    max-width: 900px;
     background: #000;
-    border-radius: 16px;
+    border-radius: 14px;
     overflow: hidden;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
 }
 
-.video-modal-close {
-    position: absolute;
-    top: -45px;
-    right: 0;
-    color: #ffffff;
-    font-size: 2rem;
-    cursor: pointer;
-    transition: color 0.3s ease;
-    z-index: 10;
-}
-
-.video-modal-close:hover {
-    color: #c19a5b;
+.video-player-wrapper {
+    position: relative;
+    width: 100%;
+    background: #000;
+    border-radius: 14px;
+    overflow: hidden;
 }
 
 .video-modal-player {
     width: 100%;
-    max-height: 80vh;
+    max-height: 75vh;
     display: block;
+    object-fit: contain;
+}
+
+/* Barre de Contrôle Vidéo Personnalisée (Capture) */
+.custom-video-controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.6) 60%, transparent 100%);
+    padding: 12px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    z-index: 20;
+    backdrop-filter: blur(4px);
+}
+
+.vid-controls-left,
+.vid-controls-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.vid-btn-gold {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #e5c378;
+    color: #1a3a5f;
+    border: none;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.vid-btn-gold:hover {
+    transform: scale(1.1);
+    background: #ffffff;
+}
+
+.vid-btn-icon {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    padding: 4px;
+}
+
+.vid-btn-icon:hover {
+    color: #e5c378;
+}
+
+.vid-timeline {
+    flex: 1;
+    min-width: 120px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 3px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.vid-timeline-fill {
+    height: 100%;
+    width: 0%;
+    background: #e5c378;
+    border-radius: 3px;
+    transition: width 0.1s linear;
+}
+
+.vid-time {
+    color: #ffffff;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+    white-space: nowrap;
+    letter-spacing: 0.5px;
+}
+
+.vid-btn-red-quit {
+    background: #e74c3c;
+    color: #ffffff;
+    border: none;
+    padding: 7px 16px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3);
+}
+
+.vid-btn-red-quit:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(231, 76, 60, 0.4);
+}
+
+.status-badge.vendu {
+    background: rgba(231, 76, 60, 0.95) !important;
+    color: white !important;
+    font-weight: 700 !important;
 }
 
 /* ==============================================

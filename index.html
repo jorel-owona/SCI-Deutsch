@@ -427,6 +427,43 @@
         </div>
     </footer>
 
+    <!-- Modal Vidéo Institutionnelle Showreel (Style Capture) -->
+    <div id="videoModal" class="video-modal">
+        <button class="top-modal-close-yellow" id="videoModalTopClose" aria-label="Fermer la vidéo">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="video-modal-content">
+            <div class="video-player-wrapper">
+                <video id="modalVideoPlayer" class="video-modal-player" poster="image/reception.jpeg">
+                    <source src="image/ShowreelSci.MOV" type="video/mp4">
+                    Votre navigateur ne supporte pas la lecture vidéo.
+                </video>
+                <div class="custom-video-controls">
+                    <div class="vid-controls-left">
+                        <button class="vid-btn-gold" id="vidPlayPauseBtn" aria-label="Lecture/Pause">
+                            <i class="fas fa-play"></i>
+                        </button>
+                        <button class="vid-btn-icon" id="vidMuteBtn" aria-label="Volume">
+                            <i class="fas fa-volume-up"></i>
+                        </button>
+                        <div class="vid-timeline" id="vidTimeline">
+                            <div class="vid-timeline-fill" id="vidTimelineFill"></div>
+                        </div>
+                        <span class="vid-time" id="vidTimeDisplay">00:00 / 00:00</span>
+                    </div>
+                    <div class="vid-controls-right">
+                        <button class="vid-btn-icon" id="vidFullscreenBtn" aria-label="Plein écran">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                        <button class="vid-btn-red-quit" id="vidQuitBtn">
+                            <i class="fas fa-times"></i> QUITTER
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Supabase & EmailJS -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>

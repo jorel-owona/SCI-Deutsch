@@ -72,19 +72,55 @@ function initShowreelPlayer() {
     const playBtns = document.querySelectorAll('.showreel-play-btn, [data-video-target]');
     const videoModal = document.getElementById('videoModal');
     const modalPlayer = document.getElementById('modalVideoPlayer');
-    const modalClose = document.querySelector('.video-modal-close');
+    const topCloseBtn = document.getElementById('videoModalTopClose') || document.querySelector('.top-modal-close-yellow');
+    const vidPlayPauseBtn = document.getElementById('vidPlayPauseBtn');
+    const vidMuteBtn = document.getElementById('vidMuteBtn');
+    const vidTimeline = document.getElementById('vidTimeline');
+    const vidTimelineFill = document.getElementById('vidTimelineFill');
+    const vidTimeDisplay = document.getElementById('vidTimeDisplay');
+    const vidFullscreenBtn = document.getElementById('vidFullscreenBtn');
+    const vidQuitBtn = document.getElementById('vidQuitBtn');
 
     if (!videoModal || !modalPlayer) return;
+
+    const formatTime = (seconds) => {
+        if (isNaN(seconds)) return '00:00';
+        const mins = Math.floor(seconds / 60);
+        const secs = Math.floor(seconds % 60);
+        return `${mins < 10 ? '0' : ''}${mins}:${secs < 10 ? '0' : ''}${secs}`;
+    };
+
+    const updateControlsUI = () => {
+        const cur = modalPlayer.currentTime || 0;
+        const dur = modalPlayer.duration || 0;
+        const pct = dur > 0 ? (cur / dur) * 100 : 0;
+
+        if (vidTimelineFill) vidTimelineFill.style.width = `${pct}%`;
+        if (vidTimeDisplay) vidTimeDisplay.textContent = `${formatTime(cur)} / ${formatTime(dur)}`;
+
+        if (vidPlayPauseBtn) {
+            const icon = vidPlayPauseBtn.querySelector('i');
+            if (icon) {
+                icon.className = modalPlayer.paused ? 'fas fa-play' : 'fas fa-pause';
+            }
+        }
+    };
 
     playBtns.forEach(btn => {
         btn.addEventListener('click', function (e) {
             e.preventDefault();
             const videoSrc = this.getAttribute('data-video-src') || 'image/ShowreelSci.MOV';
-            
-            modalPlayer.src = videoSrc;
+
+            if (modalPlayer.getAttribute('src') !== videoSrc) {
+                modalPlayer.src = videoSrc;
+            }
+
             videoModal.classList.add('active');
             document.body.style.overflow = 'hidden';
-            modalPlayer.play().catch(err => console.log('Autoplay empêché:', err));
+
+            modalPlayer.play().then(() => {
+                updateControlsUI();
+            }).catch(err => console.log('Autoplay empêché:', err));
         });
     });
 
@@ -93,18 +129,63 @@ function initShowreelPlayer() {
         modalPlayer.pause();
         modalPlayer.currentTime = 0;
         document.body.style.overflow = 'auto';
+        updateControlsUI();
     };
 
-    if (modalClose) {
-        modalClose.addEventListener('click', closeVideo);
-    }
+    // Boutons de fermeture
+    topCloseBtn?.addEventListener('click', closeVideo);
+    vidQuitBtn?.addEventListener('click', closeVideo);
+    document.querySelector('.video-modal-close')?.addEventListener('click', closeVideo);
 
+    // Play / Pause
+    vidPlayPauseBtn?.addEventListener('click', () => {
+        if (modalPlayer.paused) {
+            modalPlayer.play();
+        } else {
+            modalPlayer.pause();
+        }
+        updateControlsUI();
+    });
+
+    // Progression vidéo
+    modalPlayer.addEventListener('timeupdate', updateControlsUI);
+    modalPlayer.addEventListener('loadedmetadata', updateControlsUI);
+
+    // Clic sur timeline
+    vidTimeline?.addEventListener('click', (e) => {
+        const rect = vidTimeline.getBoundingClientRect();
+        const pos = (e.clientX - rect.left) / rect.width;
+        if (modalPlayer.duration) {
+            modalPlayer.currentTime = pos * modalPlayer.duration;
+        }
+    });
+
+    // Mute
+    vidMuteBtn?.addEventListener('click', () => {
+        modalPlayer.muted = !modalPlayer.muted;
+        const icon = vidMuteBtn.querySelector('i');
+        if (icon) {
+            icon.className = modalPlayer.muted ? 'fas fa-volume-mute' : 'fas fa-volume-up';
+        }
+    });
+
+    // Plein écran
+    vidFullscreenBtn?.addEventListener('click', () => {
+        if (document.fullscreenElement) {
+            document.exitFullscreen();
+        } else {
+            modalPlayer.requestFullscreen?.() || videoModal.requestFullscreen?.();
+        }
+    });
+
+    // Clic extérieur
     videoModal.addEventListener('click', function (e) {
         if (e.target === videoModal) {
             closeVideo();
         }
     });
 
+    // Clavier Echap
     document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape' && videoModal.classList.contains('active')) {
             closeVideo();
