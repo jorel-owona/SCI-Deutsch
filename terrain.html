@@ -474,7 +474,7 @@
 
                         <div class="terrain-price">
                             <span class="price">AU choix</span>
-                            <span class="price-details">(250 000 FCFA/m²)</span>
+                            <span class="price-details">(350 000 FCFA/m²)</span>
                             <span class="price-details">*prix légèrement discutable*</span>
                         </div>
 
@@ -1152,44 +1152,147 @@
                     </div>
                 </div>
 
-
-                <!-- ESPACE POUR AJOUTER D'AUTRES TERRAINS ET VIDÉOS -->
-                <!-- Pour ajouter un terrain, copiez-collez le bloc suivant et adaptez le contenu -->
-                <!-- 
-                <div class="terrain-card animate-on-scroll" data-region="VOTRE_REGION" data-arrondissement="VOTRE_ARRONDISSEMENT" data-prix="VOTRE_PRIX">
+                <!-- Carte Terrain 4 - Ebang (Mefou et Afamba) -->
+                <div class="terrain-card animate-on-scroll" data-region="centre" data-arrondissement="yaounde"
+                    data-prix="Au choix">
                     <div class="card-media">
                         <div class="video-container">
-                            <video class="terrain-video" poster="CHEMIN_VERS_VOTRE_IMAGE_OU_VIDEO">
-                                <source src="CHEMIN_VERS_VOTRE_VIDEO.mp4" type="video/mp4">
+                            <video class="terrain-video" poster="">
+                                <source src="image/Ebang.mp4" type="video/mp4">
                                 Votre navigateur ne supporte pas la vidéo.
                             </video>
+
+                            <!-- Contrôles vidéo personnalisés -->
                             <div class="video-controls">
-                                ... (Copiez les contrôles d'un autre terrain) ...
+                                <button class="video-play-pause" aria-label="Lecture/Pause">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <div class="video-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-filled"></div>
+                                    </div>
+                                </div>
+                                <div class="video-time">
+                                    <span class="current-time">0:00</span> / <span class="duration">0:00</span>
+                                </div>
+
+                                <!-- Contrôles avancés -->
+                                <div class="video-settings">
+                                    <button class="settings-btn" aria-label="Paramètres">
+                                        <i class="fas fa-cog"></i>
+                                    </button>
+
+                                    <!-- Menu des paramètres -->
+                                    <div class="settings-menu">
+                                        <div class="settings-group">
+                                            <h4>Vitesse</h4>
+                                            <div class="speed-options">
+                                                <button class="speed-option" data-speed="0.5">0.5x</button>
+                                                <button class="speed-option active" data-speed="1">1x</button>
+                                                <button class="speed-option" data-speed="1.5">1.5x</button>
+                                                <button class="speed-option" data-speed="2">2x</button>
+                                            </div>
+                                        </div>
+
+                                        <div class="settings-group">
+                                            <h4>Luminosité</h4>
+                                            <input type="range" class="brightness-control" min="0" max="200" value="100">
+                                        </div>
+
+                                        <div class="settings-group">
+                                            <h4>Contraste</h4>
+                                            <input type="range" class="contrast-control" min="0" max="200" value="100">
+                                        </div>
+
+                                        <div class="settings-group">
+                                            <h4>Volume</h4>
+                                            <input type="range" class="volume-control" min="0" max="100" value="50">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button class="video-fullscreen" aria-label="Plein écran">
+                                    <i class="fas fa-expand"></i>
+                                </button>
                             </div>
+
+                            <!-- Overlay de lecture -->
                             <div class="video-overlay">
                                 <i class="fas fa-play-circle"></i>
                             </div>
                         </div>
-                        <div class="region-badge VOTRE_REGION">VOTRE_REGION</div>
+
+                        <div class="region-badge centre">Centre</div>
                         <div class="status-badge disponible">Disponible</div>
                     </div>
+
                     <div class="card-content">
-                        <h3>VOTRE_TITRE</h3>
+                        <h3>Ebang (Mefou et Afamba) en face de Relaxe Hotel</h3>
+
                         <div class="terrain-location">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>VOTRE_LOCALISATION</span>
+                            <span>Mefou et Afamba - Centre</span>
                         </div>
-                        ... (Remplissez les caractéristiques et prix) ...
+
+                        <div class="terrain-features">
+                            <div class="feature">
+                                <i class="fas fa-vector-square"></i>
+                                <span>Plusieurs lots</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-road"></i>
+                                <span>Bitumé</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-bolt"></i>
+                                <span>Électricité</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-water"></i>
+                                <span>Eau</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-wifi"></i>
+                                <span>Fibre</span>
+                            </div>
+                        </div>
+
+                        <div class="terrain-description">
+                            <p>Plusieurs lots de terrains viabilisés, idéal pour construction de villas ou immeubles
+                                R+4, titre foncier disponible transaction par un notaire.</p>
+                        </div>
+
+                        <div class="terrain-price">
+                            <span class="price">AU choix</span>
+                            <span class="price-details">(25 000 FCFA/m²)</span>
+                            <span class="price-details">*prix légèrement discutable*</span>
+                        </div>
+
                         <div class="terrain-actions">
-                            <button class="btn-whatsapp" data-terrain="VOTRE_NOM_TERRAIN"> ... </button>
-                            <button class="btn-contact" data-terrain="VOTRE_NOM_TERRAIN"> ... </button>
-                            <button class="btn-details" data-terrain="VOTRE_NOM_TERRAIN"> ... </button>
+                            <button class="btn-whatsapp" data-terrain="Ebang Mefou et Afamba"
+                                title="Contacter sur WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                            <button class="btn-contact" data-terrain="Ebang Mefou et Afamba">
+                                <i class="fas fa-envelope"></i> Contacter
+                            </button>
+                            <button class="btn-details" data-terrain="Ebang Mefou et Afamba">
+                                <i class="fas fa-images"></i> Détails
+                            </button>
                         </div>
                     </div>
                 </div>
+
+                <!-- ESPACE POUR AJOUTER D'AUTRES TERRAINS ET VIDÉOS -->
+                <!-- Pour ajouter un terrain, copiez-collez le bloc suivant et adaptez le contenu -->
+                <!--
+                <div class="terrain-card animate-on-scroll" data-region="VOTRE_REGION" data-arrondissement="VOTRE_ARRONDISSEMENT" data-prix="VOTRE_PRIX">
+                    <div class="card-media">...</div>
+                    <div class="card-content">...</div>
+                </div>
                 -->
                 <!-- FIN ESPACE POUR AJOUTER D'AUTRES TERRAINS -->
-            </div>
+            </div><!-- fin terrains-grid -->
 
             <!-- Bouton Voir Plus -->
             <div class="view-more-container animate-on-scroll">
@@ -1220,7 +1323,7 @@
                     <span>Message envoyé avec succès !</span>
                 </div>
             </div>
-        </div>
+        </div><!-- fin container -->
     </section>
 
     <!-- Footer -->
