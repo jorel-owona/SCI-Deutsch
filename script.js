@@ -4,47 +4,6 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     // ==============================================
-    // MENU BURGER POUR MOBILE
-    // ==============================================
-    const burgerBtn = document.getElementById('burgerBtn');
-    const mobileNav = document.getElementById('mobileNav');
-
-    // Fonction pour ouvrir/fermer le menu mobile
-    function toggleMobileMenu() {
-        burgerBtn.classList.toggle('active');
-        mobileNav.classList.toggle('active');
-
-        // Empêcher le défilement du body lorsque le menu est ouvert
-        if (mobileNav.classList.contains('active')) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = 'auto';
-        }
-    }
-
-    // Ajouter l'événement au bouton burger
-    burgerBtn.addEventListener('click', toggleMobileMenu);
-
-    // Fermer le menu en cliquant sur un lien
-    const mobileNavLinks = mobileNav.querySelectorAll('a');
-    mobileNavLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            burgerBtn.classList.remove('active');
-            mobileNav.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        });
-    });
-
-    // Fermer le menu en cliquant en dehors
-    document.addEventListener('click', function (event) {
-        if (!burgerBtn.contains(event.target) && !mobileNav.contains(event.target) && mobileNav.classList.contains('active')) {
-            burgerBtn.classList.remove('active');
-            mobileNav.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-    });
-
-    // ==============================================
     // CAROUSEL HERO
     // ==============================================
     const carouselSlides = document.querySelectorAll('.carousel-slides .slide');
