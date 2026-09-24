@@ -235,15 +235,17 @@ document.addEventListener('DOMContentLoaded', function () {
     // ==============================================
 
     function updateCurrentImages() {
-        const visibleItems = document.querySelectorAll('.gallery-item[style*="display: block"]');
-        currentImages = Array.from(visibleItems).map(item => {
+        const visibleItems = Array.from(document.querySelectorAll('.gallery-item')).filter(item => {
+            return getComputedStyle(item).display !== 'none';
+        });
+        currentImages = visibleItems.map(item => {
             const img = item.querySelector('img');
             const title = item.querySelector('h4')?.textContent || '';
             const description = item.querySelector('p')?.textContent || '';
             const meta = item.querySelectorAll('.gallery-meta span');
 
             return {
-                src: img.src,
+                src: img ? img.src : '',
                 title: title,
                 description: description,
                 meta: Array.from(meta).map(m => m.textContent)
@@ -254,7 +256,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function openLightbox(index) {
         if (currentImages.length === 0) return;
 
-        currentIndex = index;
+        currentIndex = index >= 0 && index < currentImages.length ? index : 0;
         updateLightboxImage();
         updateLightboxThumbnails();
 
@@ -269,6 +271,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function updateLightboxImage() {
         const image = currentImages[currentIndex];
+        if (!image) return;
 
         lightboxImage.src = image.src;
         lightboxTitle.textContent = image.title;
@@ -287,15 +290,16 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Ouvrir lightbox
-    document.querySelectorAll('.gallery-zoom').forEach((btn, index) => {
+    document.querySelectorAll('.gallery-zoom').forEach((btn) => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
-            const item = btn.closest('.gallery-item');
-            const allItems = Array.from(document.querySelectorAll('.gallery-item[style*="display: block"]'));
-            const actualIndex = allItems.indexOf(item);
-
             updateCurrentImages();
-            openLightbox(actualIndex);
+            const item = btn.closest('.gallery-item');
+            const visibleItems = Array.from(document.querySelectorAll('.gallery-item')).filter(el => {
+                return getComputedStyle(el).display !== 'none';
+            });
+            const actualIndex = visibleItems.indexOf(item);
+            openLightbox(actualIndex >= 0 ? actualIndex : 0);
         });
     });
 

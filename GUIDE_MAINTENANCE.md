@@ -86,3 +86,7 @@ const carsVente = [
 - **Syntaxe** : Chaque ligne de propriété doit se terminer par une virgule `,`.
 - **Accolades** : Chaque bloc de voiture commence par `{` et se termine par `}`.
 - **Prix** : Ne mettez pas d'espaces ou de points dans le prix (ex: `12000000` et non `12 000 000`). Le site s'occupe tout seul d'ajouter les espaces à l'affichage.
+
+## 4. Liens git pour pusher 
+- git@github.com:jorel-owona/SCI-Deutsch.git
+- https://github.com/jorel-owona/SCI-Deutsch.git

@@ -533,6 +533,7 @@ section {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    image-rendering: -webkit-optimize-contrast;
     transition: transform 0.1s ease;
 }
 
@@ -1619,7 +1620,29 @@ section {
    RESPONSIVE STYLES
    ============================================== */
 
+@media (min-width: 1025px) and (max-width: 1200px) {
+    .nav-desktop li {
+        margin-left: 15px;
+    }
+
+    .nav-desktop a {
+        font-size: 0.9rem;
+    }
+}
+
 @media (max-width: 1024px) {
+    .header .container {
+        padding: 15px 20px;
+    }
+
+    .nav-desktop {
+        display: none;
+    }
+
+    .burger-menu {
+        display: flex;
+    }
+
     .hero-content h1 {
         font-size: 3rem;
     }
@@ -1634,17 +1657,6 @@ section {
 }
 
 @media (max-width: 768px) {
-    .header .container {
-        padding: 15px 20px;
-    }
-
-    .nav-desktop {
-        display: none;
-    }
-
-    .burger-menu {
-        display: flex;
-    }
 
     .hero {
         min-height: 600px;
